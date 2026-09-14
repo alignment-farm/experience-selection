@@ -1,10 +1,15 @@
 # Experience selection
 
-**Completed 14 September 2026:** [Findings](FINDINGS.md), with [reproduction instructions](notes/reproduction.md), [primary methods and provenance](sources/README.md), and [audited metrics](evidence/publication-metrics/metrics.json).
+**First phase accepted; independent follow-up commissioned, 14 September 2026.**
+Start with [FOLLOWUP.md](FOLLOWUP.md): in partially acquired states, when does
+choosing experience help beyond abstention and shorter training? The investigator
+owns the next experiments; preparation of this handoff did not launch them.
+
+The completed [findings](FINDINGS.md) are preserved with [reproduction instructions](notes/reproduction.md), [primary methods and provenance](sources/README.md), and [audited metrics](evidence/publication-metrics/metrics.json).
 
 In a synthetic routing workload, checked labels improve the base learner from 30/48 to 48/48 fresh requests but add no accuracy after acquisition. Self-training reaches 24/48 from base; deliberately opposite labels reach 0/48. A supervised agreement gate matches always-checked training at 96/96 across three seeds and two starting states while halving subsequent updates at the fixed 128-step budget. This is not a general compute advantage: the frozen base with examples also reaches full accuracy, and the fresh 32-step diagnostic checkpoints succeed with fewer updates than the gate.
 
-The study preserves development, a prospectively fixed fresh evaluation, all source checkpoints, exact reset/reload checks, the failed initial audit and its repair, and shared-resource timing limits. It closes this bounded phase on measured source/state effects and the limits of supervised abstention. The original brief below records the study's starting question and scope.
+The study preserves development, a prospectively fixed fresh evaluation, all source checkpoints, exact reset/reload checks, the failed initial audit and its repair, and shared-resource timing limits. The first phase closes on measured source/state effects and the limits of supervised abstention. The original brief below records the study's starting question and scope; FOLLOWUP.md supplies the current direction.
 
 
 **Which experience should an agent use for an update, and when should it
