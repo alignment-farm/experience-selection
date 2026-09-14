@@ -23,3 +23,27 @@ only hard-label CE with native LoRA gradients. They do not rely on a chat API or
 claim to exercise teacher-distribution access. The acquired starting state is
 trained locally for 128 updates and charged separately. Every candidate starts
 with a new optimizer, so this comparison does not test keeping optimizer momentum.
+
+For the fixed prospective comparison, after development reading and without
+changing protocol/policy-v1.md:
+
+```
+uv run --no-sync python scripts/run_confirmatory.py
+uv run --no-sync python scripts/supplemental_audit.py evidence/policy-v1-47 evidence/policy-v1-53 evidence/policy-v1-59 --output evidence/NEW-SUPPLEMENTAL
+```
+
+The batch wrapper uses the committed evidence names and deliberately rejects
+existing outputs. On a fresh checkout that already contains evidence, reproduce
+individual runs with new names, then audit each new run and pass those new paths
+to policy_report.py. For example:
+
+```
+uv run --no-sync python scripts/experiment.py --output evidence/NEW-47 --seed 47 --data-seed 20260914101 --protocol protocol/policy-v1.md --policy
+uv run --no-sync python scripts/analyze.py evidence/NEW-47
+```
+
+Repeat with53/20260914201 and59/20260914301. Policy report accepts any list of run
+paths and a new --output directory. The script's `development` split denotes the
+prospectively reserved evaluation split for these three frozen runs. Seed43 is
+exploratory only. Current tokenizer audit explicitly requests a list return type;
+the initial failed audit log is retained for provenance.

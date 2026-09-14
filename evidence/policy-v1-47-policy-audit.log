@@ -1,0 +1,69 @@
+[
+  {
+    "run": "evidence/policy-v1-47",
+    "seed": 47,
+    "states": [
+      {
+        "state": "base",
+        "probe_correct": 8,
+        "choice": "checked",
+        "outcomes": {
+          "none": 9,
+          "context": 16,
+          "checked": 16,
+          "self": 8,
+          "opposite": 0
+        },
+        "training_seconds": {
+          "none": 0,
+          "context": 0,
+          "checked": 16.449429255001633,
+          "self": 16.234223672001463,
+          "opposite": 16.450645412001904
+        },
+        "probe_seconds": 2.339138706995982,
+        "probe_prompt_tokens": 784,
+        "probe_completion_tokens": 48
+      },
+      {
+        "state": "acquired",
+        "probe_correct": 16,
+        "choice": "none",
+        "outcomes": {
+          "none": 16,
+          "context": 8,
+          "checked": 16,
+          "self": 16,
+          "opposite": 0
+        },
+        "training_seconds": {
+          "none": 0,
+          "context": 0,
+          "checked": 16.438935412003048,
+          "self": 16.37180271500165,
+          "opposite": 16.60679829599485
+        },
+        "probe_seconds": 2.3300555009991513,
+        "probe_prompt_tokens": 784,
+        "probe_completion_tokens": 48
+      }
+    ],
+    "gate_correct": 32,
+    "n": 32,
+    "gate_updates": 128,
+    "fixed_checked_updates": 256,
+    "fixed_checked_correct": 32,
+    "no_update_correct": 25,
+    "context_correct": 24,
+    "matched_random_placements": [
+      32,
+      25
+    ],
+    "matched_random_expected_correct": 28.5,
+    "gate_training_seconds": 16.449429255001633,
+    "gate_probe_seconds": 4.669194207995133,
+    "gate_checked_verifications": 32,
+    "fixed_checked_training_seconds": 32.88836466700468,
+    "acquisition_updates": 128
+  }
+]

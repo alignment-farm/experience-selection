@@ -1,0 +1,12 @@
+{
+  "base": {
+    "source": "checked",
+    "probe_correct": 8,
+    "rule": "abstain iff all 16 checked probes agree"
+  },
+  "acquired": {
+    "source": "none",
+    "probe_correct": 16,
+    "rule": "abstain iff all 16 checked probes agree"
+  }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "run": "evidence/development-v1",
+    "source_fit": {
+      "base-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 0.0020560343327815644
+      },
+      "base-self": {
+        "own_label_correct": 13,
+        "task_correct": 8,
+        "last_epoch_mean_loss": 0.23350245399342384
+      },
+      "base-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 0.0001319055359090271
+      },
+      "acquired-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 1.6070681240876183e-05
+      },
+      "acquired-self": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 1.6070681240876183e-05
+      },
+      "acquired-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 0.0002656846636455157
+      }
+    },
+    "equivalent_checkpoints": [
+      [
+        "acquired-checked-32.safetensors",
+        "acquired-self-32.safetensors"
+      ],
+      [
+        "acquired-checked-128.safetensors",
+        "acquired-self-128.safetensors"
+      ]
+    ]
+  }
+]

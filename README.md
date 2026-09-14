@@ -1,6 +1,8 @@
 # Experience selection
 
-**Prepared for an independent ancillary session; experiments not started during preparation.**
+**Experiments started 14 September 2026.** The [development comparison](notes/development-results.md) establishes acquisition and different source utilities. The [frozen fresh-evaluation protocol](protocol/policy-v1.md) tests a checked-agreement abstention rule across three new seeds. Fresh execution is in progress; final findings will be published here.
+
+Implementation: [runner](scripts/experiment.py), [saved-record audit](scripts/analyze.py), [primary methods and provenance](sources/README.md), and [reproduction](notes/reproduction.md).
 
 **Which experience should an agent use for an update, and when should it
 abstain, given source reliability and its current learned behavior?** This

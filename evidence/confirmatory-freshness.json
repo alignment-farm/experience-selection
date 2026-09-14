@@ -1,0 +1,62 @@
+[
+  {
+    "seed": 47,
+    "split": "train",
+    "tickets": [
+      "cbhnsbnt",
+      "czcvhhfw",
+      "ewixzroy",
+      "pmtehctj"
+    ]
+  },
+  {
+    "seed": 47,
+    "split": "evaluation",
+    "tickets": [
+      "aevwrdjc",
+      "lyrmppbt",
+      "xxseumca",
+      "zdanjkhx"
+    ]
+  },
+  {
+    "seed": 53,
+    "split": "train",
+    "tickets": [
+      "kadlrhkr",
+      "lszlmofy",
+      "ojqwhplx",
+      "xkndbaeo"
+    ]
+  },
+  {
+    "seed": 53,
+    "split": "evaluation",
+    "tickets": [
+      "cevggwzd",
+      "fbmxrrac",
+      "nnbsvtyp",
+      "tdwqwolz"
+    ]
+  },
+  {
+    "seed": 59,
+    "split": "train",
+    "tickets": [
+      "dkslfrdi",
+      "hbalvwqy",
+      "vgzaddxd",
+      "xbmknlfd"
+    ]
+  },
+  {
+    "seed": 59,
+    "split": "evaluation",
+    "tickets": [
+      "brptkahn",
+      "izfgdocg",
+      "mdeilhnf",
+      "sjkhcyrq"
+    ]
+  }
+]

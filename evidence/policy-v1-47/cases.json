@@ -1,0 +1,166 @@
+{
+  "train": [
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "pmtehctj"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "pmtehctj"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "pmtehctj"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "pmtehctj"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "ewixzroy"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "ewixzroy"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "ewixzroy"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "ewixzroy"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "czcvhhfw"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "czcvhhfw"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "czcvhhfw"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "czcvhhfw"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "cbhnsbnt"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "cbhnsbnt"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "cbhnsbnt"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "cbhnsbnt"
+    }
+  ],
+  "development": [
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "xxseumca"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "xxseumca"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "xxseumca"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "xxseumca"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "lyrmppbt"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "lyrmppbt"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "lyrmppbt"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "lyrmppbt"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "zdanjkhx"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "zdanjkhx"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "zdanjkhx"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "zdanjkhx"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "aevwrdjc"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "aevwrdjc"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "aevwrdjc"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "aevwrdjc"
+    }
+  ]
+}

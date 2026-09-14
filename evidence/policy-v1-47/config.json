@@ -1,0 +1,7 @@
+{
+  "seed": 47,
+  "data_seed": 20260914101,
+  "steps": 128,
+  "protocol": "protocol/policy-v1.md",
+  "policy": true
+}

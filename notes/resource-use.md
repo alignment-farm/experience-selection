@@ -5,3 +5,14 @@ process inspection found no Python/MLX experimental training process. This study
 runs one bounded MLX job at a time with a 40 GB ceiling; no model serving process
 is stopped. Active job commands identify this directory and evidence output.
 No messages to other investigators were sent. Recheck processes before each run.
+
+During fresh seed47, process inspection found the retention study waiting on this
+study's visible batch/experiment processes. Its resource-use note reports a brief
+race: it began at20:43:12 UTC after our development run ended; our confirmatory
+batch began20:43:33; it observed overlap at20:43:44 and stopped its own partial run.
+Its replacement development-v2 is currently waiting (0% CPU, resource_wait events).
+We changed none of its files or processes. This overlap was not known at launch;
+first fresh-run timing is not evidence of exclusive-machine latency. Accuracy and
+exact reset/hash audits remain checked. Our three runs execute sequentially and
+are expected to finish roughly15 minutes after batch start; no additional heavy
+experiments are planned after that batch. Raw timings are descriptive only.

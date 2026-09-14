@@ -1,0 +1,435 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{
+  "run": "evidence/policy-v1-47",
+  "verified_manifest": true,
+  "responses": 608,
+  "repeated_baseline_records": 32,
+  "summary": [
+    {
+      "arm": "base-none",
+      "step": 0,
+      "suite": "train",
+      "correct": 8,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 4.448043705996497
+    },
+    {
+      "arm": "base-none",
+      "step": 0,
+      "suite": "development",
+      "correct": 9,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 3.823848291001923
+    },
+    {
+      "arm": "acquisition",
+      "step": 32,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 3.9711100420008734
+    },
+    {
+      "arm": "acquisition",
+      "step": 32,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 3.8492216259992347
+    },
+    {
+      "arm": "acquisition",
+      "step": 128,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 3.7917144179982643
+    },
+    {
+      "arm": "acquisition",
+      "step": 128,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 4.159875292998549
+    },
+    {
+      "arm": "base-context",
+      "step": 0,
+      "suite": "train",
+      "correct": 14,
+      "n": 16,
+      "prompt_tokens": 5872,
+      "completion_tokens": 48,
+      "seconds": 6.72876987500058
+    },
+    {
+      "arm": "base-context",
+      "step": 0,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 5864,
+      "completion_tokens": 48,
+      "seconds": 6.665453917998093
+    },
+    {
+      "arm": "base-checked",
+      "step": 32,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.3982480439999563
+    },
+    {
+      "arm": "base-checked",
+      "step": 32,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3321601690013267
+    },
+    {
+      "arm": "base-checked",
+      "step": 128,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.412336792001952
+    },
+    {
+      "arm": "base-checked",
+      "step": 128,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.330292834998545
+    },
+    {
+      "arm": "base-self",
+      "step": 32,
+      "suite": "train",
+      "correct": 8,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.4377076649980154
+    },
+    {
+      "arm": "base-self",
+      "step": 32,
+      "suite": "development",
+      "correct": 8,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3107044990010763
+    },
+    {
+      "arm": "base-self",
+      "step": 128,
+      "suite": "train",
+      "correct": 8,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.4140689179994297
+    },
+    {
+      "arm": "base-self",
+      "step": 128,
+      "suite": "development",
+      "correct": 8,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3122461680013657
+    },
+    {
+      "arm": "base-opposite",
+      "step": 32,
+      "suite": "train",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.4389791250005146
+    },
+    {
+      "arm": "base-opposite",
+      "step": 32,
+      "suite": "development",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.331489417000739
+    },
+    {
+      "arm": "base-opposite",
+      "step": 128,
+      "suite": "train",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.4098148350030897
+    },
+    {
+      "arm": "base-opposite",
+      "step": 128,
+      "suite": "development",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.316488959000708
+    },
+    {
+      "arm": "acquired-none",
+      "step": 0,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.421536167999875
+    },
+    {
+      "arm": "acquired-none",
+      "step": 0,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3246993330003534
+    },
+    {
+      "arm": "acquired-context",
+      "step": 0,
+      "suite": "train",
+      "correct": 8,
+      "n": 16,
+      "prompt_tokens": 5872,
+      "completion_tokens": 48,
+      "seconds": 6.710833750001257
+    },
+    {
+      "arm": "acquired-context",
+      "step": 0,
+      "suite": "development",
+      "correct": 8,
+      "n": 16,
+      "prompt_tokens": 5864,
+      "completion_tokens": 48,
+      "seconds": 6.6873704180006825
+    },
+    {
+      "arm": "acquired-checked",
+      "step": 32,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.3731805409979643
+    },
+    {
+      "arm": "acquired-checked",
+      "step": 32,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.322336582000389
+    },
+    {
+      "arm": "acquired-checked",
+      "step": 128,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.4188180799983456
+    },
+    {
+      "arm": "acquired-checked",
+      "step": 128,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3315992940024444
+    },
+    {
+      "arm": "acquired-self",
+      "step": 32,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.4058047080006872
+    },
+    {
+      "arm": "acquired-self",
+      "step": 32,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.325413957000819
+    },
+    {
+      "arm": "acquired-self",
+      "step": 128,
+      "suite": "train",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.4188702889987326
+    },
+    {
+      "arm": "acquired-self",
+      "step": 128,
+      "suite": "development",
+      "correct": 16,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3240937910004504
+    },
+    {
+      "arm": "acquired-opposite",
+      "step": 32,
+      "suite": "train",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.390399875001094
+    },
+    {
+      "arm": "acquired-opposite",
+      "step": 32,
+      "suite": "development",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3101126679976005
+    },
+    {
+      "arm": "acquired-opposite",
+      "step": 128,
+      "suite": "train",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 784,
+      "completion_tokens": 48,
+      "seconds": 2.384292500999436
+    },
+    {
+      "arm": "acquired-opposite",
+      "step": 128,
+      "suite": "development",
+      "correct": 0,
+      "n": 16,
+      "prompt_tokens": 776,
+      "completion_tokens": 48,
+      "seconds": 2.3138610820014947
+    }
+  ],
+  "cost": {
+    "acquisition": {
+      "updates": 128,
+      "seconds": 23.874234832001093,
+      "input_tokens": 6528,
+      "loss_tokens": 384,
+      "first_loss": 0.12897564470767975,
+      "last_loss": 3.6040088161826134e-05
+    },
+    "base-checked": {
+      "updates": 128,
+      "seconds": 16.449429255001633,
+      "input_tokens": 6528,
+      "loss_tokens": 384,
+      "first_loss": 0.12897564470767975,
+      "last_loss": 3.6040088161826134e-05
+    },
+    "base-self": {
+      "updates": 128,
+      "seconds": 16.234223672001463,
+      "input_tokens": 6528,
+      "loss_tokens": 384,
+      "first_loss": 0.12897564470767975,
+      "last_loss": 7.947285496356926e-08
+    },
+    "base-opposite": {
+      "updates": 128,
+      "seconds": 16.450645412001904,
+      "input_tokens": 6528,
+      "loss_tokens": 384,
+      "first_loss": 0.3789755702018738,
+      "last_loss": 0.00023335710284300148
+    },
+    "acquired-checked": {
+      "updates": 128,
+      "seconds": 16.438935412003048,
+      "input_tokens": 6528,
+      "loss_tokens": 384,
+      "first_loss": 3.72718131984584e-05,
+      "last_loss": 0.00011228615039726719
+    },
+    "acquired-self": {
+      "updates": 128,
+      "seconds": 16.37180271500165,
+      "input_tokens": 6528,
+      "loss_tokens": 384,
+      "first_loss": 3.72718131984584e-05,
+      "last_loss": 0.00011228615039726719
+    },
+    "acquired-opposite": {
+      "updates": 128,
+      "seconds": 16.60679829599485,
+      "input_tokens": 6528,
+      "loss_tokens": 384,
+      "first_loss": 5.104198455810547,
+      "last_loss": 0.00017241493333131075
+    }
+  },
+  "reloads": 14,
+  "complete": {
+    "kind": "complete",
+    "elapsed": 328.10627962499984,
+    "status": "complete",
+    "seconds": 328.1062761659996,
+    "peak_mlx_bytes": 9612147728
+  }
+}
