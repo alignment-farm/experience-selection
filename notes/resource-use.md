@@ -21,3 +21,12 @@ The three-seed batch completed successfully after936.64 seconds of summed run
 timers. All gradient/generation/reload work is finished; remaining work is CPU-only
 analysis, documentation and Git preservation. The waiting retention study may use
 the GPU. No sibling process was stopped or modified by this study.
+
+Follow-up resumption, 14 September 2026, approximately23:33 UTC: launched the
+512-update followup-development-v1 only after inspection found no active learner.
+At elapsed202 seconds observed the retention follow-up's scope_experiment.py;
+its process is idle and its note says it is waiting for our PID6815 before loading
+the model. After v1 completes this study will yield the device for that waiting
+development run. The next local diagnosis is1920 updates and will start only after
+rechecking that resource. CPU audits and documentation proceed during the wait.
+No sibling file or process is modified. Follow-up timings remain descriptive.

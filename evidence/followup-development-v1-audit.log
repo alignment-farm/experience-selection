@@ -1,0 +1,32 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{
+  "totals": {
+    "8": {
+      "coast": 16,
+      "inland": 16,
+      "mixture": 16,
+      "selected": 16
+    },
+    "16": {
+      "coast": 16,
+      "inland": 16,
+      "mixture": 8,
+      "selected": 16
+    },
+    "32": {
+      "coast": 16,
+      "inland": 16,
+      "mixture": 16,
+      "selected": 16
+    },
+    "64": {
+      "coast": 16,
+      "inland": 16,
+      "mixture": 21,
+      "selected": 16
+    }
+  },
+  "denominator": 32,
+  "no_update": 16,
+  "context": 20
+}

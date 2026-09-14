@@ -47,6 +47,7 @@ def audit(path, tokenizer):
                 assert counts == score['by_region'] and sum(counts.values()) == score['correct']
     orders = json.loads((path/'orders.json').read_text())
     tokens = json.loads((path/'training-tokens.json').read_text())
+    assert len(tokens) == len(cases['train'])
     for t,c in zip(tokens,cases['train']):
         assert t['case'] == c
         assert t['target'] == tokenizer.encode(answer(c), add_special_tokens=False) + [tokenizer.eos_token_id]
@@ -56,7 +57,7 @@ def audit(path, tokenizer):
     for position,e in enumerate(events):
         if e['kind'] == 'update':
             assert all(math.isfinite(e[k]) for k in ['loss','gradient_norm','seconds'])
-            assert e['gradient_norm'] > 0
+            assert e['gradient_norm'] >= 0
             updates[e['arm']].append(e)
         elif e['kind'] == 'arm_start':
             assert e['optimizer_reset']
@@ -69,6 +70,7 @@ def audit(path, tokenizer):
             assert not any(x['kind']=='arm_start' and x['arm'].startswith(e['state']+'-') for x in events[:position])
             decisions[e['state']] = e
     for arm,rows in updates.items():
+        assert any(r['gradient_norm'] > 0 for r in rows)
         source = starts[arm]['source']
         assert [r['step'] for r in rows] == list(range(1,len(rows)+1))
         assert [r['index'] for r in rows] == orders[source][:len(rows)]

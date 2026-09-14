@@ -33,3 +33,30 @@ Resource inspection before launch found no active Python/MLX training process on
 the local 64GiB M1 Ultra. The visible command names this study and evidence output.
 One job runs at a time, with a 40GB MLX and 30-minute bound. No sibling processes
 or resource notes are modified. Timing is descriptive, not controlled latency.
+
+## Development v1 completed
+
+Source commit bf8e820;512 updates,248.33 seconds,9.61GB peak MLX. Raw-record audit
+passes hashes, decoding, prompt reconstruction, outcome scoring, labeled-probe
+decisions before candidates, matched reset hashes,32 checkpoint token replays and
+frozen-base/logit-reset invariants. The audit is CPU-only.
+
+Both state64 constructions acquired the exposed region8/8 and scored0/8 on the
+other. The gap policy correctly identified the missing region in both states.
+Every single-region source scored8/16 at every tested duration8,16,32,64: the
+gap source eventually moved all eight successes to the formerly wrong region,
+while the already-known source preserved the original successes. Thus a source
+can be correct and teach its component without improving balanced downstream
+utility. The held-out errors alone do not identify a safe isolated update.
+
+Balanced mixture totals across both states:16/32 at8,8/32 at16,16/32 at32,21/32
+at64. The last value comprises8/16 from coast-state and13/16 from inland-state.
+No joint acquisition yet. Preserve the0/16 transient coast-mixture16 result.
+The all-evidence context reference scored20/32 across partial states; base context
+scored12/16, so no general information-placement advantage is established.
+
+Development v2 extends the identical trajectories to128/256 updates and adds
+base-mixture to diagnose insufficient duration versus prior specialization.
+This is a bounded calibration, not a fresh test. Protocol committed before launch.
+At v1 completion the waiting retention study began its own development job;
+v2 is prepared while this study yields the GPU.
