@@ -93,7 +93,9 @@ def audit(path, tokenizer):
         return {region:sum(r['correct'] for r in rows if r['case']['region']==region) for region in REGIONS}
     def cost(arm,step):
         rows=updates.get(arm,[])[:step]
-        return dict(updates=len(rows), **{k:sum(r[k] for r in rows) for k in ['input_tokens','loss_tokens','seconds']})
+        return dict(updates=len(rows), **{k:sum(r[k] for r in rows) for k in ['input_tokens','loss_tokens','seconds']},
+                    first_eight_mean_loss=sum(r['loss'] for r in rows[:8])/len(rows[:8]) if rows else None,
+                    last_eight_mean_loss=sum(r['loss'] for r in rows[-8:])/len(rows[-8:]) if rows else None)
     def use_cost(arm,step,suite='later'):
         rows=grouped[(arm,step,suite)]
         return dict(calls=len(rows),**{k:sum(r[k] for r in rows) for k in ['prompt_tokens','completion_tokens','seconds']})
@@ -132,6 +134,13 @@ def main():
     from transformers import AutoTokenizer
     tokenizer=AutoTokenizer.from_pretrained('models/qwen3-4b-instruct')
     runs=[audit(path,tokenizer) for path in a.runs]
+    assert all(r['config']['checkpoints']==runs[0]['config']['checkpoints'] for r in runs)
+    if len(runs)>1:
+        all_tickets=[]
+        for path in a.runs:
+            cs=json.loads((path/'cases.json').read_text())
+            all_tickets.append({c['ticket'] for suite in cs.values() for c in suite})
+        assert all(not x&y for i,x in enumerate(all_tickets) for y in all_tickets[i+1:])
     totals={}
     for step in runs[0]['config']['checkpoints']:
         totals[str(step)]={s:sum(sum(state['checkpoints'][str(step)]['sources'][s]['scores'].values())
@@ -143,6 +152,8 @@ def main():
                 context=sum(sum(s['context'].values()) for run in runs for s in run['states'].values()))
     a.output.mkdir(parents=True,exist_ok=False)
     (a.output/'metrics.json').write_text(json.dumps(result,indent=2)+'\n')
+    (a.output/'followup_audit.py').write_bytes(Path(__file__).read_bytes())
+    (a.output/'followup_task.py').write_bytes(Path(__file__).with_name('followup_task.py').read_bytes())
     print(json.dumps({k:v for k,v in result.items() if k!='runs'},indent=2))
 
 
