@@ -1,0 +1,166 @@
+{
+  "train": [
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "pjwlyfvv"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "pjwlyfvv"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "pjwlyfvv"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "pjwlyfvv"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "fhjcljiq"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "fhjcljiq"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "fhjcljiq"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "fhjcljiq"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "jtlurczp"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "jtlurczp"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "jtlurczp"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "jtlurczp"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "coczmmmo"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "coczmmmo"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "coczmmmo"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "coczmmmo"
+    }
+  ],
+  "development": [
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "xlihnozp"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "xlihnozp"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "xlihnozp"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "xlihnozp"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "tzrenecz"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "tzrenecz"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "tzrenecz"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "tzrenecz"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "jiooaexh"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "jiooaexh"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "jiooaexh"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "jiooaexh"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "qcxngjzf"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "qcxngjzf"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "qcxngjzf"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "qcxngjzf"
+    }
+  ]
+}

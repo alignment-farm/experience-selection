@@ -1,0 +1,6 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+Traceback (most recent call last):
+  File "/Users/macos-user/Developer/Projects/alignment-farm/ancillary-studies/experience-selection/scripts/analyze.py", line 22, in <module>
+    assert r['prefix']==encode(prompt(r['case'],data['train'] if r['arm'].endswith('-context') else ()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

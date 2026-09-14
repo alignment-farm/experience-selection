@@ -1,0 +1,6 @@
+{
+  "seed": 43,
+  "data_seed": 20260914031,
+  "steps": 128,
+  "protocol": "protocol/development-v1.md"
+}
