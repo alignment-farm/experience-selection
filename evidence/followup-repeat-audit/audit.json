@@ -1,0 +1,23 @@
+{
+  "earlier": "evidence/followup-development-v1",
+  "extended": "evidence/followup-development-v2",
+  "exact_checkpoint_files": [
+    "base.safetensors",
+    "coast-coast-64.safetensors",
+    "coast-inland-64.safetensors",
+    "coast-mixture-64.safetensors",
+    "inland-coast-64.safetensors",
+    "inland-inland-64.safetensors",
+    "inland-mixture-64.safetensors",
+    "state-coast-16.safetensors",
+    "state-coast-32.safetensors",
+    "state-coast-64.safetensors",
+    "state-coast-8.safetensors",
+    "state-inland-16.safetensors",
+    "state-inland-32.safetensors",
+    "state-inland-64.safetensors",
+    "state-inland-8.safetensors"
+  ],
+  "exact_update_records": 512,
+  "exact_shared_responses": 488
+}

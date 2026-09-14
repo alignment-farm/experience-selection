@@ -1,0 +1,13 @@
+{
+  "output": "evidence/followup-development-v2",
+  "seed": 71,
+  "data_seed": 20260914501,
+  "state_steps": 64,
+  "checkpoints": [
+    64,
+    128,
+    256
+  ],
+  "protocol": "protocol/followup-development-v2.md",
+  "include_base_mixture": true
+}

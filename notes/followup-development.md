@@ -60,3 +60,24 @@ base-mixture to diagnose insufficient duration versus prior specialization.
 This is a bounded calibration, not a fresh test. Protocol committed before launch.
 At v1 completion the waiting retention study began its own development job;
 v2 is prepared while this study yields the GPU.
+
+## Development v2 completed and fresh protocol fixed
+
+Source commit25b5d12;1920 updates,432.49 seconds,9.61GB peak. All raw-record checks
+passed. The repeat audit found15 identical checkpoint files,512 exactly repeated
+update records (loss, gradient norm, index and token counts), and488 exact shared
+prompt/output records. Adding base-mixture and extending duration did not change
+the old trajectories. All29 evaluated checkpoints replayed exact output tokens.
+
+Mixture later totals are21/32 at64,26/32 at128 and32/32 at256. At128, coast-state
+scored10/16 and inland-state16/16; both score16/16 at256. Pure sources and gap
+policy remain16/32 throughout, with learned-region tradeoffs. Base-mixture scored
+8/16,12/16 and16/16 at64/128/256, respectively. Thus joint acquisition works;
+both insufficient short duration and loss of the old rule under gap-only updates
+are measured explanations, rather than a list of possible causes.
+
+Fix256 as the shortest tested duration maximizing fixed-mixture aggregate
+development accuracy, with128 retained as a shorter fresh diagnostic. Freeze
+three fresh seeds73/79/83 and new tickets in protocol/followup-fresh-v1.md. Preserve
+the gap policy as a test of present-error targeting, not a claim that this is the
+strongest adaptive method. All fresh states and outcomes will be included.

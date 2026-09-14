@@ -30,3 +30,17 @@ the model. After v1 completes this study will yield the device for that waiting
 development run. The next local diagnosis is1920 updates and will start only after
 rechecking that resource. CPU audits and documentation proceed during the wait.
 No sibling file or process is modified. Follow-up timings remain descriptive.
+
+The retention development completed at568.77 seconds of its own timer, including
+150.05 seconds of initial waiting. After observing its complete event and no
+active experimental Python process, this study launched followup-development-v2
+(PID7177), one1920-update job. The first minute's process inspection shows only
+this study's learner. The CPU-only source/PDF reading and evidence audits during
+the device wait did not instantiate a learner.
+
+V2 completed after432.49 seconds. Next planned use is one sequential three-run
+fresh cohort,4992 optimizer updates in total, approximately20 active minutes based
+on development timings. The batch command names run_followup_fresh.py and each
+child names its evidence output. The protocol is fixed before launch; recheck
+processes before starting. No additional heavy experiments are planned after this
+cohort unless a prespecified acquisition failure requires bounded diagnosis.
