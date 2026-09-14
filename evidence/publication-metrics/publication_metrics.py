@@ -1,7 +1,6 @@
 """Reproducible numeric tables for the local publication, from audited records."""
-import json,hashlib,argparse
+import json,hashlib
 from pathlib import Path
-parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=Path('evidence/publication-metrics'));args=parser.parse_args()
 runs=[Path(f'evidence/policy-v1-{s}') for s in [47,53,59]]
 policy=json.loads(Path('evidence/policy-v1-analysis/policy.json').read_text())
 reports=[json.loads((r.parent/(r.name+'-analysis')/'analysis.json').read_text()) for r in runs]
@@ -27,6 +26,6 @@ metrics['source_reliability']={state:[sum(x['correct'] for x in json.loads((r/(s
 metrics['acquisition']=[json.loads((r/'acquisition.json').read_text()) for r in runs]
 metrics['source_snapshots']={name:[hashlib.sha256((r/name).read_bytes()).hexdigest() for r in runs] for name in ['experiment.py','task.py','runtime.py','protocol.md']}
 assert all(len(set(h))==1 for h in metrics['source_snapshots'].values())
-out=args.output;out.mkdir(exist_ok=False)
+out=Path('evidence/publication-metrics');out.mkdir(exist_ok=False)
 (out/'metrics.json').write_text(json.dumps(metrics,indent=2)+'\n');(out/'publication_metrics.py').write_bytes(Path(__file__).read_bytes())
 print(json.dumps(metrics['totals'],indent=2))

@@ -1,8 +1,11 @@
 # Experience selection
 
-**Experiments started 14 September 2026.** The [development comparison](notes/development-results.md) establishes acquisition and different source utilities. The [frozen fresh-evaluation protocol](protocol/policy-v1.md) tests a checked-agreement abstention rule across three new seeds. Fresh execution is in progress; final findings will be published here.
+**Completed 14 September 2026:** [Findings](FINDINGS.md), with [reproduction instructions](notes/reproduction.md), [primary methods and provenance](sources/README.md), and [audited metrics](evidence/publication-metrics/metrics.json).
 
-Implementation: [runner](scripts/experiment.py), [saved-record audit](scripts/analyze.py), [primary methods and provenance](sources/README.md), and [reproduction](notes/reproduction.md).
+In a synthetic routing workload, checked labels improve the base learner from 30/48 to 48/48 fresh requests but add no accuracy after acquisition. Self-training reaches 24/48 from base; deliberately opposite labels reach 0/48. A supervised agreement gate matches always-checked training at 96/96 across three seeds and two starting states while halving subsequent updates at the fixed 128-step budget. This is not a general compute advantage: the frozen base with examples also reaches full accuracy, and the fresh 32-step diagnostic checkpoints succeed with fewer updates than the gate.
+
+The study preserves development, a prospectively fixed fresh evaluation, all source checkpoints, exact reset/reload checks, the failed initial audit and its repair, and shared-resource timing limits. It closes this bounded phase on measured source/state effects and the limits of supervised abstention. The original brief below records the study's starting question and scope.
+
 
 **Which experience should an agent use for an update, and when should it
 abstain, given source reliability and its current learned behavior?** This

@@ -1,0 +1,166 @@
+{
+  "train": [
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "xbmknlfd"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "xbmknlfd"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "xbmknlfd"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "xbmknlfd"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "vgzaddxd"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "vgzaddxd"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "vgzaddxd"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "vgzaddxd"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "dkslfrdi"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "dkslfrdi"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "dkslfrdi"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "dkslfrdi"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "hbalvwqy"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "hbalvwqy"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "hbalvwqy"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "hbalvwqy"
+    }
+  ],
+  "development": [
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "brptkahn"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "brptkahn"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "brptkahn"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "brptkahn"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "sjkhcyrq"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "sjkhcyrq"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "sjkhcyrq"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "sjkhcyrq"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "mdeilhnf"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "mdeilhnf"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "mdeilhnf"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "mdeilhnf"
+    },
+    {
+      "channel": "amber",
+      "priority": "slow",
+      "ticket": "izfgdocg"
+    },
+    {
+      "channel": "amber",
+      "priority": "fast",
+      "ticket": "izfgdocg"
+    },
+    {
+      "channel": "teal",
+      "priority": "slow",
+      "ticket": "izfgdocg"
+    },
+    {
+      "channel": "teal",
+      "priority": "fast",
+      "ticket": "izfgdocg"
+    }
+  ]
+}

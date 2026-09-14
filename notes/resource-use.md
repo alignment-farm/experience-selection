@@ -16,3 +16,8 @@ first fresh-run timing is not evidence of exclusive-machine latency. Accuracy an
 exact reset/hash audits remain checked. Our three runs execute sequentially and
 are expected to finish roughly15 minutes after batch start; no additional heavy
 experiments are planned after that batch. Raw timings are descriptive only.
+
+The three-seed batch completed successfully after936.64 seconds of summed run
+timers. All gradient/generation/reload work is finished; remaining work is CPU-only
+analysis, documentation and Git preservation. The waiting retention study may use
+the GPU. No sibling process was stopped or modified by this study.

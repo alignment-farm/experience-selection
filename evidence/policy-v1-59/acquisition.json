@@ -1,0 +1,7 @@
+{
+  "scores": {
+    "train": 16,
+    "development": 16
+  },
+  "criterion_met": true
+}

@@ -1,0 +1,143 @@
+[
+  {
+    "run": "evidence/policy-v1-47",
+    "source_fit": {
+      "base-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 6.334595514090324e-05
+      },
+      "base-self": {
+        "own_label_correct": 16,
+        "task_correct": 8,
+        "last_epoch_mean_loss": 7.698932824595772e-08
+      },
+      "base-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 0.00020362123450468061
+      },
+      "acquired-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 0.00011504321537358919
+      },
+      "acquired-self": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 0.00011504321537358919
+      },
+      "acquired-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 0.00015582997002638876
+      }
+    },
+    "equivalent_checkpoints": [
+      [
+        "acquired-checked-32.safetensors",
+        "acquired-self-32.safetensors"
+      ],
+      [
+        "acquired-checked-128.safetensors",
+        "acquired-self-128.safetensors"
+      ]
+    ],
+    "base_decision_precedes_candidates": true,
+    "acquired_decision_precedes_candidates": true
+  },
+  {
+    "run": "evidence/policy-v1-53",
+    "source_fit": {
+      "base-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 2.4325608507069774e-05
+      },
+      "base-self": {
+        "own_label_correct": 16,
+        "task_correct": 9,
+        "last_epoch_mean_loss": 0.09008498030016199
+      },
+      "base-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 8.782935060480668e-05
+      },
+      "acquired-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 1.490597168185559e-05
+      },
+      "acquired-self": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 1.490597168185559e-05
+      },
+      "acquired-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 5.114384492799218e-05
+      }
+    },
+    "equivalent_checkpoints": [
+      [
+        "acquired-checked-32.safetensors",
+        "acquired-self-32.safetensors"
+      ],
+      [
+        "acquired-checked-128.safetensors",
+        "acquired-self-128.safetensors"
+      ]
+    ],
+    "base_decision_precedes_candidates": true,
+    "acquired_decision_precedes_candidates": true
+  },
+  {
+    "run": "evidence/policy-v1-59",
+    "source_fit": {
+      "base-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 5.2685323453260935e-05
+      },
+      "base-self": {
+        "own_label_correct": 15,
+        "task_correct": 8,
+        "last_epoch_mean_loss": 0.12694639926485252
+      },
+      "base-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 3.4790741096912825e-05
+      },
+      "acquired-checked": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 1.8146870559121453e-05
+      },
+      "acquired-self": {
+        "own_label_correct": 16,
+        "task_correct": 16,
+        "last_epoch_mean_loss": 1.8146870559121453e-05
+      },
+      "acquired-opposite": {
+        "own_label_correct": 16,
+        "task_correct": 0,
+        "last_epoch_mean_loss": 4.992454222474407e-05
+      }
+    },
+    "equivalent_checkpoints": [
+      [
+        "acquired-checked-32.safetensors",
+        "acquired-self-32.safetensors"
+      ],
+      [
+        "acquired-checked-128.safetensors",
+        "acquired-self-128.safetensors"
+      ]
+    ],
+    "base_decision_precedes_candidates": true,
+    "acquired_decision_precedes_candidates": true
+  }
+]

@@ -47,3 +47,17 @@ paths and a new --output directory. The script's `development` split denotes the
 prospectively reserved evaluation split for these three frozen runs. Seed43 is
 exploratory only. Current tokenizer audit explicitly requests a list return type;
 the initial failed audit log is retained for provenance.
+
+For the completed bundle, rebuild derived aggregate metrics and the publication
+using new output paths (the metrics script refuses existing output):
+
+```
+uv run --no-sync python scripts/publication_metrics.py --output evidence/NEW-METRICS
+uv run --no-sync python scripts/render_findings.py --metrics evidence/NEW-METRICS/metrics.json --output NEW-FINDINGS.md
+```
+
+`scripts/publication_metrics.py` reads the audited three-run results and
+`scripts/render_findings.py` renders FINDINGS.md from those metrics. The numeric
+report includes the prespecified 32-step diagnostic outcomes as a limitation of
+claims about the 128-step gate. `scripts/supplemental_audit.py` independently checks
+self-output decoding, equal-label checkpoint equivalence and decision chronology.

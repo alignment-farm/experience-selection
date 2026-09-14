@@ -18,3 +18,9 @@ The auditor verifies matching tokens/cases then excludes those32 repeated record
 from statistical denominators. All raw observations remain saved. Source checkpoints
 are reloaded within the experiment and the first training input is regenerated;
 these14 repetitions per run are verification only.
+
+All three fresh seeds completed under the frozen protocol. During inspection of
+prespecified32-step checkpoints, all fresh checked branches were also at ceiling,
+unlike development. This limits the fixed128-step gate's cost advantage; the final
+publication explicitly reports the cheaper192-update shorter fixed schedule.
+No follow-up tuning or fresh neural evaluation was performed after this observation.
