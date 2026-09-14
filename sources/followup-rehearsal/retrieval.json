@@ -1,0 +1,16 @@
+[
+  {
+    "name": "CLEAR",
+    "version": "NeurIPS 2019 proceedings",
+    "url": "https://papers.nips.cc/paper_files/paper/2019/file/fa7cdfad1a5aaf8370ebeda47a1ff1c3-Paper.pdf",
+    "sha256": "68e9f35d56f26e13f5f9fb7c3519c4cd5195b1fb9a0abc7a734744f5674fed73",
+    "read_date": "2026-09-14"
+  },
+  {
+    "name": "MIR",
+    "version": "NeurIPS 2019 proceedings",
+    "url": "https://papers.nips.cc/paper_files/paper/2019/file/15825aee15eb335cc13f9b559f166ee8-Paper.pdf",
+    "sha256": "400761b89077a1c1af05f202f7437b426660a33e803fa388dad7505c79e6516f",
+    "read_date": "2026-09-14"
+  }
+]
