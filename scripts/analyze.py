@@ -4,7 +4,7 @@ from pathlib import Path
 from task import answer,wrong,prompt,cases
 from transformers import AutoTokenizer
 tokenizer=AutoTokenizer.from_pretrained("models/qwen3-4b-instruct")
-def encode(s):return tokenizer.apply_chat_template([dict(role="user",content=s)],tokenize=True,add_generation_prompt=True,enable_thinking=False)
+def encode(s):return tokenizer.apply_chat_template([dict(role="user",content=s)],tokenize=True,add_generation_prompt=True,enable_thinking=False,return_dict=False)
 p=argparse.ArgumentParser();p.add_argument('run',type=Path);a=p.parse_args();root=a.run
 for line in (root/'SHA256SUMS').read_text().splitlines():
  expected,name=line.split('  ',1);assert hashlib.sha256((root/name).read_bytes()).hexdigest()==expected,name
