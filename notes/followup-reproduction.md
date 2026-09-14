@@ -38,3 +38,32 @@ alignment and recorded costs. It reports the computational cost of each deployed
 branch separately from actually executing every counterfactual branch and all
 diagnostic evaluations. Model time measurements are descriptive and do not justify
 an exclusive-device latency or amortization claim.
+
+## Frozen fresh cohort and publication
+
+Fresh policy/duration/cohort were committed at698d8ca before any fresh model run.
+The batch refuses existing outputs, so on a checkout containing completed evidence,
+use the individual commands with new paths instead of rerunning the batch name.
+
+```sh
+uv run --no-sync python scripts/followup_experiment.py --output evidence/NEW-FRESH-73 --seed 73 --data-seed 20260914601 --state-steps 64 --checkpoints 128 256 --protocol protocol/followup-fresh-v1.md
+uv run --no-sync python scripts/followup_experiment.py --output evidence/NEW-FRESH-79 --seed 79 --data-seed 20260914701 --state-steps 64 --checkpoints 128 256 --protocol protocol/followup-fresh-v1.md
+uv run --no-sync python scripts/followup_experiment.py --output evidence/NEW-FRESH-83 --seed 83 --data-seed 20260914801 --state-steps 64 --checkpoints 128 256 --protocol protocol/followup-fresh-v1.md
+uv run --no-sync python scripts/followup_audit.py evidence/NEW-FRESH-73 evidence/NEW-FRESH-79 evidence/NEW-FRESH-83 --output evidence/NEW-FRESH-AUDIT
+uv run --no-sync python scripts/followup_report.py --fresh evidence/NEW-FRESH-AUDIT/metrics.json --primary-step 256 --output NEW-FOLLOWUP-FINDINGS.md
+```
+
+The report defaults to the committed development audit paths. Supply
+`--development-one` and `--development-two` to use newly reproduced audits.
+The exact duration-prefix audit is separately reproducible:
+
+```sh
+uv run --no-sync python scripts/followup_repeat_audit.py evidence/NEW-DEVELOPMENT-V1 evidence/NEW-DEVELOPMENT-V2 --output evidence/NEW-REPEAT-AUDIT
+```
+
+Optional standalone publication figures use a separate plotting environment,
+without changing the learner lock. The output records the plotting package versions.
+
+```sh
+uv run --no-project --with matplotlib python scripts/followup_plot.py --fresh evidence/NEW-FRESH-AUDIT/metrics.json --primary-step 256 --output evidence/NEW-FIGURES
+```

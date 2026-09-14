@@ -44,3 +44,10 @@ on development timings. The batch command names run_followup_fresh.py and each
 child names its evidence output. The protocol is fixed before launch; recheck
 processes before starting. No additional heavy experiments are planned after this
 cohort unless a prespecified acquisition failure requires bounded diagnosis.
+
+After the retention acquisition job completed (139.46 seconds), no active learner
+was visible and the fresh cohort began under the frozen698d8ca revision. The
+visible batch is PID7385, first learner PID7386. A subsequent retention boundary
+diagnosis is visible at0% CPU, waiting for this batch; its initial wait does not
+establish concurrent GPU use. Do not interpret these process samples as continuous
+exclusive-device monitoring. The cohort remains three sequential runs.

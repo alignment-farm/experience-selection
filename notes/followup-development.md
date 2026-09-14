@@ -81,3 +81,9 @@ development accuracy, with128 retained as a shorter fresh diagnostic. Freeze
 three fresh seeds73/79/83 and new tickets in protocol/followup-fresh-v1.md. Preserve
 the gap policy as a test of present-error targeting, not a claim that this is the
 strongest adaptive method. All fresh states and outcomes will be included.
+
+Training loss does not resolve the source comparison. For coast-state at256,
+gap-only training's last-eight-update mean CE is0.00000707 while later accuracy
+is8/16; mixture's mean CE is0.0232 while later accuracy is16/16. Targets are all
+correct and objectives matched, but these residual losses summarize different
+experience pools. They are not interchangeable with balanced later utility.
