@@ -4,7 +4,7 @@ from pathlib import Path
 import mlx.core as mx
 from runtime import Runtime,resource,digest,sha
 from task import cases,answer,wrong,prompt
-p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--seed',type=int,default=43);p.add_argument('--data-seed',type=int,default=20260914031);p.add_argument('--steps',type=int,default=128);p.add_argument('--protocol',default='protocol/development-v1.md');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--seed',type=int,default=43);p.add_argument('--data-seed',type=int,default=20260914031);p.add_argument('--steps',type=int,default=128);p.add_argument('--policy',action='store_true');p.add_argument('--protocol',default='protocol/development-v1.md');a=p.parse_args()
 out=a.output;out.mkdir(parents=True,exist_ok=False);start=time.monotonic()
 def save(n,v):(out/n).write_text(json.dumps(v,indent=2)+'\n')
 for f in ['experiment.py','runtime.py','task.py']:(out/f).write_bytes(Path('scripts',f).read_bytes())
@@ -16,7 +16,7 @@ def check():
  assert mx.get_peak_memory()<40e9
 status='failed'
 try:
- save('config.json',vars(a)|{'output':str(out)} if False else dict(seed=a.seed,data_seed=a.data_seed,steps=a.steps,protocol=a.protocol))
+ save('config.json',dict(seed=a.seed,data_seed=a.data_seed,steps=a.steps,protocol=a.protocol,policy=a.policy))
  save('resource.json',resource());event('revision',git=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip())
  train=cases(a.data_seed,4);dev=cases(a.data_seed+1,4)
  assert not ({c['ticket'] for c in train}&{c['ticket'] for c in dev})
@@ -49,12 +49,17 @@ try:
  evaluate('base-none',0)
  acquired_scores=updates('acquisition',[answer(c) for c in train],128,[32,128]);acquired=rt.snapshot()
  save('acquisition.json',dict(scores=acquired_scores,criterion_met=min(acquired_scores.values())>=15))
+ decisions={}
  for state,snapshot in [('base',base),('acquired',acquired)]:
   rt.restore(snapshot);evaluate(state+'-none',0);evaluate(state+'-context',0,train)
   self_records=[]
   for c in train:
    prefix=rt.encode(prompt(c));r=rt.generate(prefix,limit=16);self_records.append(dict(case=c,correct=r['action']==answer(c),prefix=prefix,**r))
   save(state+'-self.json',self_records)
+  if a.policy:
+   correct=sum(r['correct'] for r in self_records)
+   decisions[state]=dict(source='none' if correct==16 else 'checked',probe_correct=correct,rule='abstain iff all 16 checked probes agree')
+   save('decisions.json',decisions);event('decision',state=state,**decisions[state])
   for source,labels in [('checked',[answer(c) for c in train]),('self',[r['action'] for r in self_records]),('opposite',[wrong(c) for c in train])]:
    rt.restore(snapshot);event('source',state=state,source=source,correct=sum(y==answer(c) for y,c in zip(labels,train)),count=16)
    updates(state+'-'+source,labels,a.steps,sorted(set([min(32,a.steps),a.steps])))

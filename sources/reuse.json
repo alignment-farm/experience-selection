@@ -1,0 +1,24 @@
+{
+  "source_study": "procedure-transfer",
+  "source_revision": "dcdc0d6f54dde235549f8abfba407598b6635667",
+  "files": {
+    "scripts/runtime.py": {
+      "source_sha256": "3c945e68a9a4dbc12c16a87484874f09dd757ac885c234274b53c218ef7254bd",
+      "owned_sha256": "3c945e68a9a4dbc12c16a87484874f09dd757ac885c234274b53c218ef7254bd"
+    },
+    "pyproject.toml": {
+      "source_sha256": "cfd45f3e9261cae65e5fc2813218a36b9fb6f7b002c1f780b4188213026de81f",
+      "owned_sha256": "8105689011c591789fa89ad6b2768ac31267fd8f108a2050dfdcf2749b9af7d1"
+    },
+    "uv.lock": {
+      "source_sha256": "2365639940701f6398fe5979a930c5d2e0919d13169280ec14c9e9de1dbb0005",
+      "owned_sha256": "117ac9a7af322dd44df6f77193627bbe8bddfa33c06789f90f013dd3bc3fd2a3"
+    },
+    "sources/model-reference.json": {
+      "source_sha256": "22905ecb87c2905db000f3b057ac728420f0a528fef0b61ecc5dfeadf7a2e64d",
+      "owned_sha256": "22905ecb87c2905db000f3b057ac728420f0a528fef0b61ecc5dfeadf7a2e64d"
+    }
+  },
+  "changes": "Project name in pyproject.toml and corresponding lock entry changed; runtime and model reference unchanged. New runner and task implemented locally.",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O"
+}
