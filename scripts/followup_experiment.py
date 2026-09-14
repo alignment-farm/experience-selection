@@ -19,6 +19,7 @@ def main():
     p.add_argument('--state-steps', type=int, default=64)
     p.add_argument('--checkpoints', type=int, nargs='+', default=[8, 16, 32, 64])
     p.add_argument('--protocol', default='protocol/followup-development-v1.md')
+    p.add_argument('--include-base-mixture', action='store_true')
     a = p.parse_args()
     out = a.output
     out.mkdir(parents=True, exist_ok=False)
@@ -103,6 +104,9 @@ def main():
 
         evaluate('base-none',0)
         evaluate('base-context',0,train+probes)
+        if a.include_base_mixture:
+            rt.restore(base)
+            updates('base-mixture', 'mixture', max(a.checkpoints), a.checkpoints)
         for region in REGIONS:
             rt.restore(base)
             state_arm = 'state-' + region
