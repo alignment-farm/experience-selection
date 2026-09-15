@@ -105,6 +105,7 @@ def main():
                     chosen=[];newpos=oldpos=0
                     for step in range(1,1 if arm=='none' else a.steps+1):
                         if arm.startswith('mir') and (step-1)%16==0:
+                            selection_tick=time.monotonic()
                             before=rt.snapshot();h=digest(before)
                             candidate=random.Random(a.seed+10000*episode+step).sample(replay_pool,min(a.candidate_count,len(replay_pool)))
                             scores0=[loss(i) for i in candidate]
@@ -117,7 +118,7 @@ def main():
                             chosen=[v[0] for v in ranked[:max(1,len(ranked)//2)]]
                             rt.restore(before);assert digest(rt.snapshot())==h
                             assert digest(tree_flatten(opt.state))==opt_hash
-                            event('selection',arm=arm,episode=episode,step=step,ranked=ranked,chosen=chosen,reset_exact=True,optimizer_unchanged=True)
+                            event('selection',arm=arm,episode=episode,step=step,ranked=ranked,chosen=chosen,reset_exact=True,optimizer_unchanged=True,seconds=time.monotonic()-selection_tick)
                         replay=int(step*ratio)>int((step-1)*ratio)
                         if replay:
                             i=chosen[oldpos%len(chosen)] if arm.startswith('mir') else fixed_order[oldpos]

@@ -41,7 +41,7 @@ def main():
             scores.append(dict(arm=arm,episode=ep,suite=suite,success=sum(r['success'] for r in rs),total=len(rs),resource=sum(r['resource_correct'] for r in rs),preparation=sum(r['preparation_correct'] for r in rs),by_site={s:sum(r['success'] for r in rs if r['case']['site']==s) for s in sorted({r['case']['site'] for r in rs})}))
         costs={};pairs=[]
         for arm in config['arms'] if config['mode']=='recur' else ['state','joint']:
-            costs[arm]={}
+            costs[arm]={'selection_total_seconds':sum(e['seconds'] for e in events if e['kind']=='selection' and e['arm']==arm)}
             for kind in ['update','virtual_update','selection_loss']:
                 rows=[e for e in events if e['kind']==kind and e['arm']==arm]
                 costs[arm][kind]=dict(count=len(rows),input_tokens=sum(r['input_tokens'] for r in rows),target_tokens=sum(r['loss_tokens'] for r in rows),seconds=sum(r['seconds'] for r in rows))

@@ -47,3 +47,7 @@ Alder state64/128 both32/32 train and2/2 later. Replay comparisons may now proce
 V3 tunes three fixed fractions and MIR50 on the three-arrival prefix at128 updates.
 A bounded256-step follow-up will tune duration. Fresh tests will add three recurring
 arrivals; all costs and repeated-case dependence will be disclosed.
+
+Before V3, added whole-selection wall timing (including cloning, hashing, scoring,
+virtual update, ranking and restoration). Component forward/update times remain
+separate and must not be added again to the inclusive selection total.
