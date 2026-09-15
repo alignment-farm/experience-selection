@@ -84,3 +84,9 @@ V3 ended728.34s,9.63GB peak. Waiting sibling final learner5507 then became activ
 this study yielded. CPU audit and V4 preparation proceed. Next bounded job is
 V4:2304 maintenance updates plus128 construction, fixed75/MIR50/MIR75 at256 per
 arrival. No model process from this study is currently waiting in the GPU queue.
+
+After sibling final PID5507 exited (about36 minutes total process elapsed,
+including its earlier wait), no active learner was visible. Started V4 under
+89cf2da/46a7420-era audited code:2304 maintenance updates plus128 construction,
+three policies and three arrivals. Prior shared-device wait is excluded from
+experimental active timers. Native whole-selection/reset checks remain enabled.

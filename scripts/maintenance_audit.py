@@ -78,6 +78,13 @@ def main():
                         pool=[i for s in old for i,c in enumerate(cs['train']) if c['site']==s]
                         replay=[u['index'] for u in us if cs['train'][u['index']]['site']!=site]
                         assert replay==order(pool,config['steps'],config['seed']+100+ep)[:len(replay)]
+        if config['mode']=='recur' and 'stop75' in config['arms']:
+            for ep in range(1,len(config['sequence'])+1):
+                reference="fixed75" if "fixed75" in config["arms"] else "stop75"
+                anchor=run/f"{reference}-{min(ep,3)}.safetensors"
+                assert sha(run/f"stop75-{ep}.safetensors")==sha(anchor)
+            if 'none' in config['arms']:
+                assert len({sha(run/f'none-{ep}.safetensors') for ep in range(1,len(config['sequence'])+1)})==1
         selections=[e for e in events if e['kind']=='selection']
         for s in selections:
             assert s['reset_exact'] and s['optimizer_unchanged']
