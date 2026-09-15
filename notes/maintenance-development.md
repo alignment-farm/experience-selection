@@ -83,3 +83,14 @@ are now frozen for two new initialization/data seeds and a6-arrival recurrence.
 The fixed post-prefix stop control separates repeated-update costs from selection.
 The reduced diagnostic-generation code produces the same state128 SHA as V3.
 V4 completed1019.82 seconds, peak9.63GB. No fresh cases have yet been generated.
+
+## Fresh execution and audit preparation
+
+Fresh policy, protocol and cohort fixed at ba91a06 before any fresh case generation.
+Analysis code may advance while the cohort runs; the cohort audit compares every
+run-owned task/runtime/experiment snapshot and protocol byte-for-byte to that
+commit. The first fresh run started only after the sibling native audit exited.
+The auditor's gradient sanity check was corrected prospectively to allow finite
+zero gradients at convergence (requiring some nonzero gradients per updating arm),
+rather than declaring any zero gradient an execution error. This changes no
+behavioral criterion, training, selector, fresh seed or checkpoint choice.

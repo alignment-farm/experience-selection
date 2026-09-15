@@ -1,5 +1,5 @@
 """Aggregate the prospectively fixed fresh cohort, preserving seed and phase detail."""
-import argparse,hashlib,json
+import argparse,hashlib,json,subprocess
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('metrics',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
 runs=json.loads(a.metrics.read_text())['runs'];assert len(runs)==2
@@ -8,12 +8,16 @@ archive=set();fresh=set();cases_by_run=[]
 for path in Path('evidence').glob('maintenance-development-v[1-4]/cases.json'):
  cs=json.loads(path.read_text());archive.update(c['ticket'] for rows in cs.values() for c in rows)
 for r in runs:
+ for name in ['maintenance_experiment.py','maintenance_task.py','runtime.py']:
+  frozen=subprocess.check_output(['git','show',f'ba91a06:scripts/{name}'])
+  assert (Path(r['path'])/name).read_bytes()==frozen
+ assert (Path(r['path'])/'protocol.md').read_bytes()==subprocess.check_output(['git','show','ba91a06:protocol/maintenance-fresh-v1.md'])
  c=r['config'];assert c['steps']==256 and c['state_steps']==128 and c['replicas']==16 and c['later_replicas']==2
  assert c['arms']==['none','fixed75','mir75','stop75'] and c['sequence']==['birch','cedar','dune']*2
  cs=json.loads((Path(r['path'])/'cases.json').read_text());tickets=[c['ticket'] for rows in cs.values() for c in rows]
  assert len(tickets)==len(set(tickets)) and not fresh.intersection(tickets) and not archive.intersection(tickets)
  fresh.update(tickets);cases_by_run.append(cs)
-result=dict(input_sha256=hashlib.sha256(a.metrics.read_bytes()).hexdigest(),fresh_unique_later_tickets=sum(len(c['later']) for c in cases_by_run),fresh_disjoint_from_development=True,arms={},seeds=[],actual_execution={})
+result=dict(input_sha256=hashlib.sha256(a.metrics.read_bytes()).hexdigest(),fresh_unique_later_tickets=sum(len(c['later']) for c in cases_by_run),fresh_disjoint_from_development=True,frozen_policy_commit='ba91a06',policy_snapshots_match_frozen_commit=True,arms={},seeds=[],actual_execution={})
 for arm in ['none','fixed75','mir75','stop75']:
  scores=[s for r in runs for s in r['scores'] if s['arm']==arm and s['suite']=='later']
  pairs=[p for r in runs for p in r['pairs'] if p['arm']==arm]
