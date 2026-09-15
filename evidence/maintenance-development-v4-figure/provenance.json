@@ -1,0 +1,11 @@
+{
+  "title": "Development: 256 updates per arrival",
+  "with_costs": true,
+  "inputs": {
+    "evidence/maintenance-development-v4-audit/metrics.json": "0c258b750205cf34f742c52035f5fba56b5951e20c7fe9c5e4ddb4198f8e9418"
+  },
+  "packages": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3"
+  }
+}
