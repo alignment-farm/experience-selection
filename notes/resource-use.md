@@ -57,3 +57,8 @@ run timers,9,612,131,344 bytes peak MLX in each. All gradient work and reloads a
 finished. The combined audit is complete; only CPU publication work remains.
 The waiting retention boundary diagnosis can use the GPU. No further heavy job
 is planned for this follow-up, and no sibling file or process was changed.
+
+2026-09-15 maintenance phase: native local host still mac.lan/M1 Ultra. Process
+inspection before calibration found no active Python/MLX learner. Planned first
+job: 640 updates and bounded generation, 40 GB MLX ceiling, 3600 s run limit.
+No serving process or sibling file changed. Timing remains descriptive.
