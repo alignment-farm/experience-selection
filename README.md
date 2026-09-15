@@ -1,5 +1,11 @@
 # Experience selection
 
+**Third phase commissioned, 15 September 2026.** Start with
+[MAINTENANCE.md](MAINTENANCE.md): test whether anticipating update damage helps
+maintain complete behavior through recurring learning, beyond strong fixed
+mixtures and their costs. Independent ancillary execution is authorized;
+preparing the handoff has not launched experiments.
+
 **Follow-up published, 14 September 2026.** Read
 [the follow-up findings](FOLLOWUP_FINDINGS.md), with
 [audited fresh metrics](evidence/followup-fresh-v1-audit/metrics.json) and
@@ -15,14 +21,14 @@ targeting and the sufficiency of a fixed mixture on this small workload, not a
 general result against adaptive selection. Development failures, exact repeated
 trajectories, three prospectively fixed fresh runs and all checkpoints are preserved.
 
-[FOLLOWUP.md](FOLLOWUP.md) preserves the commission. The accepted first phase and
-its original brief remain below.
+[FOLLOWUP.md](FOLLOWUP.md) preserves the completed second-phase commission.
+The accepted first phase and its original brief remain below.
 
 The completed [findings](FINDINGS.md) are preserved with [reproduction instructions](notes/reproduction.md), [primary methods and provenance](sources/README.md), and [audited metrics](evidence/publication-metrics/metrics.json).
 
 In a synthetic routing workload, checked labels improve the base learner from 30/48 to 48/48 fresh requests but add no accuracy after acquisition. Self-training reaches 24/48 from base; deliberately opposite labels reach 0/48. A supervised agreement gate matches always-checked training at 96/96 across three seeds and two starting states while halving subsequent updates at the fixed 128-step budget. This is not a general compute advantage: the frozen base with examples also reaches full accuracy, and the fresh 32-step diagnostic checkpoints succeed with fewer updates than the gate.
 
-The study preserves development, a prospectively fixed fresh evaluation, all source checkpoints, exact reset/reload checks, the failed initial audit and its repair, and shared-resource timing limits. The first phase closes on measured source/state effects and the limits of supervised abstention. The original brief below records the study's starting question and scope; FOLLOWUP.md supplies the current direction.
+The study preserves development, a prospectively fixed fresh evaluation, all source checkpoints, exact reset/reload checks, the failed initial audit and its repair, and shared-resource timing limits. The first phase closes on measured source/state effects and the limits of supervised abstention. The original brief below records the study's starting question and scope; MAINTENANCE.md supplies the current direction.
 
 
 **Which experience should an agent use for an update, and when should it
