@@ -89,12 +89,14 @@ def main():
                 for episode,site in enumerate(a.sequence,1):
                     old=[s for s in seen if s!=site]
                     if site not in seen:seen.append(site)
+                    archive_tick=time.monotonic()
                     archive=[dict(c,actions=answer(c)) for c in train if c['site'] in seen]
+                    event('archive_build',arm=arm,episode=episode,rows=len(archive),new_rows=sum(c['site']==site for c in train) if site not in a.sequence[:episode-1] else 0,bytes=len(json.dumps(archive).encode()),seconds=time.monotonic()-archive_tick)
                     save(f'archive-{episode}.json',archive)
                     for c in later:
                         if c['site'] in seen:
                             tick=time.monotonic();actions=explicit(c,archive);score=execute(c,actions)
-                            event('explicit',arm=arm,episode=episode,case=c,actions=actions,**score,seconds=time.monotonic()-tick,archive_rows=len(archive),archive_bytes=len(json.dumps(archive).encode()),retrieval_comparisons=next(i+1 for i,r in enumerate(archive) if (r['site'],r['kind'])==(c['site'],c['kind'])))
+                            event('explicit',arm=arm,episode=episode,case=c,actions=actions,**score,seconds=time.monotonic()-tick,action_tokens=len(rt.tokenizer.encode(actions,add_special_tokens=False)),archive_rows=len(archive),archive_bytes=len(json.dumps(archive).encode()),retrieval_comparisons=next(i+1 for i,r in enumerate(archive) if (r['site'],r['kind'])==(c['site'],c['kind'])))
                     evaluate(arm+'-before',episode,seen,checkpoint=False)
                     opt=rt.optimizer();new_order=order(pools[site],a.steps,a.seed+episode)
                     replay_pool=[i for s in old for i in pools[s]]

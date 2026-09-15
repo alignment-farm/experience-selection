@@ -1,5 +1,5 @@
 """CPU-only independent reconstruction of workflow outcomes and policy costs."""
-import argparse, collections, hashlib, itertools, json
+import argparse, collections, hashlib, itertools, json, random
 from pathlib import Path
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -47,6 +47,8 @@ def main():
                 costs[arm][kind]=dict(count=len(rows),input_tokens=sum(r['input_tokens'] for r in rows),target_tokens=sum(r['loss_tokens'] for r in rows),seconds=sum(r['seconds'] for r in rows))
                 if kind.endswith('update'):assert all(r['gradient_norm']>0 and r['loss']>=0 for r in rows)
             rs=[r for r in responses if r['arm']==arm and r['suite']=='later']
+            before_rows=[r for r in responses if r['arm']==arm+'-before' and r['suite']=='later']
+            costs[arm]['verification_generation']=dict(count=len(before_rows),prompt_tokens=sum(r['prompt_tokens'] for r in before_rows),completion_tokens=sum(r['completion_tokens'] for r in before_rows),seconds=sum(r['seconds'] for r in before_rows))
             costs[arm]['use_generation']=dict(count=len(rs),prompt_tokens=sum(r['prompt_tokens'] for r in rs),completion_tokens=sum(r['completion_tokens'] for r in rs),seconds=sum(r['seconds'] for r in rs))
             if config['mode']=='recur':
                 updates=[e for e in events if e['kind']=='update' and e['arm']==arm]
@@ -58,11 +60,29 @@ def main():
                     us=[e for e in updates if e['episode']==ep]
                     ratio=int(arm[-2:])/100 if arm.startswith(('fixed','mir')) else 0
                     assert sum(cs['train'][u['index']]['site']!=site for u in us)==int(config['steps']*ratio)
+                    def order(pool,n,seed):
+                        rng=random.Random(seed);result=[]
+                        while len(result)<n:
+                            batch=pool.copy();rng.shuffle(batch);result.extend(batch)
+                        return result[:n]
+                    pool=[i for i,c in enumerate(cs['train']) if c['site']==site]
+                    incoming=[u['index'] for u in us if cs['train'][u['index']]['site']==site]
+                    assert incoming==order(pool,config['steps'],config['seed']+ep)[:len(incoming)]
+                    if arm.startswith('fixed'):
+                        seen=['alder']+list(dict.fromkeys(config['sequence'][:ep]));seen=list(dict.fromkeys(seen))
+                        old=[s for s in seen if s!=site]
+                        pool=[i for s in old for i,c in enumerate(cs['train']) if c['site']==s]
+                        replay=[u['index'] for u in us if cs['train'][u['index']]['site']!=site]
+                        assert replay==order(pool,config['steps'],config['seed']+100+ep)[:len(replay)]
         selections=[e for e in events if e['kind']=='selection']
         for s in selections:
             assert s['reset_exact'] and s['optimizer_unchanged']
             ranked=sorted(s['ranked'],key=lambda v:(-(v[2]-v[1]),v[0]));assert ranked==s['ranked']
             assert s['chosen']==[v[0] for v in ranked[:max(1,len(ranked)//2)]]
+            site=config['sequence'][s['episode']-1]
+            assert all(cs['train'][i]['site']!=site for i in s['chosen'])
+            selected_updates=[e for e in events if e['kind']=='update' and e['arm']==s['arm'] and e['episode']==s['episode'] and s['step']<=e['step']<s['step']+16 and cs['train'][e['index']]['site']!=site]
+            assert all(e['index'] in s['chosen'] for e in selected_updates)
         assert len([e for e in events if e['kind']=='virtual_matches_actual' and e['exact']])==len(selections)
         starts=[e['initial_hash'] for e in events if e['kind']=='arm_start'];assert len(set(starts))<=1
         assert any(e['kind']=='invariants' and e['base_unchanged'] and e['reset_max_logit_delta']==0 for e in events)
@@ -71,7 +91,9 @@ def main():
         assert all(e['success'] and e['actions']==paths[e['case']['site']][e['case']['kind']] for e in ex)
         # Explicit rows were evaluated once per counterfactual arm: deploy just one copy.
         ex=[e for e in ex if e['arm']==config['arms'][0]]
-        all_runs.append(dict(path=str(run),manifest_sha256=sha(run/'SHA256SUMS'),config=config,scores=scores,pairs=pairs,costs=costs,selection_decisions=len(selections),explicit=dict(success=sum(e['success'] for e in ex),total=len(ex),retrieval_comparisons=sum(e['retrieval_comparisons'] for e in ex),seconds=sum(e['seconds'] for e in ex),peak_archive_bytes=max([e['archive_bytes'] for e in ex],default=0)),execution=events[-1]))
+        builds=[e for e in events if e['kind']=='archive_build' and e['arm']==config['arms'][0]]
+        acquisition=[e for e in events if e['kind']=='update' and e['arm']=='state']
+        all_runs.append(dict(path=str(run),manifest_sha256=sha(run/'SHA256SUMS'),config=config,scores=scores,pairs=pairs,costs=costs,acquisition=dict(updates=len(acquisition),input_tokens=sum(e['input_tokens'] for e in acquisition),target_tokens=sum(e['loss_tokens'] for e in acquisition),seconds=sum(e['seconds'] for e in acquisition)),selection_decisions=len(selections),explicit=dict(success=sum(e['success'] for e in ex),total=len(ex),retrieval_comparisons=sum(e['retrieval_comparisons'] for e in ex),action_tokens=sum(e.get('action_tokens',0) for e in ex),archive_build_seconds=sum(e['seconds'] for e in builds),unique_archive_rows=max([e['rows'] for e in builds],default=0),seconds=sum(e['seconds'] for e in ex),peak_archive_bytes=max([e['archive_bytes'] for e in ex],default=0)),execution=events[-1]))
     (a.output/'metrics.json').write_text(json.dumps(dict(runs=all_runs),indent=2)+'\n')
     print(json.dumps([dict(path=r['path'],scores=r['scores'],pairs=r['pairs']) for r in all_runs],indent=2))
 if __name__=='__main__':main()
