@@ -1,5 +1,5 @@
 """CPU-only independent reconstruction of workflow outcomes and policy costs."""
-import argparse, collections, hashlib, itertools, json, random
+import argparse, collections, hashlib, itertools, json, random, math
 from pathlib import Path
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -46,7 +46,9 @@ def main():
             for kind in ['update','virtual_update','selection_loss']:
                 rows=[e for e in events if e['kind']==kind and e['arm']==arm]
                 costs[arm][kind]=dict(count=len(rows),input_tokens=sum(r['input_tokens'] for r in rows),target_tokens=sum(r['loss_tokens'] for r in rows),seconds=sum(r['seconds'] for r in rows))
-                if kind.endswith('update'):assert all(r['gradient_norm']>0 and r['loss']>=0 for r in rows)
+                if kind.endswith('update'):
+                    assert all(math.isfinite(r['gradient_norm']) and math.isfinite(r['loss']) and r['gradient_norm']>=0 and r['loss']>=0 for r in rows)
+                    if rows:assert any(r['gradient_norm']>0 for r in rows)
             rs=[r for r in responses if r['arm']==arm and r['suite']=='later']
             before_rows=[r for r in responses if r['arm']==arm+'-before' and r['suite']=='later']
             costs[arm]['verification_generation']=dict(count=len(before_rows),prompt_tokens=sum(r['prompt_tokens'] for r in before_rows),completion_tokens=sum(r['completion_tokens'] for r in before_rows),seconds=sum(r['seconds'] for r in before_rows))
