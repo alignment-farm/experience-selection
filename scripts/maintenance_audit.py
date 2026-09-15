@@ -105,6 +105,12 @@ def main():
         assert all(e['success'] and e['actions']==paths[e['case']['site']][e['case']['kind']] for e in ex)
         # Explicit rows were evaluated once per counterfactual arm: deploy just one copy.
         ex=[e for e in ex if e['arm']==config['arms'][0]]
+        if config['mode']=='recur':
+            for ep in range(1,len(config['sequence'])+1):
+                seen={'alder',*config['sequence'][:ep]}
+                expected={c['ticket'] for c in cs['later'] if c['site'] in seen}
+                rows=[e for e in ex if e['episode']==ep]
+                assert len(rows)==len(expected) and {e['case']['ticket'] for e in rows}==expected
         builds=[e for e in events if e['kind']=='archive_build' and e['arm']==config['arms'][0]]
         acquisition=[e for e in events if e['kind']=='update' and e['arm']=='state']
         all_runs.append(dict(path=str(run),manifest_sha256=sha(run/'SHA256SUMS'),config=config,scores=scores,pairs=pairs,costs=costs,acquisition=dict(updates=len(acquisition),input_tokens=sum(e['input_tokens'] for e in acquisition),target_tokens=sum(e['loss_tokens'] for e in acquisition),seconds=sum(e['seconds'] for e in acquisition)),selection_decisions=len(selections),explicit=dict(success=sum(e['success'] for e in ex),total=len(ex),retrieval_comparisons=sum(e['retrieval_comparisons'] for e in ex),action_tokens=sum(e.get('action_tokens',0) for e in ex),archive_build_seconds=sum(e['seconds'] for e in builds),unique_archive_rows=max([e['rows'] for e in builds],default=0),seconds=sum(e['seconds'] for e in ex),peak_archive_bytes=max([e['archive_bytes'] for e in ex],default=0)),adapter_bytes=max((f.stat().st_size for f in run.glob('*.safetensors')),default=0),execution=events[-1]))

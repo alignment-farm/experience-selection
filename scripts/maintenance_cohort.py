@@ -12,6 +12,7 @@ for r in runs:
   frozen=subprocess.check_output(['git','show',f'ba91a06:scripts/{name}'])
   assert (Path(r['path'])/name).read_bytes()==frozen
  assert (Path(r['path'])/'protocol.md').read_bytes()==subprocess.check_output(['git','show','ba91a06:protocol/maintenance-fresh-v1.md'])
+ assert (Path(r['path'])/'uv.lock').read_bytes()==subprocess.check_output(['git','show','ba91a06:uv.lock'])
  c=r['config'];assert c['steps']==256 and c['state_steps']==128 and c['replicas']==16 and c['later_replicas']==2
  assert c['arms']==['none','fixed75','mir75','stop75'] and c['sequence']==['birch','cedar','dune']*2
  cs=json.loads((Path(r['path'])/'cases.json').read_text());tickets=[c['ticket'] for rows in cs.values() for c in rows]
@@ -37,6 +38,7 @@ for arm in ['none','fixed75','mir75','stop75']:
  assert d['all']['total']==168 and d['acquisition']['total']==72 and d['recurrence']['total']==96 and d['final']['total']==32
  result['arms'][arm]=d
 result['explicit']={k:sum(r['explicit'][k] for r in runs) for k in ['success','total','retrieval_comparisons','action_tokens','archive_build_seconds','unique_archive_rows','seconds']}
+assert result['explicit']['success']==result['explicit']['total']==168
 result['explicit']['serialized_archive_bytes_per_run']=[r['explicit']['peak_archive_bytes'] for r in runs]
 for r in runs:
  rows=[s for s in r['scores'] if s['suite']=='later' and s['arm'] in r['config']['arms']]
