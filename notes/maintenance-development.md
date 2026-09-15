@@ -26,3 +26,11 @@ larger-diversity archive otherwise makes selection unnecessarily costly.
 V1 ended before starting any second job. Sibling retention learner4678 was waiting
 and began GPU work after V1; this study yields while preparing diagnostics and
 analysis. No sibling process or file is modified.
+
+CPU audit expansion: an initial prompt-reconstruction check failed because this
+Transformers version returns BatchEncoding by default. Preserved its failure in
+maintenance-development-v1-audit-v2/failure.json; explicit return_dict=False
+repairs it. V3 audit passes response, prompt, component and complete-state checks.
+This is an auditor bug; no experimental response or checkpoint was altered.
+The CPU optimizer test with accumulated AdamW moments passes isolation, exact
+restoration and equality between virtual and actual parameter updates.

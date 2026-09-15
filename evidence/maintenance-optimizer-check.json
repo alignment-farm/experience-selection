@@ -1,0 +1,7 @@
+{
+  "device": "cpu",
+  "priming_updates": 3,
+  "virtual_optimizer_isolated": true,
+  "weights_restored": true,
+  "virtual_matches_actual": true
+}

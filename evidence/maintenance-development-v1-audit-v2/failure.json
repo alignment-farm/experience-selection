@@ -1,0 +1,1 @@
+{"status":"failed","reason":"AutoTokenizer chat template returns BatchEncoding by default in this version; auditor compared it to list. Fixed with return_dict=False. Raw run unaffected."}

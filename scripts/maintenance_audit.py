@@ -25,7 +25,16 @@ def main():
             correct=r['action'].split()==expected.split();assert correct==r['success']
             if correct:
                 resource,prep,_=expected.split();assert r['state']==dict(heron=1-(resource=='heron'),otter=1-(resource=='otter'),reserved=None,prepared=prep,shipped=True)
-            assert bool(r['action'].split()) and r['action'].split()[0]==expected.split()[0] if r['resource_correct'] else not (r['action'].split() and r['action'].split()[0]==expected.split()[0])
+            parts=r['action'].split();expected_parts=expected.split()
+            assert r['resource_correct']==(bool(parts) and parts[0]==expected_parts[0])
+            assert r['preparation_correct']==(len(parts)>1 and parts[1]==expected_parts[1])
+            expected_prompt=('Dispatch sandbox. Return three space-separated actions only. '
+                'heron/otter reserves one unit of that resource; scan/seal prepares the reserved parcel; '
+                'ship consumes the reservation and dispatches it. Use the site and kind rules learned from examples. '
+                'Initially both resources have stock 1, no reservation, no preparation, not shipped. '
+                f"Site {c['site']}; kind {c['kind']}; ticket {c['ticket']}. Actions:")
+            encoded=tok.apply_chat_template([dict(role='user',content=expected_prompt)],tokenize=True,add_generation_prompt=True,enable_thinking=False,return_dict=False)
+            assert encoded==r['prefix']
             grouped[(r['arm'],r['episode'],r['suite'])].append(r)
         scores=[]
         for (arm,ep,suite),rs in grouped.items():
@@ -51,9 +60,10 @@ def main():
                     assert sum(cs['train'][u['index']]['site']!=site for u in us)==int(config['steps']*ratio)
         selections=[e for e in events if e['kind']=='selection']
         for s in selections:
-            assert s['reset_exact']
+            assert s['reset_exact'] and s['optimizer_unchanged']
             ranked=sorted(s['ranked'],key=lambda v:(-(v[2]-v[1]),v[0]));assert ranked==s['ranked']
             assert s['chosen']==[v[0] for v in ranked[:max(1,len(ranked)//2)]]
+        assert len([e for e in events if e['kind']=='virtual_matches_actual' and e['exact']])==len(selections)
         starts=[e['initial_hash'] for e in events if e['kind']=='arm_start'];assert len(set(starts))<=1
         assert any(e['kind']=='invariants' and e['base_unchanged'] and e['reset_max_logit_delta']==0 for e in events)
         assert all(e['exact_tokens'] for e in events if e['kind']=='reload')
