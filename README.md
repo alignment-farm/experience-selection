@@ -1,14 +1,13 @@
 # Experience selection
 
 **Third phase in progress, 15 September 2026.** [MAINTENANCE.md](MAINTENANCE.md)
-commissions complete behavior through recurring learning. Local development now
-establishes acquisition on a dispatch sandbox with dependent actions and inventory
-changes. At the first, short maintenance budget, fixed 75% replay completes 16/18
-uses and ends at 8/8; MIR-inspired 50% replay completes 7/18. These are development
-results, not fresh claims. Read [the development log](notes/maintenance-development.md),
-[methods](notes/maintenance-methods.md), and the next
-[duration/replay-budget diagnosis](protocol/maintenance-development-v4.md).
-The shared GPU is coordinated through [resource notes](notes/resource-use.md).
+commissions complete behavior through recurring learning. Development establishes
+acquisition on a dispatch sandbox with dependent actions and inventory changes.
+At the tuned budget, fixed 75% replay and MIR-inspired 75% replay both complete
+18/18 development uses. The [fresh protocol](protocol/maintenance-fresh-v1.md)
+was committed at `ba91a06`; its two-seed recurring comparison is now running.
+Read [the development log](notes/maintenance-development.md),
+[methods](notes/maintenance-methods.md), and [resource notes](notes/resource-use.md).
 
 **Follow-up published, 14 September 2026.** Read
 [the follow-up findings](FOLLOWUP_FINDINGS.md), with

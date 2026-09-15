@@ -33,9 +33,9 @@ Use the run-owned script snapshot for that exact diagnostic count. SHA-check the
 initial adapter when comparing these versions. Future runs also accept
 `--later-replicas` (default1), without changing training pools or policy inputs.
 
-## Prepared duration/replay-budget diagnosis
+## Completed duration/replay-budget diagnosis
 
-The following is the next planned GPU run, not evidence that it has already run:
+V4 completed and passed its audit. Reproduce to a new output path:
 
 ```sh
 uv run --no-sync python scripts/maintenance_experiment.py --output evidence/NEW-MAINTENANCE-V4 --mode recur --replicas 16 --sequence birch cedar dune --steps 256 --arms fixed75 mir50 mir75 --protocol protocol/maintenance-development-v4.md
@@ -46,3 +46,19 @@ Optional independent plotting environment (no change to learner lock):
 ```sh
 uv run --no-project --with matplotlib==3.11.2 --with numpy==2.5.3 python scripts/maintenance_plot.py evidence/NEW-MAINTENANCE-V3-AUDIT/metrics.json --output evidence/NEW-MAINTENANCE-V3-FIGURE --title 'Development: complete dispatch workflows (128 updates per arrival)'
 ```
+
+## Frozen fresh cohort (execution in progress)
+
+Policy and protocol fixed at `ba91a06`. Analysis/publication commits do not change
+the run-owned policy snapshots; the cohort audit compares them to that commit.
+Check that the shared GPU is free before launching one visible sequential batch.
+The following new prefix avoids overwriting the original fresh evidence:
+
+```sh
+uv run --no-sync python scripts/run_maintenance_fresh.py --mir-arm mir75 --protocol protocol/maintenance-fresh-v1.md --prefix NEW-MAINTENANCE-FRESH
+uv run --no-sync python scripts/maintenance_audit.py evidence/NEW-MAINTENANCE-FRESH-103 evidence/NEW-MAINTENANCE-FRESH-107 --output evidence/NEW-MAINTENANCE-FRESH-AUDIT
+uv run --no-sync python scripts/maintenance_cohort.py evidence/NEW-MAINTENANCE-FRESH-AUDIT/metrics.json --output evidence/NEW-MAINTENANCE-FRESH-COHORT
+```
+
+The selected method and both seeds are fixed, not automatically retuned from the
+new run's outcomes. Any execution failure remains visible and stops the batch.

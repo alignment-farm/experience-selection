@@ -1,0 +1,570 @@
+{
+  "runs": [
+    {
+      "path": "evidence/maintenance-development-v4",
+      "manifest_sha256": "6673c2076dc1cb256ffb544e1df9e85ada102885254c14af81418927a058109f",
+      "config": {
+        "output": "evidence/maintenance-development-v4",
+        "seed": 101,
+        "data_seed": 2026091501,
+        "protocol": "protocol/maintenance-development-v4.md",
+        "mode": "recur",
+        "later_replicas": 1,
+        "candidate_count": 16,
+        "replicas": 16,
+        "state_steps": 128,
+        "steps": 256,
+        "arms": [
+          "fixed75",
+          "mir50",
+          "mir75"
+        ],
+        "sequence": [
+          "birch",
+          "cedar",
+          "dune"
+        ],
+        "joint_checkpoints": [
+          128,
+          256,
+          512
+        ]
+      },
+      "scores": [
+        {
+          "arm": "base",
+          "episode": 0,
+          "suite": "later",
+          "success": 0,
+          "total": 8,
+          "resource": 0,
+          "preparation": 0,
+          "by_site": {
+            "alder": 0,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "train",
+          "success": 32,
+          "total": 32,
+          "resource": 32,
+          "preparation": 32,
+          "by_site": {
+            "alder": 32
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "later",
+          "success": 2,
+          "total": 2,
+          "resource": 2,
+          "preparation": 2,
+          "by_site": {
+            "alder": 2
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "train",
+          "success": 32,
+          "total": 32,
+          "resource": 32,
+          "preparation": 32,
+          "by_site": {
+            "alder": 32
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "later",
+          "success": 2,
+          "total": 2,
+          "resource": 2,
+          "preparation": 2,
+          "by_site": {
+            "alder": 2
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 2,
+          "total": 4,
+          "resource": 2,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 4,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 2
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 4,
+          "total": 6,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 2,
+          "suite": "later",
+          "success": 6,
+          "total": 6,
+          "resource": 6,
+          "preparation": 6,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 6,
+          "total": 8,
+          "resource": 6,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 3,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 2
+          }
+        },
+        {
+          "arm": "mir50-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 2,
+          "total": 4,
+          "resource": 2,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "mir50",
+          "episode": 1,
+          "suite": "later",
+          "success": 3,
+          "total": 4,
+          "resource": 3,
+          "preparation": 4,
+          "by_site": {
+            "alder": 1,
+            "birch": 2
+          }
+        },
+        {
+          "arm": "mir50-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 3,
+          "total": 6,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 1,
+            "birch": 2,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "mir50",
+          "episode": 2,
+          "suite": "later",
+          "success": 6,
+          "total": 6,
+          "resource": 6,
+          "preparation": 6,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2
+          }
+        },
+        {
+          "arm": "mir50-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 6,
+          "total": 8,
+          "resource": 6,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "mir50",
+          "episode": 3,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 2
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 2,
+          "total": 4,
+          "resource": 2,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 4,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 2
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 4,
+          "total": 6,
+          "resource": 5,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 2,
+          "suite": "later",
+          "success": 6,
+          "total": 6,
+          "resource": 6,
+          "preparation": 6,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 6,
+          "total": 8,
+          "resource": 6,
+          "preparation": 6,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 3,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 2
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "arm": "fixed75",
+          "episode": 1,
+          "site": "birch",
+          "total": 4,
+          "retained": 2,
+          "gained": 2,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 6,
+          "retained": 4,
+          "gained": 2,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 3,
+          "site": "dune",
+          "total": 8,
+          "retained": 6,
+          "gained": 2,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir50",
+          "episode": 1,
+          "site": "birch",
+          "total": 4,
+          "retained": 1,
+          "gained": 2,
+          "lost": 1,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir50",
+          "episode": 2,
+          "site": "cedar",
+          "total": 6,
+          "retained": 3,
+          "gained": 3,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir50",
+          "episode": 3,
+          "site": "dune",
+          "total": 8,
+          "retained": 6,
+          "gained": 2,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 1,
+          "site": "birch",
+          "total": 4,
+          "retained": 2,
+          "gained": 2,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 6,
+          "retained": 4,
+          "gained": 2,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 3,
+          "site": "dune",
+          "total": 8,
+          "retained": 6,
+          "gained": 2,
+          "lost": 0,
+          "failed_both": 0
+        }
+      ],
+      "costs": {
+        "fixed75": {
+          "selection_total_seconds": 0,
+          "update": {
+            "count": 768,
+            "input_tokens": 75673,
+            "target_tokens": 3840,
+            "seconds": 153.480489610949
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 18,
+            "prompt_tokens": 1697,
+            "completion_tokens": 90,
+            "seconds": 4.033894833006343
+          },
+          "use_generation": {
+            "count": 18,
+            "prompt_tokens": 1697,
+            "completion_tokens": 90,
+            "seconds": 4.2979308319991105
+          }
+        },
+        "mir50": {
+          "selection_total_seconds": 228.0879489159961,
+          "update": {
+            "count": 768,
+            "input_tokens": 75666,
+            "target_tokens": 3840,
+            "seconds": 153.73948412204481
+          },
+          "virtual_update": {
+            "count": 48,
+            "input_tokens": 4711,
+            "target_tokens": 240,
+            "seconds": 9.545546963989182
+          },
+          "selection_loss": {
+            "count": 1536,
+            "input_tokens": 151460,
+            "target_tokens": 7680,
+            "seconds": 214.14762651610363
+          },
+          "verification_generation": {
+            "count": 18,
+            "prompt_tokens": 1697,
+            "completion_tokens": 90,
+            "seconds": 4.041478832008579
+          },
+          "use_generation": {
+            "count": 18,
+            "prompt_tokens": 1697,
+            "completion_tokens": 90,
+            "seconds": 4.388352626010601
+          }
+        },
+        "mir75": {
+          "selection_total_seconds": 225.78841879299216,
+          "update": {
+            "count": 768,
+            "input_tokens": 75729,
+            "target_tokens": 3840,
+            "seconds": 152.19412161701985
+          },
+          "virtual_update": {
+            "count": 48,
+            "input_tokens": 4714,
+            "target_tokens": 240,
+            "seconds": 9.510144334020879
+          },
+          "selection_loss": {
+            "count": 1536,
+            "input_tokens": 151460,
+            "target_tokens": 7680,
+            "seconds": 212.34338758897866
+          },
+          "verification_generation": {
+            "count": 18,
+            "prompt_tokens": 1697,
+            "completion_tokens": 90,
+            "seconds": 4.050531750996015
+          },
+          "use_generation": {
+            "count": 18,
+            "prompt_tokens": 1697,
+            "completion_tokens": 90,
+            "seconds": 4.358397248994152
+          }
+        }
+      },
+      "acquisition": {
+        "updates": 128,
+        "input_tokens": 12636,
+        "target_tokens": 640,
+        "seconds": 25.47639986800641
+      },
+      "selection_decisions": 96,
+      "explicit": {
+        "success": 18,
+        "total": 18,
+        "retrieval_comparisons": 67,
+        "action_tokens": 72,
+        "archive_build_seconds": 0.0003337920024932828,
+        "unique_archive_rows": 128,
+        "seconds": 7.841600017854944e-05,
+        "peak_archive_bytes": 11616
+      },
+      "adapter_bytes": 2624893,
+      "execution": {
+        "kind": "complete",
+        "elapsed": 1019.8158407500014,
+        "status": "complete",
+        "seconds": 1019.8158381249996,
+        "peak_mlx_bytes": 9625304104
+      }
+    }
+  ]
+}

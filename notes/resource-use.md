@@ -96,3 +96,9 @@ Next intended use is one visible sequential fresh batch: two seeds,7936 actual
 optimizer updates including construction,192 virtual updates, plus scoring and
 model generations. Expected roughly45–50 minutes from measured development.
 Recheck before launch. Afterwards only CPU analysis/publication is planned.
+
+Fresh cohort launched after native sibling audit PID7650 exited and no active
+learner was visible. The parent run_maintenance_fresh.py remains visible between
+its two sequential children. First seed103 is running under the frozen policy;
+CPU audit/report preparation proceeds without changing model code or fresh choices.
+No additional heavy model work is planned after the two-seed cohort.
