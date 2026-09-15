@@ -1,13 +1,18 @@
 # Experience selection
 
-**Third phase in progress, 15 September 2026.** [MAINTENANCE.md](MAINTENANCE.md)
-commissions complete behavior through recurring learning. Development establishes
-acquisition on a dispatch sandbox with dependent actions and inventory changes.
-At the tuned budget, fixed 75% replay and MIR-inspired 75% replay both complete
-18/18 development uses. The [fresh protocol](protocol/maintenance-fresh-v1.md)
-was committed at `ba91a06`; its two-seed recurring comparison is now running.
-Read [the development log](notes/maintenance-development.md),
-[methods](notes/maintenance-methods.md), and [resource notes](notes/resource-use.md).
+**Third phase published, 15 September 2026.** Read
+[the maintenance findings](MAINTENANCE_FINDINGS.md),
+[audited fresh metrics](evidence/maintenance-fresh-v1-cohort/metrics.json), and
+[reproduction instructions](notes/maintenance-reproduction.md).
+
+Across two fixed fresh runs of complete dispatch workflows, damage-aware replay
+completed 151/168 uses versus 143/168 for the tuned fixed mixture, with equal
+actual training budgets but added selection work. Its advantage came during
+acquisition; it underperformed fixed replay during recurrence. Stopping after
+three arrivals completed 118/168 with half the maintenance updates: it preserved
+both an acquired state and an incomplete one. Explicit archive lookup completed
+168/168 without learning updates. The small sandbox and two runs limit the claim.
+[MAINTENANCE.md](MAINTENANCE.md) preserves the completed commission.
 
 **Follow-up published, 14 September 2026.** Read
 [the follow-up findings](FOLLOWUP_FINDINGS.md), with

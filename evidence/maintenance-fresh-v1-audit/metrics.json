@@ -1,0 +1,2398 @@
+{
+  "runs": [
+    {
+      "path": "evidence/maintenance-fresh-v1-103",
+      "manifest_sha256": "4442e4694cd43708b355ccff67147aa3dced6a37e155d153d000c5b6f4ab4979",
+      "config": {
+        "output": "evidence/maintenance-fresh-v1-103",
+        "seed": 103,
+        "data_seed": 2026091511,
+        "protocol": "protocol/maintenance-fresh-v1.md",
+        "mode": "recur",
+        "later_replicas": 2,
+        "candidate_count": 16,
+        "replicas": 16,
+        "state_steps": 128,
+        "steps": 256,
+        "arms": [
+          "none",
+          "fixed75",
+          "mir75",
+          "stop75"
+        ],
+        "sequence": [
+          "birch",
+          "cedar",
+          "dune",
+          "birch",
+          "cedar",
+          "dune"
+        ],
+        "joint_checkpoints": [
+          128,
+          256,
+          512
+        ]
+      },
+      "scores": [
+        {
+          "arm": "base",
+          "episode": 0,
+          "suite": "later",
+          "success": 0,
+          "total": 16,
+          "resource": 0,
+          "preparation": 0,
+          "by_site": {
+            "alder": 0,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "train",
+          "success": 32,
+          "total": 32,
+          "resource": 32,
+          "preparation": 32,
+          "by_site": {
+            "alder": 32
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "later",
+          "success": 4,
+          "total": 4,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 4
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "train",
+          "success": 32,
+          "total": 32,
+          "resource": 32,
+          "preparation": 32,
+          "by_site": {
+            "alder": 32
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "later",
+          "success": 4,
+          "total": 4,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 4
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 4,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 2,
+          "suite": "later",
+          "success": 4,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 3,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 4,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 5,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 6,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 1,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 8,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 2,
+          "suite": "later",
+          "success": 12,
+          "total": 12,
+          "resource": 12,
+          "preparation": 12,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 12,
+          "total": 16,
+          "resource": 12,
+          "preparation": 12,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 3,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 4,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 5,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 1,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 8,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 2,
+          "suite": "later",
+          "success": 12,
+          "total": 12,
+          "resource": 12,
+          "preparation": 12,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 12,
+          "total": 16,
+          "resource": 12,
+          "preparation": 12,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 3,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 4,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 5,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 1,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 8,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 2,
+          "suite": "later",
+          "success": 12,
+          "total": 12,
+          "resource": 12,
+          "preparation": 12,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 12,
+          "total": 16,
+          "resource": 12,
+          "preparation": 12,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 3,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 4,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 5,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "arm": "none",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 4
+        },
+        {
+          "arm": "none",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 8
+        },
+        {
+          "arm": "none",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "none",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "none",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "none",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "fixed75",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 8,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 12,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 8,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 12,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 8,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 12,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        }
+      ],
+      "costs": {
+        "none": {
+          "selection_total_seconds": 0,
+          "update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 18.780764418996114
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 18.791433334023168
+          }
+        },
+        "fixed75": {
+          "selection_total_seconds": 0,
+          "update": {
+            "count": 1536,
+            "input_tokens": 151046,
+            "target_tokens": 7680,
+            "seconds": 302.85056261593854
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 18.814560711987724
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 19.29394908197719
+          }
+        },
+        "mir75": {
+          "selection_total_seconds": 454.0284692550049,
+          "update": {
+            "count": 1536,
+            "input_tokens": 151079,
+            "target_tokens": 7680,
+            "seconds": 305.5054763829612
+          },
+          "virtual_update": {
+            "count": 96,
+            "input_tokens": 9447,
+            "target_tokens": 480,
+            "seconds": 19.021963040009723
+          },
+          "selection_loss": {
+            "count": 3072,
+            "input_tokens": 302104,
+            "target_tokens": 15360,
+            "seconds": 426.6064409181563
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 18.86341770497529
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 19.501052170038747
+          }
+        },
+        "stop75": {
+          "selection_total_seconds": 0,
+          "update": {
+            "count": 768,
+            "input_tokens": 75530,
+            "target_tokens": 3840,
+            "seconds": 153.59778094603098
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 18.85573787499743
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7913,
+            "completion_tokens": 420,
+            "seconds": 19.11230574297224
+          }
+        }
+      },
+      "acquisition": {
+        "updates": 128,
+        "input_tokens": 12580,
+        "target_tokens": 640,
+        "seconds": 24.65065896196029
+      },
+      "selection_decisions": 96,
+      "explicit": {
+        "success": 84,
+        "total": 84,
+        "retrieval_comparisons": 350,
+        "action_tokens": 336,
+        "archive_build_seconds": 0.0007087900085025467,
+        "unique_archive_rows": 128,
+        "seconds": 0.0002708330430323258,
+        "peak_archive_bytes": 11616
+      },
+      "adapter_bytes": 2624893,
+      "execution": {
+        "kind": "complete",
+        "elapsed": 1462.134181500005,
+        "status": "complete",
+        "seconds": 1462.134178375003,
+        "peak_mlx_bytes": 9619995688
+      }
+    },
+    {
+      "path": "evidence/maintenance-fresh-v1-107",
+      "manifest_sha256": "b09bcb02bc617b6cc95c362fd4a1402eb3b98b7ede1c575874580fbb73fcb99f",
+      "config": {
+        "output": "evidence/maintenance-fresh-v1-107",
+        "seed": 107,
+        "data_seed": 2026091521,
+        "protocol": "protocol/maintenance-fresh-v1.md",
+        "mode": "recur",
+        "later_replicas": 2,
+        "candidate_count": 16,
+        "replicas": 16,
+        "state_steps": 128,
+        "steps": 256,
+        "arms": [
+          "none",
+          "fixed75",
+          "mir75",
+          "stop75"
+        ],
+        "sequence": [
+          "birch",
+          "cedar",
+          "dune",
+          "birch",
+          "cedar",
+          "dune"
+        ],
+        "joint_checkpoints": [
+          128,
+          256,
+          512
+        ]
+      },
+      "scores": [
+        {
+          "arm": "base",
+          "episode": 0,
+          "suite": "later",
+          "success": 0,
+          "total": 16,
+          "resource": 0,
+          "preparation": 0,
+          "by_site": {
+            "alder": 0,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "train",
+          "success": 32,
+          "total": 32,
+          "resource": 32,
+          "preparation": 32,
+          "by_site": {
+            "alder": 32
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "later",
+          "success": 4,
+          "total": 4,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 4
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "train",
+          "success": 32,
+          "total": 32,
+          "resource": 32,
+          "preparation": 32,
+          "by_site": {
+            "alder": 32
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "later",
+          "success": 4,
+          "total": 4,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 4
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 4,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 2,
+          "suite": "later",
+          "success": 4,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 3,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 4,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 5,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "none",
+          "episode": 6,
+          "suite": "later",
+          "success": 4,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 1,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 8,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 2,
+          "suite": "later",
+          "success": 6,
+          "total": 12,
+          "resource": 8,
+          "preparation": 6,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 6,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 3,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 4,
+          "suite": "later",
+          "success": 8,
+          "total": 16,
+          "resource": 13,
+          "preparation": 10,
+          "by_site": {
+            "alder": 4,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 8,
+          "total": 16,
+          "resource": 13,
+          "preparation": 10,
+          "by_site": {
+            "alder": 4,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 5,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "fixed75",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 1,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 8,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 2,
+          "suite": "later",
+          "success": 12,
+          "total": 12,
+          "resource": 12,
+          "preparation": 12,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 12,
+          "total": 16,
+          "resource": 12,
+          "preparation": 14,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 3,
+          "suite": "later",
+          "success": 11,
+          "total": 16,
+          "resource": 12,
+          "preparation": 15,
+          "by_site": {
+            "alder": 4,
+            "birch": 3,
+            "cedar": 2,
+            "dune": 2
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 11,
+          "total": 16,
+          "resource": 12,
+          "preparation": 15,
+          "by_site": {
+            "alder": 4,
+            "birch": 3,
+            "cedar": 2,
+            "dune": 2
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 4,
+          "suite": "later",
+          "success": 12,
+          "total": 16,
+          "resource": 12,
+          "preparation": 15,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 12,
+          "total": 16,
+          "resource": 12,
+          "preparation": 15,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 5,
+          "suite": "later",
+          "success": 8,
+          "total": 16,
+          "resource": 8,
+          "preparation": 14,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 2
+          }
+        },
+        {
+          "arm": "mir75-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 8,
+          "total": 16,
+          "resource": 8,
+          "preparation": 14,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 2
+          }
+        },
+        {
+          "arm": "mir75",
+          "episode": 6,
+          "suite": "later",
+          "success": 16,
+          "total": 16,
+          "resource": 16,
+          "preparation": 16,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 4,
+            "dune": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 1,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 0
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 1,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 2,
+          "suite": "later",
+          "success": 8,
+          "total": 12,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 4,
+            "birch": 4,
+            "cedar": 0
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 2,
+          "suite": "later",
+          "success": 6,
+          "total": 12,
+          "resource": 8,
+          "preparation": 6,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 3,
+          "suite": "later",
+          "success": 6,
+          "total": 16,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 3,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 4,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 4,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 5,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 5,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "stop75-before",
+          "episode": 6,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "stop75",
+          "episode": 6,
+          "suite": "later",
+          "success": 5,
+          "total": 16,
+          "resource": 9,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 2,
+            "dune": 1
+          }
+        }
+      ],
+      "pairs": [
+        {
+          "arm": "none",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 4
+        },
+        {
+          "arm": "none",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 8
+        },
+        {
+          "arm": "none",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "none",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "none",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "none",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 4,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 12
+        },
+        {
+          "arm": "fixed75",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 4,
+          "gained": 2,
+          "lost": 4,
+          "failed_both": 2
+        },
+        {
+          "arm": "fixed75",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 4,
+          "gained": 1,
+          "lost": 2,
+          "failed_both": 9
+        },
+        {
+          "arm": "fixed75",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 2,
+          "gained": 6,
+          "lost": 3,
+          "failed_both": 5
+        },
+        {
+          "arm": "fixed75",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 8,
+          "gained": 8,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "fixed75",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 16,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 8,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "mir75",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 9,
+          "gained": 2,
+          "lost": 3,
+          "failed_both": 2
+        },
+        {
+          "arm": "mir75",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 9,
+          "gained": 3,
+          "lost": 2,
+          "failed_both": 2
+        },
+        {
+          "arm": "mir75",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 6,
+          "gained": 2,
+          "lost": 6,
+          "failed_both": 2
+        },
+        {
+          "arm": "mir75",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 8,
+          "gained": 8,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 1,
+          "site": "birch",
+          "total": 8,
+          "retained": 4,
+          "gained": 4,
+          "lost": 0,
+          "failed_both": 0
+        },
+        {
+          "arm": "stop75",
+          "episode": 2,
+          "site": "cedar",
+          "total": 12,
+          "retained": 4,
+          "gained": 2,
+          "lost": 4,
+          "failed_both": 2
+        },
+        {
+          "arm": "stop75",
+          "episode": 3,
+          "site": "dune",
+          "total": 16,
+          "retained": 4,
+          "gained": 1,
+          "lost": 2,
+          "failed_both": 9
+        },
+        {
+          "arm": "stop75",
+          "episode": 4,
+          "site": "birch",
+          "total": 16,
+          "retained": 5,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 11
+        },
+        {
+          "arm": "stop75",
+          "episode": 5,
+          "site": "cedar",
+          "total": 16,
+          "retained": 5,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 11
+        },
+        {
+          "arm": "stop75",
+          "episode": 6,
+          "site": "dune",
+          "total": 16,
+          "retained": 5,
+          "gained": 0,
+          "lost": 0,
+          "failed_both": 11
+        }
+      ],
+      "costs": {
+        "none": {
+          "selection_total_seconds": 0,
+          "update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 18.854441870978917
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 18.845818001973385
+          }
+        },
+        "fixed75": {
+          "selection_total_seconds": 0,
+          "update": {
+            "count": 1536,
+            "input_tokens": 151040,
+            "target_tokens": 7680,
+            "seconds": 308.371063316903
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 18.86665933405311
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 19.380254252944724
+          }
+        },
+        "mir75": {
+          "selection_total_seconds": 451.1270544610161,
+          "update": {
+            "count": 1536,
+            "input_tokens": 151103,
+            "target_tokens": 7680,
+            "seconds": 305.1160884249257
+          },
+          "virtual_update": {
+            "count": 96,
+            "input_tokens": 9433,
+            "target_tokens": 480,
+            "seconds": 19.054221286976826
+          },
+          "selection_loss": {
+            "count": 3072,
+            "input_tokens": 302248,
+            "target_tokens": 15360,
+            "seconds": 424.15265999110125
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 18.893302129021322
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 19.490991161008424
+          }
+        },
+        "stop75": {
+          "selection_total_seconds": 0,
+          "update": {
+            "count": 768,
+            "input_tokens": 75548,
+            "target_tokens": 3840,
+            "seconds": 154.28709579596034
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 18.892699623014778
+          },
+          "use_generation": {
+            "count": 84,
+            "prompt_tokens": 7912,
+            "completion_tokens": 420,
+            "seconds": 19.144679083983647
+          }
+        }
+      },
+      "acquisition": {
+        "updates": 128,
+        "input_tokens": 12620,
+        "target_tokens": 640,
+        "seconds": 25.6179698789565
+      },
+      "selection_decisions": 96,
+      "explicit": {
+        "success": 84,
+        "total": 84,
+        "retrieval_comparisons": 350,
+        "action_tokens": 336,
+        "archive_build_seconds": 0.0006949160015210509,
+        "unique_archive_rows": 128,
+        "seconds": 0.0002945380037999712,
+        "peak_archive_bytes": 11616
+      },
+      "adapter_bytes": 2624893,
+      "execution": {
+        "kind": "complete",
+        "elapsed": 1467.1341859579989,
+        "status": "complete",
+        "seconds": 1467.1341837500004,
+        "peak_mlx_bytes": 9619995688
+      }
+    }
+  ]
+}

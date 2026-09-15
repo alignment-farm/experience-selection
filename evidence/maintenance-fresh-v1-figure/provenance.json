@@ -1,0 +1,11 @@
+{
+  "title": "Fresh recurring learning: two fixed seeds",
+  "with_costs": true,
+  "inputs": {
+    "evidence/maintenance-fresh-v1-audit/metrics.json": "af818103c9b7d92b6bf83fcb80e964201cbc1d4402c3b628cba07d269975b779"
+  },
+  "packages": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3"
+  }
+}

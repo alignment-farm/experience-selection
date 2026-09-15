@@ -1,0 +1,130 @@
+{
+  "none": {
+    "all": {
+      "complete": 48,
+      "total": 168,
+      "resource": 88,
+      "preparation": 96
+    },
+    "acquisition": {
+      "complete": 24,
+      "total": 72,
+      "resource": 40,
+      "preparation": 48
+    },
+    "recurrence": {
+      "complete": 24,
+      "total": 96,
+      "resource": 48,
+      "preparation": 48
+    },
+    "final": {
+      "complete": 8,
+      "total": 32,
+      "resource": 16,
+      "preparation": 16
+    },
+    "pairs": {
+      "retained": 48,
+      "gained": 0,
+      "lost": 0,
+      "failed_both": 120
+    }
+  },
+  "fixed75": {
+    "all": {
+      "complete": 143,
+      "total": 168,
+      "resource": 154,
+      "preparation": 148
+    },
+    "acquisition": {
+      "complete": 55,
+      "total": 72,
+      "resource": 61,
+      "preparation": 58
+    },
+    "recurrence": {
+      "complete": 88,
+      "total": 96,
+      "resource": 93,
+      "preparation": 90
+    },
+    "final": {
+      "complete": 32,
+      "total": 32,
+      "resource": 32,
+      "preparation": 32
+    },
+    "pairs": {
+      "retained": 110,
+      "gained": 33,
+      "lost": 9,
+      "failed_both": 16
+    }
+  },
+  "mir75": {
+    "all": {
+      "complete": 151,
+      "total": 168,
+      "resource": 152,
+      "preparation": 164
+    },
+    "acquisition": {
+      "complete": 67,
+      "total": 72,
+      "resource": 68,
+      "preparation": 71
+    },
+    "recurrence": {
+      "complete": 84,
+      "total": 96,
+      "resource": 84,
+      "preparation": 93
+    },
+    "final": {
+      "complete": 32,
+      "total": 32,
+      "resource": 32,
+      "preparation": 32
+    },
+    "pairs": {
+      "retained": 116,
+      "gained": 35,
+      "lost": 11,
+      "failed_both": 6
+    }
+  },
+  "stop75": {
+    "all": {
+      "complete": 118,
+      "total": 168,
+      "resource": 136,
+      "preparation": 130
+    },
+    "acquisition": {
+      "complete": 55,
+      "total": 72,
+      "resource": 61,
+      "preparation": 58
+    },
+    "recurrence": {
+      "complete": 63,
+      "total": 96,
+      "resource": 75,
+      "preparation": 72
+    },
+    "final": {
+      "complete": 21,
+      "total": 32,
+      "resource": 25,
+      "preparation": 24
+    },
+    "pairs": {
+      "retained": 99,
+      "gained": 19,
+      "lost": 6,
+      "failed_both": 44
+    }
+  }
+}

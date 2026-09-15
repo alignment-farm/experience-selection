@@ -1,4 +1,4 @@
-# Maintenance reproduction (in development)
+# Maintenance reproduction
 
 Use the existing `uv.lock`, exact Qwen3-4B model revision and native setup from
 [the follow-up](followup-reproduction.md). No sibling checkpoints are used.
@@ -14,8 +14,8 @@ uv run --no-sync python scripts/maintenance_experiment.py --output evidence/NEW-
 ```
 
 V1 source snapshot has the original, unexecuted recurrent draft. Subsequent code
-corrects virtual optimizer state and caps candidate scoring. No recurrent data
-have yet been used to choose these implementation corrections. Model runtime is
+corrects virtual optimizer state and caps candidate scoring. At that point, no recurrent data
+had been used to choose these implementation corrections. Model runtime is
 unchanged; every run's resource.json checks all model file hashes.
 
 ## Completed replay composition development
@@ -47,7 +47,7 @@ Optional independent plotting environment (no change to learner lock):
 uv run --no-project --with matplotlib==3.11.2 --with numpy==2.5.3 python scripts/maintenance_plot.py evidence/NEW-MAINTENANCE-V3-AUDIT/metrics.json --output evidence/NEW-MAINTENANCE-V3-FIGURE --title 'Development: complete dispatch workflows (128 updates per arrival)'
 ```
 
-## Frozen fresh cohort (execution in progress)
+## Completed frozen fresh cohort
 
 Policy and protocol fixed at `ba91a06`. Analysis/publication commits do not change
 the run-owned policy snapshots; the cohort audit compares them to that commit.
@@ -62,3 +62,18 @@ uv run --no-sync python scripts/maintenance_cohort.py evidence/NEW-MAINTENANCE-F
 
 The selected method and both seeds are fixed, not automatically retuned from the
 new run's outcomes. Any execution failure remains visible and stops the batch.
+
+## Rebuild the published analysis from retained runs
+
+The following output directories must be absent. Use new names to preserve the
+published artifacts, and supply those names to subsequent commands.
+
+```sh
+uv run --no-sync python scripts/maintenance_audit.py evidence/maintenance-fresh-v1-103 evidence/maintenance-fresh-v1-107 --output evidence/maintenance-fresh-v1-audit
+uv run --no-sync python scripts/maintenance_cohort.py evidence/maintenance-fresh-v1-audit/metrics.json --output evidence/maintenance-fresh-v1-cohort
+uv run --no-project --with matplotlib==3.11.2 --with numpy==2.5.3 python scripts/maintenance_plot.py evidence/maintenance-fresh-v1-audit/metrics.json --output evidence/maintenance-fresh-v1-figure --title 'Fresh recurring learning: two fixed seeds' --with-costs
+uv run --no-sync python scripts/maintenance_findings.py --metrics evidence/maintenance-fresh-v1-cohort/metrics.json --output MAINTENANCE_FINDINGS.md --figure evidence/maintenance-fresh-v1-figure/complete-workflows.svg
+```
+
+The publication renderer includes interpretation specific to this completed cohort;
+it is not an automatic interpretation of a newly generated experiment.

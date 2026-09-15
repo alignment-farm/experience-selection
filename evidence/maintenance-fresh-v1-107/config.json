@@ -1,0 +1,31 @@
+{
+  "output": "evidence/maintenance-fresh-v1-107",
+  "seed": 107,
+  "data_seed": 2026091521,
+  "protocol": "protocol/maintenance-fresh-v1.md",
+  "mode": "recur",
+  "later_replicas": 2,
+  "candidate_count": 16,
+  "replicas": 16,
+  "state_steps": 128,
+  "steps": 256,
+  "arms": [
+    "none",
+    "fixed75",
+    "mir75",
+    "stop75"
+  ],
+  "sequence": [
+    "birch",
+    "cedar",
+    "dune",
+    "birch",
+    "cedar",
+    "dune"
+  ],
+  "joint_checkpoints": [
+    128,
+    256,
+    512
+  ]
+}

@@ -94,3 +94,19 @@ The auditor's gradient sanity check was corrected prospectively to allow finite
 zero gradients at convergence (requiring some nonzero gradients per updating arm),
 rather than declaring any zero gradient an execution error. This changes no
 behavioral criterion, training, selector, fresh seed or checkpoint choice.
+
+## Fresh cohort completed
+
+Both frozen seeds completed; per-run and cohort audits pass. Fixed75=143/168,
+MIR75=151/168, stop75=118/168, none=48/168, explicit=168/168. Fixed and MIR both
+end32/32. Seed103 gives all three updating/stopping policies84/84; seed107
+accounts for the differences. MIR's acquisition prefix67/72 exceeds fixed55/72,
+but recurrence84/96 is below fixed88/96. Stop shares the fixed prefix exactly,
+then freezes: seed107 remains5/16 while continued fixed replay reaches16/16.
+This identifies the consequence of stopping before complete acquisition without
+retuning fresh policies. Initialization and ticket effects are not separated.
+All fresh snapshots match ba91a06, ticket sets are disjoint, exact reload and
+virtual-step checks pass. Component and complete outcomes, costs and limitations
+are published in MAINTENANCE_FINDINGS.md. No additional winning-config search is
+needed: the bounded study establishes a local accuracy/work tradeoff and a
+state-dependent limitation of the fixed stopping schedule.

@@ -102,3 +102,11 @@ learner was visible. The parent run_maintenance_fresh.py remains visible between
 its two sequential children. First seed103 is running under the frozen policy;
 CPU audit/report preparation proceeds without changing model code or fresh choices.
 No additional heavy model work is planned after the two-seed cohort.
+
+Fresh cohort completed both seeds: native run timers total2929.27s (48.82min),
+peak9,619,995,688 MLX bytes. Executed7936 actual optimizer steps including256
+construction, plus192 virtual steps and6144 scoring forwards. All native model
+work is complete; subsequent auditing, plotting and publication use CPU only.
+The two policies with3072 maintenance steps each take611.22s fixed training and
+610.62s MIR training, with905.16s additional inclusive MIR selection. Timings
+remain descriptive shared-machine measurements, not isolated benchmarks.
