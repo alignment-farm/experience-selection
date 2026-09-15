@@ -1,0 +1,12 @@
+{
+  "output": "evidence/followup-fresh-v1-73",
+  "seed": 73,
+  "data_seed": 20260914601,
+  "state_steps": 64,
+  "checkpoints": [
+    128,
+    256
+  ],
+  "protocol": "protocol/followup-fresh-v1.md",
+  "include_base_mixture": false
+}

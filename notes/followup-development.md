@@ -87,3 +87,14 @@ gap-only training's last-eight-update mean CE is0.00000707 while later accuracy
 is8/16; mixture's mean CE is0.0232 while later accuracy is16/16. Targets are all
 correct and objectives matched, but these residual losses summarize different
 experience pools. They are not interchangeable with balanced later utility.
+
+## Fresh cohort in progress
+
+Seed73 completed in364.89 seconds with1664 updates and9.61GB peak. All audit checks
+passed, including20 exact-token checkpoint replays. Both partial states meet
+acquisition; fixed mixture scores32/32 at128 and256, gap policy and either pure
+source16/32 atboth. No update16/32; partial-state context16/32. This is the first
+prespecified run, not a reason to stop or choose a new checkpoint. Seeds79/83
+remain fixed. Publication/audit tooling changed during the cohort, but experiment,
+task, runtime, prompts, protocol and learner environment are unchanged; the cohort
+audit verifies their identical bytes across all runs.

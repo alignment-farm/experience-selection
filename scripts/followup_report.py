@@ -24,6 +24,10 @@ def main():
     verification_tokens=sum(v['verification']['prompt_tokens']+v['verification']['completion_tokens'] for _,_,v in states)
     base_context=sum(sum(r['base_context'].values()) for r in f['runs'])
     no_update=f['no_update']; mixture=totals['mixture']; selected=totals['selected']
+    abstentions=sum(v['decision']['source']=='none' for _,_,v in states)
+    acquired=sum(v['no_update'][state]==8 for _,state,v in states)
+    strict_mixture_wins=sum(sum(v['checkpoints'][step]['sources']['mixture']['scores'].values())>
+                           sum(v['checkpoints'][step]['selected']['scores'].values()) for _,_,v in states)
     def fraction(v): return f'{v}/{n}'
     md=[f'''# Selecting correct experience under partial acquisition
 
@@ -124,6 +128,13 @@ name indicates which source constructed it, not an assumption about acquisition.
     for r,s,v in states:
         sources=v['checkpoints'][step]['sources']
         md.append(f"| {r['config']['seed']} | {s} | {pair(v['no_update'])} | {pair(sources['coast']['scores'])} | {pair(sources['inland']['scores'])} | {pair(sources['mixture']['scores'])} | {v['decision']['source']} |")
+    md.append(f'\n{acquired}/{len(states)} constructed states meet the exposed-region acquisition criterion. '
+              f'The mixture strictly exceeds the gap policy in {strict_mixture_wins}/{len(states)} states. '
+              f'The policy abstains in {abstentions}/{len(states)} states; its update totals below make any savings explicit.')
+    shorter=[(s,t) for s,t in f['totals'].items() if int(s)<a.primary_step]
+    if shorter:
+        md.append('\nThe shorter fixed-mixture comparator scores '+', '.join(f"{fraction(t['mixture'])} at {s} updates" for s,t in shorter)
+                  +'. These outcomes are reported without changing the primary checkpoint. The selected primary duration is not claimed to be globally minimal.')
     md.append(f'''
 ## Costs and audit
 
