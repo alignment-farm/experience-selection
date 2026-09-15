@@ -34,3 +34,16 @@ repairs it. V3 audit passes response, prompt, component and complete-state check
 This is an auditor bug; no experimental response or checkpoint was altered.
 The CPU optimizer test with accumulated AdamW moments passes isolation, exact
 restoration and equality between virtual and actual parameter updates.
+
+## V2: a functioning acquisition regime
+
+At512 joint updates the128-record pool gives64/128 train and4/8 later. All later
+outputs choose otter, with site-specific preparation, ignoring kind. At1024,
+128/128 training and8/8 unseen-ticket workflows succeed. Diverse supervision plus
+sufficient duration resolves the floor on this development seed. This is not a
+claim that diversity alone suffices: its matched512 outcome remains incomplete.
+Alder state64/128 both32/32 train and2/2 later. Replay comparisons may now proceed.
+
+V3 tunes three fixed fractions and MIR50 on the three-arrival prefix at128 updates.
+A bounded256-step follow-up will tune duration. Fresh tests will add three recurring
+arrivals; all costs and repeated-case dependence will be disclosed.

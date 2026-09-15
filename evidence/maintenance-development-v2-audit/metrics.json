@@ -1,0 +1,283 @@
+{
+  "runs": [
+    {
+      "path": "evidence/maintenance-development-v2",
+      "manifest_sha256": "97ccf948389b01d61d14ec1f1cb33d85e7cec7f50b370f262a7849aa1ea9a6a1",
+      "config": {
+        "output": "evidence/maintenance-development-v2",
+        "seed": 101,
+        "data_seed": 2026091501,
+        "protocol": "protocol/maintenance-development-v2.md",
+        "mode": "calibrate",
+        "candidate_count": 16,
+        "replicas": 16,
+        "state_steps": 128,
+        "steps": 128,
+        "arms": [
+          "none",
+          "incoming",
+          "fixed25",
+          "fixed50",
+          "fixed75",
+          "mir50"
+        ],
+        "sequence": [
+          "birch",
+          "cedar",
+          "dune",
+          "birch",
+          "cedar",
+          "dune"
+        ],
+        "joint_checkpoints": [
+          512,
+          1024
+        ]
+      },
+      "scores": [
+        {
+          "arm": "base",
+          "episode": 0,
+          "suite": "train",
+          "success": 0,
+          "total": 128,
+          "resource": 0,
+          "preparation": 0,
+          "by_site": {
+            "alder": 0,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "base",
+          "episode": 0,
+          "suite": "later",
+          "success": 0,
+          "total": 8,
+          "resource": 0,
+          "preparation": 0,
+          "by_site": {
+            "alder": 0,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "train",
+          "success": 32,
+          "total": 128,
+          "resource": 64,
+          "preparation": 64,
+          "by_site": {
+            "alder": 32,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 64,
+          "suite": "later",
+          "success": 2,
+          "total": 8,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "train",
+          "success": 32,
+          "total": 128,
+          "resource": 64,
+          "preparation": 64,
+          "by_site": {
+            "alder": 32,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "state",
+          "episode": 128,
+          "suite": "later",
+          "success": 2,
+          "total": 8,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 2,
+            "birch": 0,
+            "cedar": 0,
+            "dune": 0
+          }
+        },
+        {
+          "arm": "joint",
+          "episode": 512,
+          "suite": "train",
+          "success": 64,
+          "total": 128,
+          "resource": 64,
+          "preparation": 64,
+          "by_site": {
+            "alder": 16,
+            "birch": 16,
+            "cedar": 16,
+            "dune": 16
+          }
+        },
+        {
+          "arm": "joint",
+          "episode": 512,
+          "suite": "later",
+          "success": 4,
+          "total": 8,
+          "resource": 4,
+          "preparation": 4,
+          "by_site": {
+            "alder": 1,
+            "birch": 1,
+            "cedar": 1,
+            "dune": 1
+          }
+        },
+        {
+          "arm": "joint",
+          "episode": 1024,
+          "suite": "train",
+          "success": 128,
+          "total": 128,
+          "resource": 128,
+          "preparation": 128,
+          "by_site": {
+            "alder": 32,
+            "birch": 32,
+            "cedar": 32,
+            "dune": 32
+          }
+        },
+        {
+          "arm": "joint",
+          "episode": 1024,
+          "suite": "later",
+          "success": 8,
+          "total": 8,
+          "resource": 8,
+          "preparation": 8,
+          "by_site": {
+            "alder": 2,
+            "birch": 2,
+            "cedar": 2,
+            "dune": 2
+          }
+        }
+      ],
+      "pairs": [],
+      "costs": {
+        "state": {
+          "update": {
+            "count": 128,
+            "input_tokens": 12636,
+            "target_tokens": 640,
+            "seconds": 26.0803970449997
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "seconds": 0
+          },
+          "use_generation": {
+            "count": 16,
+            "prompt_tokens": 1510,
+            "completion_tokens": 80,
+            "seconds": 3.590181792005751
+          }
+        },
+        "joint": {
+          "update": {
+            "count": 1024,
+            "input_tokens": 100808,
+            "target_tokens": 5120,
+            "seconds": 204.45469562902326
+          },
+          "virtual_update": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "selection_loss": {
+            "count": 0,
+            "input_tokens": 0,
+            "target_tokens": 0,
+            "seconds": 0
+          },
+          "verification_generation": {
+            "count": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "seconds": 0
+          },
+          "use_generation": {
+            "count": 16,
+            "prompt_tokens": 1510,
+            "completion_tokens": 80,
+            "seconds": 3.591225291003866
+          }
+        }
+      },
+      "acquisition": {
+        "updates": 128,
+        "input_tokens": 12636,
+        "target_tokens": 640,
+        "seconds": 26.0803970449997
+      },
+      "selection_decisions": 0,
+      "explicit": {
+        "success": 0,
+        "total": 0,
+        "retrieval_comparisons": 0,
+        "action_tokens": 0,
+        "archive_build_seconds": 0,
+        "unique_archive_rows": 0,
+        "seconds": 0,
+        "peak_archive_bytes": 0
+      },
+      "adapter_bytes": 2624893,
+      "execution": {
+        "kind": "complete",
+        "elapsed": 440.61381116699886,
+        "status": "complete",
+        "seconds": 440.61380870799985,
+        "peak_mlx_bytes": 9617374236
+      }
+    }
+  ]
+}

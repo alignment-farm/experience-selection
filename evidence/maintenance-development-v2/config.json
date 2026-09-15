@@ -1,0 +1,31 @@
+{
+  "output": "evidence/maintenance-development-v2",
+  "seed": 101,
+  "data_seed": 2026091501,
+  "protocol": "protocol/maintenance-development-v2.md",
+  "mode": "calibrate",
+  "candidate_count": 16,
+  "replicas": 16,
+  "state_steps": 128,
+  "steps": 128,
+  "arms": [
+    "none",
+    "incoming",
+    "fixed25",
+    "fixed50",
+    "fixed75",
+    "mir50"
+  ],
+  "sequence": [
+    "birch",
+    "cedar",
+    "dune",
+    "birch",
+    "cedar",
+    "dune"
+  ],
+  "joint_checkpoints": [
+    512,
+    1024
+  ]
+}
