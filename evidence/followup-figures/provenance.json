@@ -1,0 +1,11 @@
+{
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.3",
+  "fresh": "evidence/followup-fresh-v1-audit/metrics.json",
+  "primary_step": "256",
+  "input_sha256": {
+    "evidence/followup-fresh-v1-audit/metrics.json": "3ed762066b67cd2cbc8b85832ae80dcd7dad942c8e1637dce4b2cff8b30d8f30",
+    "evidence/followup-development-v1-audit/metrics.json": "a5f471756a45a4222e988b3094c53b1f8e48ff952fabc46b073c870f1fdcaaa9",
+    "evidence/followup-development-v2-audit/metrics.json": "205e9e5340a7a983205ffd5e199457237a1af37bc196a296447a0d44062216bc"
+  }
+}

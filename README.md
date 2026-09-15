@@ -1,9 +1,22 @@
 # Experience selection
 
-**First phase accepted; independent follow-up commissioned, 14 September 2026.**
-Start with [FOLLOWUP.md](FOLLOWUP.md): in partially acquired states, when does
-choosing experience help beyond abstention and shorter training? The investigator
-owns the next experiments; preparation of this handoff did not launch them.
+**Follow-up published, 14 September 2026.** Read
+[the follow-up findings](FOLLOWUP_FINDINGS.md), with
+[audited fresh metrics](evidence/followup-fresh-v1-audit/metrics.json) and
+[reproduction instructions](notes/followup-reproduction.md).
+
+In six partially acquired routing states, choosing the region with current errors
+repairs that region but loses the previously learned rule: 48/96 later outcomes,
+matching no update. A fixed balanced mixture reaches 96/96 at the same 256-update
+budget and identical aggregate training-token count. Its shorter 128-update
+comparator reaches 82/96. All observations are correct; examples already answered
+correctly remain useful as rehearsal. This establishes a limitation of current-error
+targeting and the sufficiency of a fixed mixture on this small workload, not a
+general result against adaptive selection. Development failures, exact repeated
+trajectories, three prospectively fixed fresh runs and all checkpoints are preserved.
+
+[FOLLOWUP.md](FOLLOWUP.md) preserves the commission. The accepted first phase and
+its original brief remain below.
 
 The completed [findings](FINDINGS.md) are preserved with [reproduction instructions](notes/reproduction.md), [primary methods and provenance](sources/README.md), and [audited metrics](evidence/publication-metrics/metrics.json).
 

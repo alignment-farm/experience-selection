@@ -104,3 +104,28 @@ Seed79 completed in365.11 seconds,1664 updates,9.61GB peak. Raw scores: mixture
 and gap policy remain16/32. Both states acquired their exposed region. Seed83 is
 executing as prespecified; the final combined audit will check this run and all
 cross-run invariants. No learning or selection rule was changed after fresh results.
+
+## Follow-up completed
+
+Seed83 completed in365.55 seconds. The combined audit passed for all three runs:
+all six exposed-region acquisitions succeed; mixture256 scores96/96, mixture128
+82/96, gap policy and either pure source48/96. No update48/96, partial-state context
+44/96, base context36/48. The policy selects the missing region in all six states
+and never abstains. Each selected pure source repairs that region8/8 and loses
+the previous region0/8. The fixed mixture wins in all six states.
+
+Primary mixture and gap policy each use1536 subsequent updates,80128 training
+input tokens and4608 loss tokens. Construction adds384 updates; verification adds
+24 generations and1284 input/output tokens. Full fresh experimental expense is
+4992 updates,1896 scoring generations and60 checkpoint-reload generations.
+Fresh run timers sum1095.54 seconds. All script/protocol/lock bytes match across
+the cohort, and fresh tickets are disjoint from development and across seeds.
+
+Close on the measured limitation of current-error targeting and a functioning
+joint acquisition schedule. The comparison does not show a reversal of the best
+balanced source composition across states; the fixed mixture suffices. It does
+show why correctness and remaining errors do not replace utility measurement:
+an individually acquired example pool can matter during a competing update.
+No MIR, learned mixture, online reselection or amortized placement advantage is
+claimed. FOLLOWUP_FINDINGS.md is rendered from audited metrics; the accepted
+FINDINGS.md and its completed protocols/evidence remain unchanged.

@@ -1,60 +1,25 @@
-"""Render the follow-up publication from audited development and fresh evidence."""
-import argparse
-import json
-import hashlib
-from pathlib import Path
-
-
-def main():
-    p=argparse.ArgumentParser()
-    p.add_argument('--development-one',type=Path,default=Path('evidence/followup-development-v1-audit/metrics.json'))
-    p.add_argument('--development-two',type=Path,default=Path('evidence/followup-development-v2-audit/metrics.json'))
-    p.add_argument('--fresh',type=Path,required=True)
-    p.add_argument('--primary-step',type=int,required=True)
-    p.add_argument('--output',type=Path,required=True)
-    p.add_argument('--figure',type=Path)
-    a=p.parse_args()
-    d1,d2,f=[json.loads(path.read_text()) for path in [a.development_one,a.development_two,a.fresh]]
-    step=str(a.primary_step); n=f['denominator']; totals=f['totals'][step]
-    states=[(r,s,v) for r in f['runs'] for s,v in r['states'].items()]
-    def total_cost(key):
-        return sum(v['checkpoints'][step][key]['training']['updates'] for _,_,v in states)
-    selected_updates=total_cost('selected')
-    mixture_updates=sum(v['checkpoints'][step]['sources']['mixture']['training']['updates'] for _,_,v in states)
-    construction=sum(v['construction']['updates'] for _,_,v in states)
-    probes=sum(v['verification']['calls'] for _,_,v in states)
-    verification_tokens=sum(v['verification']['prompt_tokens']+v['verification']['completion_tokens'] for _,_,v in states)
-    base_context=sum(sum(r['base_context'].values()) for r in f['runs'])
-    no_update=f['no_update']; mixture=totals['mixture']; selected=totals['selected']
-    abstentions=sum(v['decision']['source']=='none' for _,_,v in states)
-    acquired=sum(v['no_update'][state]==8 for _,state,v in states)
-    strict_mixture_wins=sum(sum(v['checkpoints'][step]['sources']['mixture']['scores'].values())>
-                           sum(v['checkpoints'][step]['selected']['scores'].values()) for _,_,v in states)
-    replacements=0
-    for _,old,v in states:
-        gap=v['decision']['source'];score=v['checkpoints'][step]['selected']['scores']
-        replacements+=gap in ['coast','inland'] and gap!=old and v['no_update'][old]==8 and score[old]==0 and score[gap]==8
-    def fraction(v): return f'{v}/{n}'
-    md=[f'''# Selecting correct experience under partial acquisition
+# Selecting correct experience under partial acquisition
 
 Follow-up to the accepted [first-phase findings](FINDINGS.md).
 The first-phase publication, protocols and evidence remain preserved.
 
 ## Result
 
-At the prospectively fixed **{a.primary_step}-update budget**, a fixed balanced
-mixture scored **{fraction(mixture)}** on fresh later queries. Selecting only the
-region with more current errors scored **{fraction(selected)}**; no update scored
-**{fraction(no_update)}**. Both source pools contain correct observations. This
+At the prospectively fixed **256-update budget**, a fixed balanced
+mixture scored **96/96** on fresh later queries. Selecting only the
+region with more current errors scored **48/96**; no update scored
+**48/96**. Both source pools contain correct observations. This
 comparison concerns choosing experience by present errors, not estimating source
 truthfulness or implementing a general adaptive selector.
 
 The gap policy repaired the missing region and lost the previously learned region
-in **{replacements}/{len(states)} states**. Correctly identifying an error did not
+in **6/6 states**. Correctly identifying an error did not
 identify a useful isolated update for the balanced later workload. The mixture
 spends half its updates on each region, including observations the learner already
 answers correctly. Source composition matters here; the tested adaptive choice
 adds no accuracy beyond abstention or either fixed pure source.
+
+![Development duration curve and fresh state outcomes](evidence/followup-figures/source-comparison.svg)
 
 ## Workload and information access
 
@@ -73,7 +38,7 @@ prompt. Obtaining labels is privileged synthetic supervision; real verification
 costs were not measured.
 
 The same sixteen later queries are used across both starting states within each
-run, giving {len(f['runs'])*16} distinct later requests and {n} state/query outcomes
+run, giving 48 distinct later requests and 96 state/query outcomes
 for each source policy in the fresh cohort.
 
 Two states are constructed independently from the same base initialization using
@@ -100,13 +65,17 @@ to 128 and 256, and added mixture training from base to test joint learnability.
 No development failures or intermediate checkpoints were removed.
 
 | Development | Updates per branch | Fixed coast | Fixed inland | Fixed mixture | Gap policy |
-|---|---:|---:|---:|---:|---:|''']
-    for label,d in [('v1',d1),('v2',d2)]:
-        for s,t in d['totals'].items():
-            md.append(f"| {label} | {s} | {t['coast']}/32 | {t['inland']}/32 | {t['mixture']}/32 | {t['selected']}/32 |")
-    bm=d2['runs'][0]['base_mixture']
-    md.append('\nJoint mixture acquisition from base: '+', '.join(f"{s} updates → {sum(v['scores'].values())}/16" for s,v in bm.items())+'.')
-    md.append(f'''
+|---|---:|---:|---:|---:|---:|
+| v1 | 8 | 16/32 | 16/32 | 16/32 | 16/32 |
+| v1 | 16 | 16/32 | 16/32 | 8/32 | 16/32 |
+| v1 | 32 | 16/32 | 16/32 | 16/32 | 16/32 |
+| v1 | 64 | 16/32 | 16/32 | 21/32 | 16/32 |
+| v2 | 64 | 16/32 | 16/32 | 21/32 | 16/32 |
+| v2 | 128 | 16/32 | 16/32 | 26/32 | 16/32 |
+| v2 | 256 | 16/32 | 16/32 | 32/32 | 16/32 |
+
+Joint mixture acquisition from base: 64 updates → 8/16, 128 updates → 12/16, 256 updates → 16/16.
+
 The fixed source, primary duration and shorter diagnostic checkpoints were chosen
 on development and committed in [the fresh protocol](protocol/followup-fresh-v1.md)
 before generating or evaluating fresh cases. V2 and v1 share exact checkpoint
@@ -114,17 +83,17 @@ files and update prefixes, checked by [the repeat audit](evidence/followup-repea
 
 ## Fresh comparison
 
-All {len(f['runs'])} prespecified initialization/data seeds are included. No fresh
+All 3 prespecified initialization/data seeds are included. No fresh
 checkpoint is promoted after seeing its score. Each row below is a complete
 balanced evaluation across the two states and all fresh runs.
 
 | Updates per branch | Fixed coast | Fixed inland | Fixed mixture | Gap policy |
-|---:|---:|---:|---:|---:|''')
-    for s,t in f['totals'].items():
-        md.append(f"| {s}{' (primary)' if s==step else ' (diagnostic)'} | {fraction(t['coast'])} | {fraction(t['inland'])} | {fraction(t['mixture'])} | {fraction(t['selected'])} |")
-    md.append(f'''
-No update: {fraction(no_update)}. All-evidence context at partial states:
-{fraction(f['context'])}. Base with all evidence: {base_context}/{len(f['runs'])*16}.
+|---:|---:|---:|---:|---:|
+| 128 (diagnostic) | 48/96 | 48/96 | 82/96 | 48/96 |
+| 256 (primary) | 48/96 | 48/96 | 96/96 | 48/96 |
+
+No update: 48/96. All-evidence context at partial states:
+44/96. Base with all evidence: 36/48.
 The context reference is one fixed prompt, not an optimized retrieval system;
 these results do not establish a general advantage of storing knowledge in weights.
 
@@ -134,30 +103,29 @@ Each entry is **coast correct / inland correct**, out of 8 per region. The state
 name indicates which source constructed it, not an assumption about acquisition.
 
 | Seed | State | No update | Coast source | Inland source | Mixture | Policy choice |
-|---:|---|---|---|---|---|---|''')
-    def pair(x):return f"{x['coast']} / {x['inland']}"
-    for r,s,v in states:
-        sources=v['checkpoints'][step]['sources']
-        md.append(f"| {r['config']['seed']} | {s} | {pair(v['no_update'])} | {pair(sources['coast']['scores'])} | {pair(sources['inland']['scores'])} | {pair(sources['mixture']['scores'])} | {v['decision']['source']} |")
-    md.append(f'\n{acquired}/{len(states)} constructed states meet the exposed-region acquisition criterion. '
-              f'The mixture strictly exceeds the gap policy in {strict_mixture_wins}/{len(states)} states. '
-              f'The policy abstains in {abstentions}/{len(states)} states; its update totals below make any savings explicit.')
-    shorter=[(s,t) for s,t in f['totals'].items() if int(s)<a.primary_step]
-    if shorter:
-        md.append('\nThe shorter fixed-mixture comparator scores '+', '.join(f"{fraction(t['mixture'])} at {s} updates" for s,t in shorter)
-                  +'. These outcomes are reported without changing the primary checkpoint. The selected primary duration is not claimed to be globally minimal.')
-    md.append(f'''
+|---:|---|---|---|---|---|---|
+| 73 | coast | 8 / 0 | 8 / 0 | 0 / 8 | 8 / 8 | inland |
+| 73 | inland | 0 / 8 | 8 / 0 | 0 / 8 | 8 / 8 | coast |
+| 79 | coast | 8 / 0 | 8 / 0 | 0 / 8 | 8 / 8 | inland |
+| 79 | inland | 0 / 8 | 8 / 0 | 0 / 8 | 8 / 8 | coast |
+| 83 | coast | 8 / 0 | 8 / 0 | 0 / 8 | 8 / 8 | inland |
+| 83 | inland | 0 / 8 | 8 / 0 | 0 / 8 | 8 / 8 | coast |
+
+6/6 constructed states meet the exposed-region acquisition criterion. The mixture strictly exceeds the gap policy in 6/6 states. The policy abstains in 0/6 states; its update totals below make any savings explicit.
+
+The shorter fixed-mixture comparator scores 82/96 at 128 updates. These outcomes are reported without changing the primary checkpoint. The selected primary duration is not claimed to be globally minimal.
+
 ## Costs and audit
 
-The {len(states)} partial-state constructions cost **{construction} updates**.
-Subsequent fixed-mixture training costs **{mixture_updates} updates**, versus
-**{selected_updates}** for the gap policy. Totals including construction are
-**{construction+mixture_updates}** and **{construction+selected_updates}** respectively.
+The 6 partial-state constructions cost **384 updates**.
+Subsequent fixed-mixture training costs **1536 updates**, versus
+**1536** for the gap policy. Totals including construction are
+**1920** and **1920** respectively.
 No-update and context arms cost no subsequent updates. State construction is a
 workload intervention and is charged explicitly; it is not free pretraining.
 
-The policy makes **{probes} verification generations**, totaling
-**{verification_tokens} prompt plus completion tokens**. Controls have equal
+The policy makes **24 verification generations**, totaling
+**1284 prompt plus completion tokens**. Controls have equal
 access to those results in the paired experiment. A fixed policy could omit the
 verification calls when deployed; no verification saving is credited to selection.
 The source pools have equal numbers of observations and the output targets have
@@ -165,26 +133,22 @@ the same objective; update counts are matched, while exact token costs are repor
 below. Token counts are not FLOPs.
 
 | Primary arm | Subsequent training input tokens | Target tokens | Later prompt tokens | Later completion tokens |
-|---|---:|---:|---:|---:|''')
-    for source in ['coast','inland','mixture','selected']:
-        vals=[v['checkpoints'][step]['selected'] if source=='selected' else v['checkpoints'][step]['sources'][source] for _,_,v in states]
-        md.append(f"| {source} | {sum(x['training']['input_tokens'] for x in vals)} | {sum(x['training']['loss_tokens'] for x in vals)} | {sum(x['use']['prompt_tokens'] for x in vals)} | {sum(x['use']['completion_tokens'] for x in vals)} |")
-    mix_tokens=sum(v['checkpoints'][step]['sources']['mixture']['training']['input_tokens'] for _,_,v in states)
-    gap_tokens=sum(v['checkpoints'][step]['selected']['training']['input_tokens'] for _,_,v in states)
-    if mix_tokens==gap_tokens and mixture_updates==selected_updates:
-        md.append('\nThe mixture and gap policy also match in aggregate training input tokens; the composition contrast is not explained by more gradient updates or more total input tokens.')
-    actual=sum(r['actual_experiment_updates'] for r in f['runs'])
-    calls=sum(r['actual_experiment_generation_calls'] for r in f['runs'])
-    sec=sum(r['run']['seconds'] for r in f['runs'])
-    md.append(f'''
-Actually running every fresh counterfactual and diagnostic cost {actual} optimizer
-updates and {calls} recorded scoring generations, plus
-{sum(r['audit']['reloads'] for r in f['runs'])} exact-token reload generations.
-Fresh run timers sum to {sec:.2f} seconds; timings describe observed execution,
+|---|---:|---:|---:|---:|
+| coast | 80896 | 4608 | 4856 | 288 |
+| inland | 79360 | 4608 | 4856 | 288 |
+| mixture | 80128 | 4608 | 4856 | 288 |
+| selected | 80128 | 4608 | 4856 | 288 |
+
+The mixture and gap policy also match in aggregate training input tokens; the composition contrast is not explained by more gradient updates or more total input tokens.
+
+Actually running every fresh counterfactual and diagnostic cost 4992 optimizer
+updates and 1896 recorded scoring generations, plus
+60 exact-token reload generations.
+Fresh run timers sum to 1095.54 seconds; timings describe observed execution,
 not isolated-hardware latency. [Resource notes](notes/resource-use.md) record
 shared-device coordination. The local host is a 64 GiB M1 Ultra.
 
-The [audited metrics]({a.fresh.as_posix()}) link all raw runs. The audit checks file
+The [audited metrics](evidence/followup-fresh-v1-audit/metrics.json) link all raw runs. The audit checks file
 hashes, prompt/token decoding, independent score reconstruction, disjoint tickets,
 source orders, matched starting hashes, finite gradients with nonzero updates,
 decisions before candidate training, frozen-base invariants and exact token replay
@@ -211,7 +175,7 @@ This study tests a single source decision followed by a fixed update schedule,
 not repeated online reselection, learned mixture ratios, or prediction of update
 damage. There are only two correct pools, four rule cells, one model/objective,
 and a balanced query distribution. Fresh tickets and initializations test local
-reproducibility; the {n} query outcomes are not {n} independent task draws. No
+reproducibility; the 96 query outcomes are not 96 independent task draws. No
 general statistical or real-agent performance claim follows from these counts.
 
 Rehearsal and interference-aware selection are established methods. [CLEAR](sources/followup-rehearsal/README.md)
@@ -235,16 +199,4 @@ Original primary methods and transitive code provenance are in
 [sources/README.md](sources/README.md); additional proceedings versions and hashes
 are in [rehearsal sources](sources/followup-rehearsal/README.md).
 The [development log](notes/followup-development.md) preserves changes and diagnosis.
-''')
-    document='\n'.join(md)+'\n'
-    if a.figure:
-        assert a.figure.is_file()
-        provenance=json.loads((a.figure.parent/'provenance.json').read_text())
-        assert provenance['primary_step']==step
-        assert provenance['input_sha256'][provenance['fresh']]==hashlib.sha256(a.fresh.read_bytes()).hexdigest()
-        document=document.replace('\n## Workload and information access',
-            f'\n![Development duration curve and fresh state outcomes]({a.figure.as_posix()})\n\n## Workload and information access',1)
-    a.output.write_text(document)
 
-
-if __name__=='__main__':main()

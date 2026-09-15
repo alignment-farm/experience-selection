@@ -1,0 +1,148 @@
+{
+  "train": [
+    {
+      "region": "coast",
+      "channel": "copper",
+      "ticket": "ybcybfebkt"
+    },
+    {
+      "region": "coast",
+      "channel": "violet",
+      "ticket": "ybcybfebkt"
+    },
+    {
+      "region": "inland",
+      "channel": "copper",
+      "ticket": "ybcybfebkt"
+    },
+    {
+      "region": "inland",
+      "channel": "violet",
+      "ticket": "ybcybfebkt"
+    },
+    {
+      "region": "coast",
+      "channel": "copper",
+      "ticket": "cotzpqsbuy"
+    },
+    {
+      "region": "coast",
+      "channel": "violet",
+      "ticket": "cotzpqsbuy"
+    },
+    {
+      "region": "inland",
+      "channel": "copper",
+      "ticket": "cotzpqsbuy"
+    },
+    {
+      "region": "inland",
+      "channel": "violet",
+      "ticket": "cotzpqsbuy"
+    }
+  ],
+  "probes": [
+    {
+      "region": "coast",
+      "channel": "copper",
+      "ticket": "uwrjcmnpve"
+    },
+    {
+      "region": "coast",
+      "channel": "violet",
+      "ticket": "uwrjcmnpve"
+    },
+    {
+      "region": "inland",
+      "channel": "copper",
+      "ticket": "uwrjcmnpve"
+    },
+    {
+      "region": "inland",
+      "channel": "violet",
+      "ticket": "uwrjcmnpve"
+    }
+  ],
+  "later": [
+    {
+      "region": "coast",
+      "channel": "copper",
+      "ticket": "oujeboxabw"
+    },
+    {
+      "region": "coast",
+      "channel": "violet",
+      "ticket": "oujeboxabw"
+    },
+    {
+      "region": "inland",
+      "channel": "copper",
+      "ticket": "oujeboxabw"
+    },
+    {
+      "region": "inland",
+      "channel": "violet",
+      "ticket": "oujeboxabw"
+    },
+    {
+      "region": "coast",
+      "channel": "copper",
+      "ticket": "vadtcfgdey"
+    },
+    {
+      "region": "coast",
+      "channel": "violet",
+      "ticket": "vadtcfgdey"
+    },
+    {
+      "region": "inland",
+      "channel": "copper",
+      "ticket": "vadtcfgdey"
+    },
+    {
+      "region": "inland",
+      "channel": "violet",
+      "ticket": "vadtcfgdey"
+    },
+    {
+      "region": "coast",
+      "channel": "copper",
+      "ticket": "ycllcxoibx"
+    },
+    {
+      "region": "coast",
+      "channel": "violet",
+      "ticket": "ycllcxoibx"
+    },
+    {
+      "region": "inland",
+      "channel": "copper",
+      "ticket": "ycllcxoibx"
+    },
+    {
+      "region": "inland",
+      "channel": "violet",
+      "ticket": "ycllcxoibx"
+    },
+    {
+      "region": "coast",
+      "channel": "copper",
+      "ticket": "loslvptlsy"
+    },
+    {
+      "region": "coast",
+      "channel": "violet",
+      "ticket": "loslvptlsy"
+    },
+    {
+      "region": "inland",
+      "channel": "copper",
+      "ticket": "loslvptlsy"
+    },
+    {
+      "region": "inland",
+      "channel": "violet",
+      "ticket": "loslvptlsy"
+    }
+  ]
+}

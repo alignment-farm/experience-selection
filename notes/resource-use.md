@@ -51,3 +51,9 @@ visible batch is PID7385, first learner PID7386. A subsequent retention boundary
 diagnosis is visible at0% CPU, waiting for this batch; its initial wait does not
 establish concurrent GPU use. Do not interpret these process samples as continuous
 exclusive-device monitoring. The cohort remains three sequential runs.
+
+Fresh cohort completed:364.89,365.11 and365.55 seconds,1095.54 seconds summed active
+run timers,9,612,131,344 bytes peak MLX in each. All gradient work and reloads are
+finished. The combined audit is complete; only CPU publication work remains.
+The waiting retention boundary diagnosis can use the GPU. No further heavy job
+is planned for this follow-up, and no sibling file or process was changed.

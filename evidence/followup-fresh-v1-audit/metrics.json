@@ -1,0 +1,1494 @@
+{
+  "runs": [
+    {
+      "path": "evidence/followup-fresh-v1-73",
+      "config": {
+        "output": "evidence/followup-fresh-v1-73",
+        "seed": 73,
+        "data_seed": 20260914601,
+        "state_steps": 64,
+        "checkpoints": [
+          128,
+          256
+        ],
+        "protocol": "protocol/followup-fresh-v1.md",
+        "include_base_mixture": false
+      },
+      "states": {
+        "coast": {
+          "no_update": {
+            "coast": 8,
+            "inland": 0
+          },
+          "context": {
+            "coast": 4,
+            "inland": 4
+          },
+          "construction": {
+            "updates": 64,
+            "input_tokens": 3328,
+            "loss_tokens": 192,
+            "seconds": 7.977804370995727,
+            "first_eight_mean_loss": 3.461019837576714,
+            "last_eight_mean_loss": 0.009990483194997068
+          },
+          "decision": {
+            "kind": "decision",
+            "elapsed": 49.63841420800236,
+            "state": "coast",
+            "source": "inland",
+            "errors": {
+              "coast": 0,
+              "inland": 2
+            },
+            "state_hash": "a7b94a5db45fdb073793bdb1de5ab4c4113a1f4661eeb5709ace15e2b4b32d8b",
+            "rule": "none if zero errors; maximum-error region; mixture on nonzero tie"
+          },
+          "verification": {
+            "calls": 4,
+            "prompt_tokens": 198,
+            "completion_tokens": 12,
+            "seconds": 0.5806668759978493
+          },
+          "checkpoints": {
+            "128": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6656,
+                    "loss_tokens": 384,
+                    "seconds": 16.102544254008535,
+                    "first_eight_mean_loss": 0.9034802857113391,
+                    "last_eight_mean_loss": 3.150522888972773e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.325998999996955
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6528,
+                    "loss_tokens": 384,
+                    "seconds": 16.406839580995438,
+                    "first_eight_mean_loss": 1.7851920332759619,
+                    "last_eight_mean_loss": 0.0003000732285727281
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.3320485829972313
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6592,
+                    "loss_tokens": 384,
+                    "seconds": 16.315496874991368,
+                    "first_eight_mean_loss": 1.3269459770563117,
+                    "last_eight_mean_loss": 0.0007597641306347214
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.325344958997448
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 0,
+                  "inland": 8
+                },
+                "training": {
+                  "updates": 128,
+                  "input_tokens": 6528,
+                  "loss_tokens": 384,
+                  "seconds": 16.406839580995438,
+                  "first_eight_mean_loss": 1.7851920332759619,
+                  "last_eight_mean_loss": 0.0003000732285727281
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 812,
+                  "completion_tokens": 48,
+                  "seconds": 2.3320485829972313
+                }
+              },
+              "oracle_correct": 16
+            },
+            "256": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13312,
+                    "loss_tokens": 768,
+                    "seconds": 32.16265941598613,
+                    "first_eight_mean_loss": 0.9034802857113391,
+                    "last_eight_mean_loss": 1.8472225065124803e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.32786591601689
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13056,
+                    "loss_tokens": 768,
+                    "seconds": 32.77154966099988,
+                    "first_eight_mean_loss": 1.7851920332759619,
+                    "last_eight_mean_loss": 0.00013100688283884665
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.3282872889867576
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13184,
+                    "loss_tokens": 768,
+                    "seconds": 32.61034170399944,
+                    "first_eight_mean_loss": 1.3269459770563117,
+                    "last_eight_mean_loss": 0.00011173490565852262
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.334962874992925
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 0,
+                  "inland": 8
+                },
+                "training": {
+                  "updates": 256,
+                  "input_tokens": 13056,
+                  "loss_tokens": 768,
+                  "seconds": 32.77154966099988,
+                  "first_eight_mean_loss": 1.7851920332759619,
+                  "last_eight_mean_loss": 0.00013100688283884665
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 812,
+                  "completion_tokens": 48,
+                  "seconds": 2.3282872889867576
+                }
+              },
+              "oracle_correct": 16
+            }
+          },
+          "context_use": {
+            "calls": 16,
+            "prompt_tokens": 4604,
+            "completion_tokens": 48,
+            "seconds": 5.86855387599644
+          },
+          "no_update_use": {
+            "calls": 16,
+            "prompt_tokens": 812,
+            "completion_tokens": 48,
+            "seconds": 2.3283179989994096
+          }
+        },
+        "inland": {
+          "no_update": {
+            "coast": 0,
+            "inland": 8
+          },
+          "context": {
+            "coast": 4,
+            "inland": 4
+          },
+          "construction": {
+            "updates": 64,
+            "input_tokens": 3264,
+            "loss_tokens": 192,
+            "seconds": 8.16127470999345,
+            "first_eight_mean_loss": 3.1075247168919304,
+            "last_eight_mean_loss": 0.004704072358435951
+          },
+          "decision": {
+            "kind": "decision",
+            "elapsed": 217.5890695420021,
+            "state": "inland",
+            "source": "coast",
+            "errors": {
+              "coast": 2,
+              "inland": 0
+            },
+            "state_hash": "df575fe657d1427642b3353aa5a4bcb53e38c0047ad67748be91e0a73a6970c6",
+            "rule": "none if zero errors; maximum-error region; mixture on nonzero tie"
+          },
+          "verification": {
+            "calls": 4,
+            "prompt_tokens": 198,
+            "completion_tokens": 12,
+            "seconds": 0.5823658330009494
+          },
+          "checkpoints": {
+            "128": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6656,
+                    "loss_tokens": 384,
+                    "seconds": 16.147096912984125,
+                    "first_eight_mean_loss": 1.6092153587378561,
+                    "last_eight_mean_loss": 0.00013126113935868489
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.3291608320032537
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6528,
+                    "loss_tokens": 384,
+                    "seconds": 16.458407210993755,
+                    "first_eight_mean_loss": 1.0999821323798642,
+                    "last_eight_mean_loss": 2.8331615794741083e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.3326140829994984
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6592,
+                    "loss_tokens": 384,
+                    "seconds": 15.808029419993545,
+                    "first_eight_mean_loss": 0.9580883076414466,
+                    "last_eight_mean_loss": 0.00010523470200496376
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.3264194579896866
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 8,
+                  "inland": 0
+                },
+                "training": {
+                  "updates": 128,
+                  "input_tokens": 6656,
+                  "loss_tokens": 384,
+                  "seconds": 16.147096912984125,
+                  "first_eight_mean_loss": 1.6092153587378561,
+                  "last_eight_mean_loss": 0.00013126113935868489
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 812,
+                  "completion_tokens": 48,
+                  "seconds": 2.3291608320032537
+                }
+              },
+              "oracle_correct": 16
+            },
+            "256": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13312,
+                    "loss_tokens": 768,
+                    "seconds": 32.269309493021865,
+                    "first_eight_mean_loss": 1.6092153587378561,
+                    "last_eight_mean_loss": 8.125102795020211e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.3323812510061543
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13056,
+                    "loss_tokens": 768,
+                    "seconds": 32.88496233197657,
+                    "first_eight_mean_loss": 1.0999821323798642,
+                    "last_eight_mean_loss": 1.9361360273251194e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.330212542005029
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13184,
+                    "loss_tokens": 768,
+                    "seconds": 32.12498425699232,
+                    "first_eight_mean_loss": 0.9580883076414466,
+                    "last_eight_mean_loss": 4.0862372998162755e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 812,
+                    "completion_tokens": 48,
+                    "seconds": 2.335090961001697
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 8,
+                  "inland": 0
+                },
+                "training": {
+                  "updates": 256,
+                  "input_tokens": 13312,
+                  "loss_tokens": 768,
+                  "seconds": 32.269309493021865,
+                  "first_eight_mean_loss": 1.6092153587378561,
+                  "last_eight_mean_loss": 8.125102795020211e-05
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 812,
+                  "completion_tokens": 48,
+                  "seconds": 2.3323812510061543
+                }
+              },
+              "oracle_correct": 16
+            }
+          },
+          "context_use": {
+            "calls": 16,
+            "prompt_tokens": 4604,
+            "completion_tokens": 48,
+            "seconds": 5.933255123007257
+          },
+          "no_update_use": {
+            "calls": 16,
+            "prompt_tokens": 812,
+            "completion_tokens": 48,
+            "seconds": 2.330752540990943
+          }
+        }
+      },
+      "base": {
+        "coast": 4,
+        "inland": 4
+      },
+      "base_mixture": {},
+      "base_context": {
+        "coast": 8,
+        "inland": 4
+      },
+      "base_context_use": {
+        "calls": 16,
+        "prompt_tokens": 4604,
+        "completion_tokens": 48,
+        "seconds": 5.971610417993361
+      },
+      "actual_experiment_updates": 1664,
+      "actual_experiment_generation_calls": 632,
+      "run": {
+        "kind": "complete",
+        "elapsed": 364.88914441700035,
+        "status": "complete",
+        "seconds": 364.8891410000033,
+        "peak_mlx_bytes": 9612131344
+      },
+      "audit": {
+        "hashes": true,
+        "raw_decoding": true,
+        "prompts": true,
+        "scoring": true,
+        "matched_starts": true,
+        "decision_before_candidates": true,
+        "reloads": 20,
+        "invariants": true
+      }
+    },
+    {
+      "path": "evidence/followup-fresh-v1-79",
+      "config": {
+        "output": "evidence/followup-fresh-v1-79",
+        "seed": 79,
+        "data_seed": 20260914701,
+        "state_steps": 64,
+        "checkpoints": [
+          128,
+          256
+        ],
+        "protocol": "protocol/followup-fresh-v1.md",
+        "include_base_mixture": false
+      },
+      "states": {
+        "coast": {
+          "no_update": {
+            "coast": 8,
+            "inland": 0
+          },
+          "context": {
+            "coast": 4,
+            "inland": 4
+          },
+          "construction": {
+            "updates": 64,
+            "input_tokens": 3424,
+            "loss_tokens": 192,
+            "seconds": 8.003948373996536,
+            "first_eight_mean_loss": 3.7896812255894474,
+            "last_eight_mean_loss": 0.0003786377192227519
+          },
+          "decision": {
+            "kind": "decision",
+            "elapsed": 49.60779220900076,
+            "state": "coast",
+            "source": "inland",
+            "errors": {
+              "coast": 0,
+              "inland": 2
+            },
+            "state_hash": "8aedc733723f639b01eeb8cc698e4c612f3bf2e0ba95ec0173eecbd05da38959",
+            "rule": "none if zero errors; maximum-error region; mixture on nonzero tie"
+          },
+          "verification": {
+            "calls": 4,
+            "prompt_tokens": 206,
+            "completion_tokens": 12,
+            "seconds": 0.5744190419973165
+          },
+          "checkpoints": {
+            "128": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6848,
+                    "loss_tokens": 384,
+                    "seconds": 16.26286633098789,
+                    "first_eight_mean_loss": 0.39759216183790613,
+                    "last_eight_mean_loss": 8.527712316208635e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3334616659958556
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6720,
+                    "loss_tokens": 384,
+                    "seconds": 16.209256616009952,
+                    "first_eight_mean_loss": 1.8770954331266694,
+                    "last_eight_mean_loss": 6.062560032660258e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.334103873999993
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 4,
+                    "inland": 6
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6784,
+                    "loss_tokens": 384,
+                    "seconds": 16.205243000971677,
+                    "first_eight_mean_loss": 2.0076936460282013,
+                    "last_eight_mean_loss": 0.24178873747587204
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3285098769956676
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 0,
+                  "inland": 8
+                },
+                "training": {
+                  "updates": 128,
+                  "input_tokens": 6720,
+                  "loss_tokens": 384,
+                  "seconds": 16.209256616009952,
+                  "first_eight_mean_loss": 1.8770954331266694,
+                  "last_eight_mean_loss": 6.062560032660258e-05
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.334103873999993
+                }
+              },
+              "oracle_correct": 10
+            },
+            "256": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13696,
+                    "loss_tokens": 768,
+                    "seconds": 32.48180591202254,
+                    "first_eight_mean_loss": 0.39759216183790613,
+                    "last_eight_mean_loss": 4.1185211216543394e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.32760866600438
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13440,
+                    "loss_tokens": 768,
+                    "seconds": 32.43846994699925,
+                    "first_eight_mean_loss": 1.8770954331266694,
+                    "last_eight_mean_loss": 3.763948438972875e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.32423950100565
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13568,
+                    "loss_tokens": 768,
+                    "seconds": 32.4797705419478,
+                    "first_eight_mean_loss": 2.0076936460282013,
+                    "last_eight_mean_loss": 0.0016367402422474697
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3276085810030054
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 0,
+                  "inland": 8
+                },
+                "training": {
+                  "updates": 256,
+                  "input_tokens": 13440,
+                  "loss_tokens": 768,
+                  "seconds": 32.43846994699925,
+                  "first_eight_mean_loss": 1.8770954331266694,
+                  "last_eight_mean_loss": 3.763948438972875e-05
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.32423950100565
+                }
+              },
+              "oracle_correct": 16
+            }
+          },
+          "context_use": {
+            "calls": 16,
+            "prompt_tokens": 4920,
+            "completion_tokens": 48,
+            "seconds": 5.998160626993922
+          },
+          "no_update_use": {
+            "calls": 16,
+            "prompt_tokens": 808,
+            "completion_tokens": 48,
+            "seconds": 2.3291363330063177
+          }
+        },
+        "inland": {
+          "no_update": {
+            "coast": 0,
+            "inland": 8
+          },
+          "context": {
+            "coast": 0,
+            "inland": 4
+          },
+          "construction": {
+            "updates": 64,
+            "input_tokens": 3360,
+            "loss_tokens": 192,
+            "seconds": 8.029997460977029,
+            "first_eight_mean_loss": 3.857158720747975,
+            "last_eight_mean_loss": 0.023660701932385564
+          },
+          "decision": {
+            "kind": "decision",
+            "elapsed": 217.55180337500133,
+            "state": "inland",
+            "source": "coast",
+            "errors": {
+              "coast": 2,
+              "inland": 0
+            },
+            "state_hash": "80b1f025b3e9b7eba7a13db8be2a5ceb2ae805bcb37bfea999c4302c7ffadf87",
+            "rule": "none if zero errors; maximum-error region; mixture on nonzero tie"
+          },
+          "verification": {
+            "calls": 4,
+            "prompt_tokens": 206,
+            "completion_tokens": 12,
+            "seconds": 0.5812580410020018
+          },
+          "checkpoints": {
+            "128": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6848,
+                    "loss_tokens": 384,
+                    "seconds": 16.2142986670151,
+                    "first_eight_mean_loss": 2.0270421897294,
+                    "last_eight_mean_loss": 5.573831140281982e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.323300708005263
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6720,
+                    "loss_tokens": 384,
+                    "seconds": 16.212814877009805,
+                    "first_eight_mean_loss": 0.7191688898019493,
+                    "last_eight_mean_loss": 5.4405630862675025e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3319644999901357
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6784,
+                    "loss_tokens": 384,
+                    "seconds": 16.14085679798154,
+                    "first_eight_mean_loss": 1.1971803084015846,
+                    "last_eight_mean_loss": 0.0013143539690645412
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.33011479299239
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 8,
+                  "inland": 0
+                },
+                "training": {
+                  "updates": 128,
+                  "input_tokens": 6848,
+                  "loss_tokens": 384,
+                  "seconds": 16.2142986670151,
+                  "first_eight_mean_loss": 2.0270421897294,
+                  "last_eight_mean_loss": 5.573831140281982e-05
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.323300708005263
+                }
+              },
+              "oracle_correct": 16
+            },
+            "256": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13696,
+                    "loss_tokens": 768,
+                    "seconds": 32.409948420994624,
+                    "first_eight_mean_loss": 2.0270421897294,
+                    "last_eight_mean_loss": 2.9717345341850887e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3318617490003817
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13440,
+                    "loss_tokens": 768,
+                    "seconds": 32.46449479203147,
+                    "first_eight_mean_loss": 0.7191688898019493,
+                    "last_eight_mean_loss": 2.7496742632138194e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.328967460005515
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13568,
+                    "loss_tokens": 768,
+                    "seconds": 32.4299945019884,
+                    "first_eight_mean_loss": 1.1971803084015846,
+                    "last_eight_mean_loss": 0.00033220315890503116
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.324058957001398
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 8,
+                  "inland": 0
+                },
+                "training": {
+                  "updates": 256,
+                  "input_tokens": 13696,
+                  "loss_tokens": 768,
+                  "seconds": 32.409948420994624,
+                  "first_eight_mean_loss": 2.0270421897294,
+                  "last_eight_mean_loss": 2.9717345341850887e-05
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.3318617490003817
+                }
+              },
+              "oracle_correct": 16
+            }
+          },
+          "context_use": {
+            "calls": 16,
+            "prompt_tokens": 4920,
+            "completion_tokens": 48,
+            "seconds": 5.988577541000268
+          },
+          "no_update_use": {
+            "calls": 16,
+            "prompt_tokens": 808,
+            "completion_tokens": 48,
+            "seconds": 2.3216250829864293
+          }
+        }
+      },
+      "base": {
+        "coast": 4,
+        "inland": 4
+      },
+      "base_mixture": {},
+      "base_context": {
+        "coast": 8,
+        "inland": 4
+      },
+      "base_context_use": {
+        "calls": 16,
+        "prompt_tokens": 4920,
+        "completion_tokens": 48,
+        "seconds": 5.988891790006164
+      },
+      "actual_experiment_updates": 1664,
+      "actual_experiment_generation_calls": 632,
+      "run": {
+        "kind": "complete",
+        "elapsed": 365.10516570899927,
+        "status": "complete",
+        "seconds": 365.10516262500096,
+        "peak_mlx_bytes": 9612131344
+      },
+      "audit": {
+        "hashes": true,
+        "raw_decoding": true,
+        "prompts": true,
+        "scoring": true,
+        "matched_starts": true,
+        "decision_before_candidates": true,
+        "reloads": 20,
+        "invariants": true
+      }
+    },
+    {
+      "path": "evidence/followup-fresh-v1-83",
+      "config": {
+        "output": "evidence/followup-fresh-v1-83",
+        "seed": 83,
+        "data_seed": 20260914801,
+        "state_steps": 64,
+        "checkpoints": [
+          128,
+          256
+        ],
+        "protocol": "protocol/followup-fresh-v1.md",
+        "include_base_mixture": false
+      },
+      "states": {
+        "coast": {
+          "no_update": {
+            "coast": 8,
+            "inland": 0
+          },
+          "context": {
+            "coast": 4,
+            "inland": 4
+          },
+          "construction": {
+            "updates": 64,
+            "input_tokens": 3360,
+            "loss_tokens": 192,
+            "seconds": 8.058715708983073,
+            "first_eight_mean_loss": 4.768907558832623,
+            "last_eight_mean_loss": 0.010960655632516136
+          },
+          "decision": {
+            "kind": "decision",
+            "elapsed": 50.163409417000366,
+            "state": "coast",
+            "source": "inland",
+            "errors": {
+              "coast": 0,
+              "inland": 2
+            },
+            "state_hash": "f26fbb4f92a8d0e9f9e403564a89685bc2f27fa526ce916e8d152a88d3b955e1",
+            "rule": "none if zero errors; maximum-error region; mixture on nonzero tie"
+          },
+          "verification": {
+            "calls": 4,
+            "prompt_tokens": 202,
+            "completion_tokens": 12,
+            "seconds": 0.5807416670031671
+          },
+          "checkpoints": {
+            "128": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6720,
+                    "loss_tokens": 384,
+                    "seconds": 16.147553424998478,
+                    "first_eight_mean_loss": 0.6536884626002575,
+                    "last_eight_mean_loss": 7.783955061313463e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3285120429936796
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6592,
+                    "loss_tokens": 384,
+                    "seconds": 16.30961375701736,
+                    "first_eight_mean_loss": 2.0650357203558087,
+                    "last_eight_mean_loss": 0.00032113576162373647
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3284692090055614
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 4,
+                    "inland": 4
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6656,
+                    "loss_tokens": 384,
+                    "seconds": 16.28290237298279,
+                    "first_eight_mean_loss": 1.0009642976510804,
+                    "last_eight_mean_loss": 0.25182138942182064
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.328194834997703
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 0,
+                  "inland": 8
+                },
+                "training": {
+                  "updates": 128,
+                  "input_tokens": 6592,
+                  "loss_tokens": 384,
+                  "seconds": 16.30961375701736,
+                  "first_eight_mean_loss": 2.0650357203558087,
+                  "last_eight_mean_loss": 0.00032113576162373647
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.3284692090055614
+                }
+              },
+              "oracle_correct": 8
+            },
+            "256": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13440,
+                    "loss_tokens": 768,
+                    "seconds": 32.13073701998292,
+                    "first_eight_mean_loss": 0.6536884626002575,
+                    "last_eight_mean_loss": 4.494551194511587e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3368699589955213
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13184,
+                    "loss_tokens": 768,
+                    "seconds": 32.57825392301311,
+                    "first_eight_mean_loss": 2.0650357203558087,
+                    "last_eight_mean_loss": 0.00012064939801348373
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.33067429399307
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13312,
+                    "loss_tokens": 768,
+                    "seconds": 32.49834912894585,
+                    "first_eight_mean_loss": 1.0009642976510804,
+                    "last_eight_mean_loss": 0.00024031066277530044
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3424289180002233
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 0,
+                  "inland": 8
+                },
+                "training": {
+                  "updates": 256,
+                  "input_tokens": 13184,
+                  "loss_tokens": 768,
+                  "seconds": 32.57825392301311,
+                  "first_eight_mean_loss": 2.0650357203558087,
+                  "last_eight_mean_loss": 0.00012064939801348373
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.33067429399307
+                }
+              },
+              "oracle_correct": 16
+            }
+          },
+          "context_use": {
+            "calls": 16,
+            "prompt_tokens": 4728,
+            "completion_tokens": 48,
+            "seconds": 5.984909002010681
+          },
+          "no_update_use": {
+            "calls": 16,
+            "prompt_tokens": 808,
+            "completion_tokens": 48,
+            "seconds": 2.318526042996382
+          }
+        },
+        "inland": {
+          "no_update": {
+            "coast": 0,
+            "inland": 8
+          },
+          "context": {
+            "coast": 4,
+            "inland": 4
+          },
+          "construction": {
+            "updates": 64,
+            "input_tokens": 3296,
+            "loss_tokens": 192,
+            "seconds": 8.085768337012269,
+            "first_eight_mean_loss": 2.0514953564852476,
+            "last_eight_mean_loss": 0.10802459670230746
+          },
+          "decision": {
+            "kind": "decision",
+            "elapsed": 218.03205983299995,
+            "state": "inland",
+            "source": "coast",
+            "errors": {
+              "coast": 2,
+              "inland": 0
+            },
+            "state_hash": "76de5e0d5310a59572f1e24428735e2eb659cdf0f4caacb7110be5dde66f18fd",
+            "rule": "none if zero errors; maximum-error region; mixture on nonzero tie"
+          },
+          "verification": {
+            "calls": 4,
+            "prompt_tokens": 202,
+            "completion_tokens": 12,
+            "seconds": 0.5796391250041779
+          },
+          "checkpoints": {
+            "128": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6720,
+                    "loss_tokens": 384,
+                    "seconds": 16.153170242003398,
+                    "first_eight_mean_loss": 1.1318595900665969,
+                    "last_eight_mean_loss": 3.8846467759867664e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3254484180069994
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6592,
+                    "loss_tokens": 384,
+                    "seconds": 16.282737005993113,
+                    "first_eight_mean_loss": 0.7228347022319213,
+                    "last_eight_mean_loss": 6.645886003298074e-06
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3238623759934853
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 128,
+                    "input_tokens": 6656,
+                    "loss_tokens": 384,
+                    "seconds": 16.236928587990406,
+                    "first_eight_mean_loss": 0.7055463893339038,
+                    "last_eight_mean_loss": 0.00018961014848173363
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.334097835006105
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 8,
+                  "inland": 0
+                },
+                "training": {
+                  "updates": 128,
+                  "input_tokens": 6720,
+                  "loss_tokens": 384,
+                  "seconds": 16.153170242003398,
+                  "first_eight_mean_loss": 1.1318595900665969,
+                  "last_eight_mean_loss": 3.8846467759867664e-05
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.3254484180069994
+                }
+              },
+              "oracle_correct": 16
+            },
+            "256": {
+              "sources": {
+                "coast": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 0
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13440,
+                    "loss_tokens": 768,
+                    "seconds": 32.3116604090028,
+                    "first_eight_mean_loss": 1.1318595900665969,
+                    "last_eight_mean_loss": 1.925706419569906e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3290977889919304
+                  }
+                },
+                "inland": {
+                  "scores": {
+                    "coast": 0,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13184,
+                    "loss_tokens": 768,
+                    "seconds": 32.56613221201769,
+                    "first_eight_mean_loss": 0.7228347022319213,
+                    "last_eight_mean_loss": 3.4371932997601107e-06
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.3337555850121134
+                  }
+                },
+                "mixture": {
+                  "scores": {
+                    "coast": 8,
+                    "inland": 8
+                  },
+                  "training": {
+                    "updates": 256,
+                    "input_tokens": 13312,
+                    "loss_tokens": 768,
+                    "seconds": 32.39265129400883,
+                    "first_eight_mean_loss": 0.7055463893339038,
+                    "last_eight_mean_loss": 6.0718258737324504e-05
+                  },
+                  "use": {
+                    "calls": 16,
+                    "prompt_tokens": 808,
+                    "completion_tokens": 48,
+                    "seconds": 2.33075112500228
+                  }
+                }
+              },
+              "selected": {
+                "scores": {
+                  "coast": 8,
+                  "inland": 0
+                },
+                "training": {
+                  "updates": 256,
+                  "input_tokens": 13440,
+                  "loss_tokens": 768,
+                  "seconds": 32.3116604090028,
+                  "first_eight_mean_loss": 1.1318595900665969,
+                  "last_eight_mean_loss": 1.925706419569906e-05
+                },
+                "use": {
+                  "calls": 16,
+                  "prompt_tokens": 808,
+                  "completion_tokens": 48,
+                  "seconds": 2.3290977889919304
+                }
+              },
+              "oracle_correct": 16
+            }
+          },
+          "context_use": {
+            "calls": 16,
+            "prompt_tokens": 4728,
+            "completion_tokens": 48,
+            "seconds": 5.992796583999734
+          },
+          "no_update_use": {
+            "calls": 16,
+            "prompt_tokens": 808,
+            "completion_tokens": 48,
+            "seconds": 2.320696250990295
+          }
+        }
+      },
+      "base": {
+        "coast": 4,
+        "inland": 4
+      },
+      "base_mixture": {},
+      "base_context": {
+        "coast": 8,
+        "inland": 4
+      },
+      "base_context_use": {
+        "calls": 16,
+        "prompt_tokens": 4728,
+        "completion_tokens": 48,
+        "seconds": 5.9715670439909445
+      },
+      "actual_experiment_updates": 1664,
+      "actual_experiment_generation_calls": 632,
+      "run": {
+        "kind": "complete",
+        "elapsed": 365.54888033300085,
+        "status": "complete",
+        "seconds": 365.548877792,
+        "peak_mlx_bytes": 9612131344
+      },
+      "audit": {
+        "hashes": true,
+        "raw_decoding": true,
+        "prompts": true,
+        "scoring": true,
+        "matched_starts": true,
+        "decision_before_candidates": true,
+        "reloads": 20,
+        "invariants": true
+      }
+    }
+  ],
+  "totals": {
+    "128": {
+      "coast": 48,
+      "inland": 48,
+      "mixture": 82,
+      "selected": 48
+    },
+    "256": {
+      "coast": 48,
+      "inland": 48,
+      "mixture": 96,
+      "selected": 48
+    }
+  },
+  "denominator": 96,
+  "no_update": 48,
+  "context": 44
+}

@@ -67,4 +67,8 @@ without changing the learner lock. The output records the plotting package versi
 
 ```sh
 uv run --no-project --with matplotlib==3.11.2 --with numpy==2.5.3 python scripts/followup_plot.py --fresh evidence/NEW-FRESH-AUDIT/metrics.json --primary-step 256 --output evidence/NEW-FIGURES
+uv run --no-sync python scripts/followup_report.py --fresh evidence/NEW-FRESH-AUDIT/metrics.json --primary-step 256 --figure evidence/NEW-FIGURES/source-comparison.svg --output NEW-FOLLOWUP-FINDINGS.md
 ```
+
+When a figure is supplied, the renderer verifies that its recorded input hash and
+primary step match the metrics being published.

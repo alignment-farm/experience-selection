@@ -1,0 +1,23 @@
+Finished evidence/followup-fresh-v1-73
+Finished evidence/followup-fresh-v1-79
+Finished evidence/followup-fresh-v1-83
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{
+  "totals": {
+    "128": {
+      "coast": 48,
+      "inland": 48,
+      "mixture": 82,
+      "selected": 48
+    },
+    "256": {
+      "coast": 48,
+      "inland": 48,
+      "mixture": 96,
+      "selected": 48
+    }
+  },
+  "denominator": 96,
+  "no_update": 48,
+  "context": 44
+}
