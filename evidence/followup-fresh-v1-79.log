@@ -1,0 +1,28 @@
+base-none 0 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+base-context 0 {'train': {'correct': 8, 'total': 8, 'by_region': {'coast': 4, 'inland': 4}}, 'later': {'correct': 12, 'total': 16, 'by_region': {'coast': 8, 'inland': 4}}}
+state-coast 8 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+state-coast 16 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+state-coast 32 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+state-coast 64 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 4, 'inland': 0}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 8, 'inland': 0}}}
+coast-probe 0 {'probes': {'correct': 2, 'total': 4, 'by_region': {'coast': 2, 'inland': 0}}}
+coast-none 0 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 4, 'inland': 0}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 8, 'inland': 0}}}
+coast-context 0 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+coast-coast 128 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 4, 'inland': 0}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 8, 'inland': 0}}}
+coast-coast 256 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 4, 'inland': 0}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 8, 'inland': 0}}}
+coast-inland 128 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 0, 'inland': 4}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 0, 'inland': 8}}}
+coast-inland 256 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 0, 'inland': 4}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 0, 'inland': 8}}}
+coast-mixture 128 {'train': {'correct': 6, 'total': 8, 'by_region': {'coast': 2, 'inland': 4}}, 'later': {'correct': 10, 'total': 16, 'by_region': {'coast': 4, 'inland': 6}}}
+coast-mixture 256 {'train': {'correct': 8, 'total': 8, 'by_region': {'coast': 4, 'inland': 4}}, 'later': {'correct': 16, 'total': 16, 'by_region': {'coast': 8, 'inland': 8}}}
+state-inland 8 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+state-inland 16 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+state-inland 32 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 2, 'inland': 2}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 4, 'inland': 4}}}
+state-inland 64 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 0, 'inland': 4}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 0, 'inland': 8}}}
+inland-probe 0 {'probes': {'correct': 2, 'total': 4, 'by_region': {'coast': 0, 'inland': 2}}}
+inland-none 0 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 0, 'inland': 4}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 0, 'inland': 8}}}
+inland-context 0 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 0, 'inland': 4}}, 'later': {'correct': 4, 'total': 16, 'by_region': {'coast': 0, 'inland': 4}}}
+inland-coast 128 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 4, 'inland': 0}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 8, 'inland': 0}}}
+inland-coast 256 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 4, 'inland': 0}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 8, 'inland': 0}}}
+inland-inland 128 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 0, 'inland': 4}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 0, 'inland': 8}}}
+inland-inland 256 {'train': {'correct': 4, 'total': 8, 'by_region': {'coast': 0, 'inland': 4}}, 'later': {'correct': 8, 'total': 16, 'by_region': {'coast': 0, 'inland': 8}}}
+inland-mixture 128 {'train': {'correct': 8, 'total': 8, 'by_region': {'coast': 4, 'inland': 4}}, 'later': {'correct': 16, 'total': 16, 'by_region': {'coast': 8, 'inland': 8}}}
+inland-mixture 256 {'train': {'correct': 8, 'total': 8, 'by_region': {'coast': 4, 'inland': 4}}, 'later': {'correct': 16, 'total': 16, 'by_region': {'coast': 8, 'inland': 8}}}

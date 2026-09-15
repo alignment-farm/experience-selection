@@ -98,3 +98,9 @@ prespecified run, not a reason to stop or choose a new checkpoint. Seeds79/83
 remain fixed. Publication/audit tooling changed during the cohort, but experiment,
 task, runtime, prompts, protocol and learner environment are unchanged; the cohort
 audit verifies their identical bytes across all runs.
+
+Seed79 completed in365.11 seconds,1664 updates,9.61GB peak. Raw scores: mixture
+32/32 at256 and26/32 at128 (coast-state10/16, inland-state16/16 at128). Pure sources
+and gap policy remain16/32. Both states acquired their exposed region. Seed83 is
+executing as prespecified; the final combined audit will check this run and all
+cross-run invariants. No learning or selection rule was changed after fresh results.
