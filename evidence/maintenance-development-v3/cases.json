@@ -1,0 +1,686 @@
+{
+  "train": [
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "8f5a7ddf70"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "752e165f7d"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "d3fdb74259"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "1581db09f7"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "c68910395d"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "642d3eea8b"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "7e539013c0"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "20aaeb1cc7"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "57b1962a2d"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "e2eb3322a1"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "e1ffd4541d"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "732624c375"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "ae3464516a"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "3bf60417d2"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "9369d694d7"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "464af32ea4"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "993870ee57"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "ff64199cf9"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "e6eb4a2a65"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "2c84f6aa95"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "2d9a30ac57"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "413026aaab"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "7094aa18cc"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "bf7ef1b50a"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "3d535d80d1"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "570726b1f2"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "b2e928e0d9"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "b0313d3074"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "6b04b0450f"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "ab07066645"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "d0c37afa8e"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "77e5d6c450"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "aac25cfdac"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "cf8f7cffda"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "4207e14dc3"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "08cb6ccabb"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "10e075ac78"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "3d382ad697"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "3228871b61"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "34b41d621d"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "99e235d98e"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "f04330e351"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "3c60ae499c"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "1392bea9d0"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "7158b4fbc9"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "bf9b6623b6"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "5da1f9e8ed"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "9b564d5d4b"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "6984ec5c82"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "9a6938e84c"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "3ec5d561d7"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "a89379c787"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "9267cbbde2"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "75048d68df"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "88189dda64"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "9479365fa5"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "ae16d93095"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "612467af8e"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "6c58361afb"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "356dd113bd"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "1de3ae8007"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "5927564eb3"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "1c0904add7"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "66e80e3b99"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "753eadd185"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "5a17338be5"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "ebbc2df76a"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "acdd8f2f94"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "ca7c91f199"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "9d2c0f444e"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "f6773d19bc"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "242f525d8c"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "564b686a72"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "d821c9567c"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "5485f820d4"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "b668a92354"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "e77bcb939e"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "6ab4ca40f7"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "239bd7e3e1"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "516a214e9f"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "435911e808"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "d10276660a"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "73f34227d2"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "ad08182981"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "c5a802a3f0"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "b3a5c79523"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "c0d4493d42"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "399ae05ce3"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "16b8e29603"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "b7edbb447b"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "05d3f133f6"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "123a520fd4"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "792ba9f3fa"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "6a2137fdd6"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "6e7f59325e"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "2fc8042aab"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "7a2417015d"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "67e76f85cd"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "36f30768d3"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "aef24b4258"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "0c8e55f2c8"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "51b71d38ed"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "b86b527cd6"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "45179c8135"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "67a0e506e1"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "8d9ed4724a"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "7e7ba0e5a8"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "58c55da819"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "9db939565f"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "585fdac804"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "5e4806e131"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "dea006c1f8"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "41b2efbe3b"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "8248d688f8"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "4679302d9d"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "3c5a987b4d"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "0b51d3fc0f"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "becb3abbe5"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "2e9c5d0acb"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "2f98b8c915"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "cb5dcdc8cd"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "ee219c8282"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "802a2a1569"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "2751b43e5c"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "eff9ae1ea0"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "6e36e63810"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "38312e6de9"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "bdc009c270"
+    }
+  ],
+  "later": [
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "a82f26a562"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "31dd21d182"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "ade150887c"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "fc08fa1219"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "6754a9d5c3"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "85c675011c"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "054ddaae04"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "886b93d0db"
+    }
+  ]
+}

@@ -59,3 +59,16 @@ training-case generations, not any selector input or primary before/after measur
 Greedy evaluation does not update weights. Check exact initial-state file equality
 with V3 before claiming unchanged trajectories. Added configurable later replicas
 so fresh claims can use more disjoint tickets without changing training.
+
+## V3: composition matters on complete workflows
+
+Independent audit passes. Total uses over the three arrivals (18 repeated-state
+outcomes): none6, incoming6, fixed25 7, fixed50 10, fixed75 16, MIR50 7; explicit18.
+Fixed75 ends8/8, retains10 and loses0. Incoming learns6 and loses6; MIR50 likewise
+learns6 and loses6. Each updating arm spends384 steps and1920 target tokens.
+MIR50 adds24 virtual updates and768 loss-scoring forwards;24 exact virtual/actual
+next-step and optimizer-isolation checks pass. Starting checkpoint matches V2
+byte-for-byte. Full run728.34s,9.63GB peak. V4 tests256-step duration and MIR75,
+matching the strongest fixed replay fraction instead of blaming ranking for an
+unmatched rehearsal budget. A fixed post-prefix stop schedule is added for fresh
+recurrence, with its lower update count reported separately.

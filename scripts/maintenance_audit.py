@@ -52,14 +52,14 @@ def main():
             costs[arm]['use_generation']=dict(count=len(rs),prompt_tokens=sum(r['prompt_tokens'] for r in rs),completion_tokens=sum(r['completion_tokens'] for r in rs),seconds=sum(r['seconds'] for r in rs))
             if config['mode']=='recur':
                 updates=[e for e in events if e['kind']=='update' and e['arm']==arm]
-                assert len(updates)==(0 if arm=='none' else config['steps']*len(config['sequence']))
+                assert len(updates)==(0 if arm=='none' else config['steps']*(min(3,len(config['sequence'])) if arm.startswith('stop') else len(config['sequence'])))
                 for ep,site in enumerate(config['sequence'],1):
                     before=grouped[(arm+'-before',ep,'later')];after=grouped[(arm,ep,'later')]
                     b={r['index']:r for r in before};assert set(b)=={r['index'] for r in after}
                     pairs.append(dict(arm=arm,episode=ep,site=site,total=len(after),retained=sum(r['success'] and b[r['index']]['success'] for r in after),gained=sum(r['success'] and not b[r['index']]['success'] for r in after),lost=sum(not r['success'] and b[r['index']]['success'] for r in after),failed_both=sum(not r['success'] and not b[r['index']]['success'] for r in after)))
                     us=[e for e in updates if e['episode']==ep]
-                    ratio=int(arm[-2:])/100 if arm.startswith(('fixed','mir')) else 0
-                    assert sum(cs['train'][u['index']]['site']!=site for u in us)==int(config['steps']*ratio)
+                    ratio=int(arm[-2:])/100 if arm.startswith(('fixed','mir','stop')) else 0
+                    assert sum(cs['train'][u['index']]['site']!=site for u in us)==int((0 if arm.startswith('stop') and ep>3 else config['steps'])*ratio)
                     def order(pool,n,seed):
                         rng=random.Random(seed);result=[]
                         while len(result)<n:
@@ -68,7 +68,7 @@ def main():
                     pool=[i for i,c in enumerate(cs['train']) if c['site']==site]
                     incoming=[u['index'] for u in us if cs['train'][u['index']]['site']==site]
                     assert incoming==order(pool,config['steps'],config['seed']+ep)[:len(incoming)]
-                    if arm.startswith('fixed'):
+                    if arm.startswith(('fixed','stop')):
                         seen=['alder']+list(dict.fromkeys(config['sequence'][:ep]));seen=list(dict.fromkeys(seen))
                         old=[s for s in seen if s!=site]
                         pool=[i for s in old for i,c in enumerate(cs['train']) if c['site']==s]

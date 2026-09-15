@@ -79,3 +79,8 @@ PID5223; after it exited and no active learner was visible, launched V3:1920
 counterfactual maintenance updates plus128 construction updates, three arrivals,
 six arms. Prospective protocol committed65c5e49; whole-selection cost timing at
 236382b. No other learner was active at launch.
+
+V3 ended728.34s,9.63GB peak. Waiting sibling final learner5507 then became active;
+this study yielded. CPU audit and V4 preparation proceed. Next bounded job is
+V4:2304 maintenance updates plus128 construction, fixed75/MIR50/MIR75 at256 per
+arrival. No model process from this study is currently waiting in the GPU queue.

@@ -14,7 +14,6 @@ def main():
     p.add_argument('--data-seed',type=int,default=2026091501)
     p.add_argument('--protocol',default='protocol/maintenance-development-v1.md')
     p.add_argument('--mode',choices=['calibrate','recur'],default='calibrate')
-    p.add_argument('--later-replicas',type=int,default=1)
     p.add_argument('--candidate-count',type=int,default=16)
     p.add_argument('--replicas',type=int,default=2)
     p.add_argument('--state-steps',type=int,default=128)
@@ -35,7 +34,7 @@ def main():
     try:
         save('config.json',{k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()})
         save('resource.json',resource());event('revision',git=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip())
-        train,later=cases(a.data_seed,a.replicas),cases(a.data_seed+1,a.later_replicas)
+        train,later=cases(a.data_seed,a.replicas),cases(a.data_seed+1,1)
         assert not {c['ticket'] for c in train}&{c['ticket'] for c in later}
         save('cases.json',dict(train=train,later=later))
         rt=Runtime();rt.reinitialize(a.seed);base=rt.snapshot();reloads=[]
@@ -65,11 +64,11 @@ def main():
             while len(result)<n:
                 batch=pool.copy();rng.shuffle(batch);result+=batch
             return result[:n]
-        evaluate('base',0,suites=('train','later') if a.mode=='calibrate' else ('later',))
+        evaluate('base',0,suites=('train','later'))
         opt=rt.optimizer()
         for step,i in enumerate(order(pools['alder'],a.state_steps,a.seed),1):
             update('state',0,step,i,opt)
-            if step in sorted(set([min(64,a.state_steps),a.state_steps])):evaluate('state',step,sites=SITES if a.mode=='calibrate' else ['alder'],suites=('train','later'))
+            if step in sorted(set([min(64,a.state_steps),a.state_steps])):evaluate('state',step,suites=('train','later'))
         initial=rt.snapshot();initial_hash=digest(initial)
         if a.mode=='calibrate':
             rt.restore(base);opt=rt.optimizer()
@@ -102,9 +101,9 @@ def main():
                     opt=rt.optimizer();new_order=order(pools[site],a.steps,a.seed+episode)
                     replay_pool=[i for s in old for i in pools[s]]
                     fixed_order=order(replay_pool,a.steps,a.seed+100+episode)
-                    ratio=int(arm[-2:])/100 if arm.startswith(('fixed','mir','stop')) else 0
+                    ratio=int(arm[-2:])/100 if arm.startswith(('fixed','mir')) else 0
                     chosen=[];newpos=oldpos=0
-                    for step in range(1,1 if arm=='none' or (arm.startswith('stop') and episode>3) else a.steps+1):
+                    for step in range(1,1 if arm=='none' else a.steps+1):
                         if arm.startswith('mir') and (step-1)%16==0:
                             selection_tick=time.monotonic()
                             before=rt.snapshot();h=digest(before)
