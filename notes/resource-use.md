@@ -67,3 +67,9 @@ Maintenance V1 completed185.97s, peak9.62GB. Sibling retention PID4678 was seen
 waiting and then actively running; this study yields before V2. CPU-only audit
 and task checks completed while yielding. Next intended job is1152 updates for
 higher-ticket-diversity acquisition; no background learner is started to wait.
+
+After the sibling PID4678 exited (about19 minutes elapsed for that process),
+process inspection found no active learner. Launched maintenance-development-v2:
+128 alder updates and1024 joint updates,16 tickets per rule, checkpoints512/1024.
+No overlap intentionally introduced. Awaiting yielded time is not experimental
+active time and is not included in model latency comparisons.
