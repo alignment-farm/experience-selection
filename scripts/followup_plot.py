@@ -1,6 +1,7 @@
 """Export the measured development curve and individual fresh-state outcomes."""
 import argparse
 import json
+import hashlib
 from pathlib import Path
 import matplotlib
 import matplotlib.pyplot as plt
@@ -54,7 +55,10 @@ def main():
     a.output.mkdir(parents=True,exist_ok=False)
     for ext in ['svg','png']:fig.savefig(a.output/f'source-comparison.{ext}',dpi=180)
     (a.output/'provenance.json').write_text(json.dumps(dict(matplotlib=matplotlib.__version__,numpy=np.__version__,
-          fresh=str(a.fresh),primary_step=a.primary_step),indent=2)+'\n')
+          fresh=str(a.fresh),primary_step=a.primary_step,
+          input_sha256={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in [a.fresh,
+              Path('evidence/followup-development-v1-audit/metrics.json'),
+              Path('evidence/followup-development-v2-audit/metrics.json')]}),indent=2)+'\n')
     (a.output/'followup_plot.py').write_bytes(Path(__file__).read_bytes())
 
 

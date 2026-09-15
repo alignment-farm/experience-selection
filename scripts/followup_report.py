@@ -65,6 +65,10 @@ update. The context reference receives all twelve labeled observations in every
 prompt. Obtaining labels is privileged synthetic supervision; real verification
 costs were not measured.
 
+The same sixteen later queries are used across both starting states within each
+run, giving {len(f['runs'])*16} distinct later requests and {n} state/query outcomes
+for each source policy in the fresh cohort.
+
 Two states are constructed independently from the same base initialization using
 64 updates on one region. Each source branch starts from the exact same saved
 partial-state weights, with a fresh optimizer. The sources are coast, inland,
@@ -158,6 +162,10 @@ below. Token counts are not FLOPs.
     for source in ['coast','inland','mixture','selected']:
         vals=[v['checkpoints'][step]['selected'] if source=='selected' else v['checkpoints'][step]['sources'][source] for _,_,v in states]
         md.append(f"| {source} | {sum(x['training']['input_tokens'] for x in vals)} | {sum(x['training']['loss_tokens'] for x in vals)} | {sum(x['use']['prompt_tokens'] for x in vals)} | {sum(x['use']['completion_tokens'] for x in vals)} |")
+    mix_tokens=sum(v['checkpoints'][step]['sources']['mixture']['training']['input_tokens'] for _,_,v in states)
+    gap_tokens=sum(v['checkpoints'][step]['selected']['training']['input_tokens'] for _,_,v in states)
+    if mix_tokens==gap_tokens and mixture_updates==selected_updates:
+        md.append('\nThe mixture and gap policy also match in aggregate training input tokens; the composition contrast is not explained by more gradient updates or more total input tokens.')
     actual=sum(r['actual_experiment_updates'] for r in f['runs'])
     calls=sum(r['actual_experiment_generation_calls'] for r in f['runs'])
     sec=sum(r['run']['seconds'] for r in f['runs'])
@@ -173,7 +181,8 @@ The [audited metrics]({a.fresh.as_posix()}) link all raw runs. The audit checks 
 hashes, prompt/token decoding, independent score reconstruction, disjoint tickets,
 source orders, matched starting hashes, finite gradients with nonzero updates,
 decisions before candidate training, frozen-base invariants and exact token replay
-after checkpoint reload. All evaluated adapters, script snapshots and raw records
+after checkpoint reload (one saved generation per evaluated checkpoint). All
+evaluated adapters, script snapshots and raw records
 are preserved. See [reproduction](notes/followup-reproduction.md).
 
 ## Interpretation and limits

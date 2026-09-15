@@ -29,7 +29,8 @@ not load the model and can run while another study uses the GPU.
 
 Evidence includes all model responses (with prompt and output token IDs), labeled
 probe decisions, each gradient update, state/source hashes, all evaluated adapter
-checkpoints, exact-token reload checks and SHA256SUMS. Base weights and Python
+checkpoints, exact-token reload checks (one generation per checkpoint) and
+SHA256SUMS. Base weights and Python
 environments are ignored by Git; the small adapters are committed.
 
 The auditor independently recomputes per-region accuracy from raw decoded answers,
@@ -65,5 +66,5 @@ Optional standalone publication figures use a separate plotting environment,
 without changing the learner lock. The output records the plotting package versions.
 
 ```sh
-uv run --no-project --with matplotlib python scripts/followup_plot.py --fresh evidence/NEW-FRESH-AUDIT/metrics.json --primary-step 256 --output evidence/NEW-FIGURES
+uv run --no-project --with matplotlib==3.11.2 --with numpy==2.5.3 python scripts/followup_plot.py --fresh evidence/NEW-FRESH-AUDIT/metrics.json --primary-step 256 --output evidence/NEW-FIGURES
 ```
