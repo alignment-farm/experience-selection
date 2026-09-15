@@ -73,3 +73,9 @@ process inspection found no active learner. Launched maintenance-development-v2:
 128 alder updates and1024 joint updates,16 tickets per rule, checkpoints512/1024.
 No overlap intentionally introduced. Awaiting yielded time is not experimental
 active time and is not included in model latency comparisons.
+
+V2 completed440.61s with9.62GB peak. Yielded to waiting sibling boundary-diagnosis
+PID5223; after it exited and no active learner was visible, launched V3:1920
+counterfactual maintenance updates plus128 construction updates, three arrivals,
+six arms. Prospective protocol committed65c5e49; whole-selection cost timing at
+236382b. No other learner was active at launch.

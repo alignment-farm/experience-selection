@@ -14,6 +14,7 @@ def main():
     p.add_argument('--data-seed',type=int,default=2026091501)
     p.add_argument('--protocol',default='protocol/maintenance-development-v1.md')
     p.add_argument('--mode',choices=['calibrate','recur'],default='calibrate')
+    p.add_argument('--later-replicas',type=int,default=1)
     p.add_argument('--candidate-count',type=int,default=16)
     p.add_argument('--replicas',type=int,default=2)
     p.add_argument('--state-steps',type=int,default=128)
@@ -34,7 +35,7 @@ def main():
     try:
         save('config.json',{k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()})
         save('resource.json',resource());event('revision',git=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip())
-        train,later=cases(a.data_seed,a.replicas),cases(a.data_seed+1,1)
+        train,later=cases(a.data_seed,a.replicas),cases(a.data_seed+1,a.later_replicas)
         assert not {c['ticket'] for c in train}&{c['ticket'] for c in later}
         save('cases.json',dict(train=train,later=later))
         rt=Runtime();rt.reinitialize(a.seed);base=rt.snapshot();reloads=[]
@@ -64,11 +65,11 @@ def main():
             while len(result)<n:
                 batch=pool.copy();rng.shuffle(batch);result+=batch
             return result[:n]
-        evaluate('base',0,suites=('train','later'))
+        evaluate('base',0,suites=('train','later') if a.mode=='calibrate' else ('later',))
         opt=rt.optimizer()
         for step,i in enumerate(order(pools['alder'],a.state_steps,a.seed),1):
             update('state',0,step,i,opt)
-            if step in sorted(set([min(64,a.state_steps),a.state_steps])):evaluate('state',step,suites=('train','later'))
+            if step in sorted(set([min(64,a.state_steps),a.state_steps])):evaluate('state',step,sites=SITES if a.mode=='calibrate' else ['alder'],suites=('train','later'))
         initial=rt.snapshot();initial_hash=digest(initial)
         if a.mode=='calibrate':
             rt.restore(base);opt=rt.optimizer()

@@ -51,3 +51,11 @@ arrivals; all costs and repeated-case dependence will be disclosed.
 Before V3, added whole-selection wall timing (including cloning, hashing, scoring,
 virtual update, ranking and restoration). Component forward/update times remain
 separate and must not be added again to the inclusive selection total.
+
+After V3 launch (its source snapshot preserved), prepared a diagnostic-generation
+reduction for subsequent recurrent runs: base scores only later queries; initial
+state scores train and later only on alder. This removes gratuitous future-site
+training-case generations, not any selector input or primary before/after measure.
+Greedy evaluation does not update weights. Check exact initial-state file equality
+with V3 before claiming unchanged trajectories. Added configurable later replicas
+so fresh claims can use more disjoint tickets without changing training.
