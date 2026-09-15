@@ -72,3 +72,14 @@ byte-for-byte. Full run728.34s,9.63GB peak. V4 tests256-step duration and MIR75,
 matching the strongest fixed replay fraction instead of blaming ranking for an
 unmatched rehearsal budget. A fixed post-prefix stop schedule is added for fresh
 recurrence, with its lower update count reported separately.
+
+## V4: duration and matched replay-budget diagnosis
+
+Audit passed. At256 updates/arrival, fixed75=18/18, MIR50=17/18, MIR75=18/18;
+all end8/8. The shorter failure of MIR50 is not a general selector failure:
+longer duration and75% replay suffice for complete development behavior. Fixed75
+also suffices without predicting damage. Both choices and primary256 duration
+are now frozen for two new initialization/data seeds and a6-arrival recurrence.
+The fixed post-prefix stop control separates repeated-update costs from selection.
+The reduced diagnostic-generation code produces the same state128 SHA as V3.
+V4 completed1019.82 seconds, peak9.63GB. No fresh cases have yet been generated.

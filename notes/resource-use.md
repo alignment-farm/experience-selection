@@ -90,3 +90,9 @@ including its earlier wait), no active learner was visible. Started V4 under
 89cf2da/46a7420-era audited code:2304 maintenance updates plus128 construction,
 three policies and three arrivals. Prior shared-device wait is excluded from
 experimental active timers. Native whole-selection/reset checks remain enabled.
+
+V4 complete1019.82s,9.63GB peak. No other Python learner was visible at completion.
+Next intended use is one visible sequential fresh batch: two seeds,7936 actual
+optimizer updates including construction,192 virtual updates, plus scoring and
+model generations. Expected roughly45–50 minutes from measured development.
+Recheck before launch. Afterwards only CPU analysis/publication is planned.
