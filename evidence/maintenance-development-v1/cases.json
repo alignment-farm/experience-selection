@@ -1,0 +1,126 @@
+{
+  "train": [
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "8f5a7ddf70"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "752e165f7d"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "d3fdb74259"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "1581db09f7"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "c68910395d"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "642d3eea8b"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "7e539013c0"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "20aaeb1cc7"
+    },
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "57b1962a2d"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "e2eb3322a1"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "e1ffd4541d"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "732624c375"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "ae3464516a"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "3bf60417d2"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "9369d694d7"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "464af32ea4"
+    }
+  ],
+  "later": [
+    {
+      "site": "alder",
+      "kind": "copper",
+      "ticket": "a82f26a562"
+    },
+    {
+      "site": "alder",
+      "kind": "violet",
+      "ticket": "31dd21d182"
+    },
+    {
+      "site": "birch",
+      "kind": "copper",
+      "ticket": "ade150887c"
+    },
+    {
+      "site": "birch",
+      "kind": "violet",
+      "ticket": "fc08fa1219"
+    },
+    {
+      "site": "cedar",
+      "kind": "copper",
+      "ticket": "6754a9d5c3"
+    },
+    {
+      "site": "cedar",
+      "kind": "violet",
+      "ticket": "85c675011c"
+    },
+    {
+      "site": "dune",
+      "kind": "copper",
+      "ticket": "054ddaae04"
+    },
+    {
+      "site": "dune",
+      "kind": "violet",
+      "ticket": "886b93d0db"
+    }
+  ]
+}

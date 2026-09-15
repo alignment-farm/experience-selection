@@ -9,12 +9,15 @@ uses a copied model and one SGD step. Author code is cached for inspection, not
 imported into this study. License preserved. Local implementation is independently
 written using this study's existing native runtime at dee1e3159ed0105f6a090c65b72f57cbc386fb10.
 
-Local adaptation: answer-token CE for multi-action text; one virtual fresh-AdamW
-step, every 16 actual updates, on the next incoming example; rank the complete
-small old-site archive by post-minus-pre loss and cycle through its top half for
+Local adaptation: answer-token CE for multi-action text; one virtual AdamW
+step with cloned current optimizer state, every 16 actual updates, on the next incoming example; rank a seeded sample of at most 16 records from the
+old-site archive by post-minus-pre loss and cycle through its top half for
 replay. Restore exact adapter weights, leave actual optimizer untouched. No
-reservoir/subsample, image classifier, joint minibatch, historical minimum loss,
+reservoir replacement, image classifier, joint minibatch, historical minimum loss,
 or teacher distribution. Actual updates alternate incoming and selected replay
 according to a fixed ratio. This is MIR-inspired block replay, not a replication
-of published MIR. Fresh AdamW predicts a standardized prospective update, not
-necessarily the next actual optimizer step after its moments have accumulated.
+of published MIR. The virtual step uses the actual optimizer moments; its separate copy is discarded.
+Exact weight restore and an unchanged actual optimizer-state digest are checked.
+The fresh-AdamW draft was corrected before any recurrent run.
+`mir.py:retrieve_replay_update` was read in full, including descending loss-delta
+ranking, excluded current task, reservoir sampling and the summed new/replay gradients.

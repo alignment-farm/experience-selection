@@ -62,3 +62,8 @@ is planned for this follow-up, and no sibling file or process was changed.
 inspection before calibration found no active Python/MLX learner. Planned first
 job: 640 updates and bounded generation, 40 GB MLX ceiling, 3600 s run limit.
 No serving process or sibling file changed. Timing remains descriptive.
+
+Maintenance V1 completed185.97s, peak9.62GB. Sibling retention PID4678 was seen
+waiting and then actively running; this study yields before V2. CPU-only audit
+and task checks completed while yielding. Next intended job is1152 updates for
+higher-ticket-diversity acquisition; no background learner is started to wait.

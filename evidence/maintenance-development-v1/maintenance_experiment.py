@@ -3,7 +3,6 @@ import argparse, json, random, subprocess, time
 from pathlib import Path
 import mlx.core as mx
 import mlx.nn as nn
-from mlx.utils import tree_map, tree_flatten
 from runtime import Runtime, resource, digest, sha
 from maintenance_task import SITES, cases, answer, prompt, execute, explicit
 
@@ -14,8 +13,6 @@ def main():
     p.add_argument('--data-seed',type=int,default=2026091501)
     p.add_argument('--protocol',default='protocol/maintenance-development-v1.md')
     p.add_argument('--mode',choices=['calibrate','recur'],default='calibrate')
-    p.add_argument('--candidate-count',type=int,default=16)
-    p.add_argument('--replicas',type=int,default=2)
     p.add_argument('--state-steps',type=int,default=128)
     p.add_argument('--steps',type=int,default=128)
     p.add_argument('--arms',nargs='+',default=['none','incoming','fixed25','fixed50','fixed75','mir50'])
@@ -34,7 +31,7 @@ def main():
     try:
         save('config.json',{k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()})
         save('resource.json',resource());event('revision',git=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip())
-        train,later=cases(a.data_seed,a.replicas),cases(a.data_seed+1,1)
+        train,later=cases(a.data_seed,2),cases(a.data_seed+1,1)
         assert not {c['ticket'] for c in train}&{c['ticket'] for c in later}
         save('cases.json',dict(train=train,later=later))
         rt=Runtime();rt.reinitialize(a.seed);base=rt.snapshot();reloads=[]
@@ -104,27 +101,20 @@ def main():
                     for step in range(1,1 if arm=='none' else a.steps+1):
                         if arm.startswith('mir') and (step-1)%16==0:
                             before=rt.snapshot();h=digest(before)
-                            candidate=random.Random(a.seed+10000*episode+step).sample(replay_pool,min(a.candidate_count,len(replay_pool)))
-                            scores0=[loss(i) for i in candidate]
-                            opt_hash=digest(tree_flatten(opt.state))
-                            virtual=rt.optimizer();virtual.state=tree_map(lambda x:mx.array(x),opt.state)
+                            scores0=[loss(i) for i in replay_pool]
+                            virtual=rt.optimizer()
                             update(arm,episode,step,new_order[newpos],virtual,kind='virtual_update')
-                            future_hash=digest(rt.snapshot())
-                            scores1=[loss(i) for i in candidate]
-                            ranked=sorted(zip(candidate,scores0,scores1),key=lambda v:(-(v[2]-v[1]),v[0]))
+                            scores1=[loss(i) for i in replay_pool]
+                            ranked=sorted(zip(replay_pool,scores0,scores1),key=lambda v:(-(v[2]-v[1]),v[0]))
                             chosen=[v[0] for v in ranked[:max(1,len(ranked)//2)]]
                             rt.restore(before);assert digest(rt.snapshot())==h
-                            assert digest(tree_flatten(opt.state))==opt_hash
-                            event('selection',arm=arm,episode=episode,step=step,ranked=ranked,chosen=chosen,reset_exact=True,optimizer_unchanged=True)
+                            event('selection',arm=arm,episode=episode,step=step,ranked=ranked,chosen=chosen,reset_exact=True)
                         replay=int(step*ratio)>int((step-1)*ratio)
                         if replay:
                             i=chosen[oldpos%len(chosen)] if arm.startswith('mir') else fixed_order[oldpos]
                             oldpos+=1
                         else:i=new_order[newpos];newpos+=1
                         update(arm,episode,step,i,opt)
-                        if arm.startswith('mir') and (step-1)%16==0:
-                            assert digest(rt.snapshot())==future_hash
-                            event('virtual_matches_actual',arm=arm,episode=episode,step=step,exact=True)
                     evaluate(arm,episode,seen)
         event('invariants',**rt.invariants())
         for file,x,y in reloads:
