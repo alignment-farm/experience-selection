@@ -21,7 +21,8 @@ def main():
         grouped=collections.defaultdict(list)
         for r in responses:
             raw=tok.decode(r['ids'][:-1] if r['ended'] else r['ids']);assert raw==r['raw'] and raw.strip()==r['action']
-            c=r['case'];expected=paths[c['site']][c['kind']]
+            c=r['case'];assert c==cs[r['suite']][r['index']]
+            expected=paths[c['site']][c['kind']]
             correct=r['action'].split()==expected.split();assert correct==r['success']
             if correct:
                 resource,prep,_=expected.split();assert r['state']==dict(heron=1-(resource=='heron'),otter=1-(resource=='otter'),reserved=None,prepared=prep,shipped=True)
@@ -56,6 +57,9 @@ def main():
                 for ep,site in enumerate(config['sequence'],1):
                     before=grouped[(arm+'-before',ep,'later')];after=grouped[(arm,ep,'later')]
                     b={r['index']:r for r in before};assert set(b)=={r['index'] for r in after}
+                    seen_sites={'alder',*config['sequence'][:ep]}
+                    expected_indices={i for i,c in enumerate(cs['later']) if c['site'] in seen_sites}
+                    assert set(b)==expected_indices and len(before)==len(after)==len(expected_indices)
                     pairs.append(dict(arm=arm,episode=ep,site=site,total=len(after),retained=sum(r['success'] and b[r['index']]['success'] for r in after),gained=sum(r['success'] and not b[r['index']]['success'] for r in after),lost=sum(not r['success'] and b[r['index']]['success'] for r in after),failed_both=sum(not r['success'] and not b[r['index']]['success'] for r in after)))
                     us=[e for e in updates if e['episode']==ep]
                     ratio=int(arm[-2:])/100 if arm.startswith(('fixed','mir','stop')) else 0
@@ -80,7 +84,8 @@ def main():
             ranked=sorted(s['ranked'],key=lambda v:(-(v[2]-v[1]),v[0]));assert ranked==s['ranked']
             assert s['chosen']==[v[0] for v in ranked[:max(1,len(ranked)//2)]]
             site=config['sequence'][s['episode']-1]
-            assert all(cs['train'][i]['site']!=site for i in s['chosen'])
+            old_sites={'alder',*config['sequence'][:s['episode']]}-{site}
+            assert all(cs['train'][i]['site'] in old_sites for i,_,_ in ranked)
             selected_updates=[e for e in events if e['kind']=='update' and e['arm']==s['arm'] and e['episode']==s['episode'] and s['step']<=e['step']<s['step']+16 and cs['train'][e['index']]['site']!=site]
             assert all(e['index'] in s['chosen'] for e in selected_updates)
         assert len([e for e in events if e['kind']=='virtual_matches_actual' and e['exact']])==len(selections)
