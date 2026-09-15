@@ -1,0 +1,10 @@
+{
+  "title": "Development: complete dispatch workflows (128 updates per arrival)",
+  "inputs": {
+    "evidence/maintenance-development-v3-audit/metrics.json": "35d5548a526375dc16a753213f830bb4a269849eb2ece06af217b507eb7b857c"
+  },
+  "packages": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3"
+  }
+}
