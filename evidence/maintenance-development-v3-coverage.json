@@ -1,0 +1,440 @@
+{
+  "run": "evidence/maintenance-development-v3",
+  "blocks": [
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 1,
+      "candidate_cells": 2,
+      "chosen_cells": 1,
+      "chosen_counts": {
+        "alder/copper": 8
+      },
+      "largest_delta": 2.7251171736279503,
+      "smallest_selected_delta": 2.475174882711144
+    },
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 17,
+      "candidate_cells": 2,
+      "chosen_cells": 1,
+      "chosen_counts": {
+        "alder/copper": 8
+      },
+      "largest_delta": 0.32017216831445694,
+      "smallest_selected_delta": 0.2146170809864998
+    },
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 33,
+      "candidate_cells": 2,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "alder/copper": 6,
+        "alder/violet": 2
+      },
+      "largest_delta": 0.0028721317648887634,
+      "smallest_selected_delta": -0.14053022861480713
+    },
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 49,
+      "candidate_cells": 2,
+      "chosen_cells": 1,
+      "chosen_counts": {
+        "alder/copper": 8
+      },
+      "largest_delta": 0.244068443775177,
+      "smallest_selected_delta": 0.21734517812728882
+    },
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 65,
+      "candidate_cells": 2,
+      "chosen_cells": 1,
+      "chosen_counts": {
+        "alder/copper": 8
+      },
+      "largest_delta": -0.003627689555287361,
+      "smallest_selected_delta": -0.007079374976456165
+    },
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 81,
+      "candidate_cells": 2,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "alder/violet": 6,
+        "alder/copper": 2
+      },
+      "largest_delta": 0.17138385772705078,
+      "smallest_selected_delta": -0.005901608616113663
+    },
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 97,
+      "candidate_cells": 2,
+      "chosen_cells": 1,
+      "chosen_counts": {
+        "alder/copper": 8
+      },
+      "largest_delta": 0.006949130445718765,
+      "smallest_selected_delta": 0.00043869949877262115
+    },
+    {
+      "arm": "mir50",
+      "episode": 1,
+      "step": 113,
+      "candidate_cells": 2,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "alder/violet": 6,
+        "alder/copper": 2
+      },
+      "largest_delta": 0.03846454620361328,
+      "smallest_selected_delta": -0.0002316259779036045
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 1,
+      "candidate_cells": 4,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "birch/copper": 4,
+        "alder/copper": 3,
+        "alder/violet": 1
+      },
+      "largest_delta": 1.7198028266429901,
+      "smallest_selected_delta": 0.40177443623542786
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 17,
+      "candidate_cells": 4,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "birch/copper": 5,
+        "alder/copper": 3
+      },
+      "largest_delta": 0.5807515382766724,
+      "smallest_selected_delta": 0.5018281936645508
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 33,
+      "candidate_cells": 4,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "alder/violet": 6,
+        "birch/violet": 2
+      },
+      "largest_delta": 0.2159423828125,
+      "smallest_selected_delta": 0.0718643069267273
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 49,
+      "candidate_cells": 4,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "birch/copper": 3,
+        "alder/violet": 5
+      },
+      "largest_delta": 0.356711208820343,
+      "smallest_selected_delta": 0.17458829283714294
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 65,
+      "candidate_cells": 4,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "birch/violet": 4,
+        "alder/violet": 3,
+        "alder/copper": 1
+      },
+      "largest_delta": 0.09614914655685425,
+      "smallest_selected_delta": 0.047446370124816895
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 81,
+      "candidate_cells": 4,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "birch/violet": 3,
+        "alder/violet": 5
+      },
+      "largest_delta": 0.013894468545913696,
+      "smallest_selected_delta": -0.0019184201955795288
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 97,
+      "candidate_cells": 4,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "birch/copper": 4,
+        "alder/violet": 3,
+        "alder/copper": 1
+      },
+      "largest_delta": 0.025960326194763184,
+      "smallest_selected_delta": 0.0016705989837646484
+    },
+    {
+      "arm": "mir50",
+      "episode": 2,
+      "step": 113,
+      "candidate_cells": 4,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "birch/copper": 3,
+        "alder/violet": 3,
+        "birch/violet": 2
+      },
+      "largest_delta": 0.05707179009914398,
+      "smallest_selected_delta": -0.053909093141555786
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 1,
+      "candidate_cells": 6,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "cedar/copper": 3,
+        "alder/violet": 2,
+        "birch/violet": 3
+      },
+      "largest_delta": 0.6143074110150337,
+      "smallest_selected_delta": 0.2343347668647766
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 17,
+      "candidate_cells": 6,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "cedar/copper": 2,
+        "birch/violet": 2,
+        "alder/copper": 4
+      },
+      "largest_delta": 0.10193446651101112,
+      "smallest_selected_delta": 0.017208397388458252
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 33,
+      "candidate_cells": 6,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "cedar/copper": 3,
+        "alder/copper": 3,
+        "birch/violet": 2
+      },
+      "largest_delta": 0.06871053576469421,
+      "smallest_selected_delta": 0.023814857006072998
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 49,
+      "candidate_cells": 6,
+      "chosen_cells": 4,
+      "chosen_counts": {
+        "cedar/violet": 3,
+        "birch/copper": 2,
+        "alder/copper": 2,
+        "alder/violet": 1
+      },
+      "largest_delta": 0.15639472007751465,
+      "smallest_selected_delta": -0.45578378438949585
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 65,
+      "candidate_cells": 6,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "alder/copper": 3,
+        "birch/copper": 2,
+        "cedar/violet": 3
+      },
+      "largest_delta": 0.0414624959230423,
+      "smallest_selected_delta": -0.03484922647476196
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 81,
+      "candidate_cells": 6,
+      "chosen_cells": 4,
+      "chosen_counts": {
+        "birch/copper": 1,
+        "cedar/violet": 3,
+        "alder/violet": 3,
+        "alder/copper": 1
+      },
+      "largest_delta": 0.02878696471452713,
+      "smallest_selected_delta": -0.10174292325973511
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 97,
+      "candidate_cells": 6,
+      "chosen_cells": 2,
+      "chosen_counts": {
+        "cedar/violet": 7,
+        "birch/copper": 1
+      },
+      "largest_delta": 0.1776866912841797,
+      "smallest_selected_delta": 0.11924499273300171
+    },
+    {
+      "arm": "mir50",
+      "episode": 3,
+      "step": 113,
+      "candidate_cells": 6,
+      "chosen_cells": 3,
+      "chosen_counts": {
+        "birch/copper": 3,
+        "cedar/violet": 1,
+        "alder/copper": 4
+      },
+      "largest_delta": 0.04421139508485794,
+      "smallest_selected_delta": -0.026132583618164062
+    }
+  ],
+  "updates": {
+    "state/0": {
+      "alder/copper": 64,
+      "alder/violet": 64
+    },
+    "incoming/1": {
+      "birch/copper": 64,
+      "birch/violet": 64
+    },
+    "incoming/2": {
+      "cedar/copper": 64,
+      "cedar/violet": 64
+    },
+    "incoming/3": {
+      "dune/violet": 64,
+      "dune/copper": 64
+    },
+    "fixed25/1": {
+      "birch/copper": 48,
+      "birch/violet": 48,
+      "alder/violet": 16,
+      "alder/copper": 16
+    },
+    "fixed25/2": {
+      "cedar/copper": 48,
+      "cedar/violet": 48,
+      "alder/copper": 8,
+      "birch/copper": 10,
+      "alder/violet": 10,
+      "birch/violet": 4
+    },
+    "fixed25/3": {
+      "dune/violet": 48,
+      "alder/violet": 7,
+      "dune/copper": 48,
+      "birch/copper": 3,
+      "alder/copper": 5,
+      "cedar/copper": 8,
+      "birch/violet": 5,
+      "cedar/violet": 4
+    },
+    "fixed50/1": {
+      "birch/copper": 32,
+      "alder/violet": 32,
+      "birch/violet": 32,
+      "alder/copper": 32
+    },
+    "fixed50/2": {
+      "cedar/copper": 32,
+      "alder/copper": 16,
+      "cedar/violet": 32,
+      "birch/copper": 16,
+      "alder/violet": 16,
+      "birch/violet": 16
+    },
+    "fixed50/3": {
+      "dune/violet": 32,
+      "alder/violet": 10,
+      "birch/copper": 8,
+      "alder/copper": 10,
+      "dune/copper": 32,
+      "cedar/copper": 11,
+      "birch/violet": 11,
+      "cedar/violet": 14
+    },
+    "fixed75/1": {
+      "birch/copper": 16,
+      "alder/violet": 48,
+      "alder/copper": 48,
+      "birch/violet": 16
+    },
+    "fixed75/2": {
+      "cedar/copper": 16,
+      "alder/copper": 22,
+      "birch/copper": 26,
+      "alder/violet": 24,
+      "cedar/violet": 16,
+      "birch/violet": 24
+    },
+    "fixed75/3": {
+      "dune/violet": 16,
+      "alder/violet": 16,
+      "birch/copper": 16,
+      "alder/copper": 16,
+      "cedar/copper": 16,
+      "birch/violet": 16,
+      "cedar/violet": 16,
+      "dune/copper": 16
+    },
+    "mir50/1": {
+      "birch/copper": 32,
+      "alder/copper": 50,
+      "birch/violet": 32,
+      "alder/violet": 14
+    },
+    "mir50/2": {
+      "cedar/copper": 32,
+      "birch/copper": 19,
+      "cedar/violet": 32,
+      "alder/copper": 8,
+      "alder/violet": 26,
+      "birch/violet": 11
+    },
+    "mir50/3": {
+      "dune/violet": 32,
+      "cedar/copper": 8,
+      "alder/violet": 6,
+      "dune/copper": 32,
+      "birch/violet": 7,
+      "alder/copper": 17,
+      "cedar/violet": 17,
+      "birch/copper": 9
+    }
+  },
+  "note": "Coverage is descriptive; selection changes the subsequent outcome, so these are not unbiased tests of damage prediction."
+}
